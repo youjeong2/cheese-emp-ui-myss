@@ -1,0 +1,6 @@
+[1010/232618.200:ERROR:settings.cc(430)] Settings version is not 5
+[1010/233618.519:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\oksu_\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\417fc136-a8e2-4e4c-adcc-81c10f9b50da: ������ ��θ� ã�� �� �����ϴ�. (0x3)
+[1010/233618.526:ERROR:directory_reader_win.cc(43)] FindFirstFile: ������ ��θ� ã�� �� �����ϴ�. (0x3)
+[1011/124019.589:ERROR:directory_reader_win.cc(43)] FindFirstFile: ������ ��θ� ã�� �� �����ϴ�. (0x3)
+[1012/114022.628:ERROR:directory_reader_win.cc(43)] FindFirstFile: ������ ��θ� ã�� �� �����ϴ�. (0x3)
+[1013/113505.175:ERROR:directory_reader_win.cc(43)] FindFirstFile: ������ ��θ� ã�� �� �����ϴ�. (0x3)
