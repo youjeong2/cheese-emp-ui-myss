@@ -63,7 +63,7 @@ export default () => {
 
               <SubmitButton type="submit" value="Submit">Submit</SubmitButton>
             </form>
-          </div>
+          </div>      
           <SvgDotPattern1 />
         </FormContainer>
       </Content>

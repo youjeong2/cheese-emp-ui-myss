@@ -9,8 +9,9 @@ import Blog from "../containers/cmm/hom/Blogs.js";
 import Testimonial from "../containers/cmm/hom/TwoColumnWithImage.js";
 import ContactUsForm from "../containers/cmm/hom/SimpleContactUs.js";
 import Footer from "../components/cmm/Footer.js";
-
 import Header from "../components/cmm/Header.js";
+// import { ChatbotContainer as Chatbot } from "../containers/cop/itm"
+
 
 const Home = () => <div className="home">
   <Header />
@@ -22,7 +23,10 @@ const Home = () => <div className="home">
     <ContactUsForm />
     <Footer />
   </AnimationRevealPage>
+  {/* <Chatbot/> */}
 );
 </div>
 
 export default Home
+
+

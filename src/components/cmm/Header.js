@@ -6,7 +6,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 
 import useAnimatedNavToggler from "../../containers/cmm/hom/useAnimatedNavToggler.js";
 
-import logo from "../images/logo.svg";
+import logo from "../images/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 
@@ -64,9 +64,8 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
   const defaultLinks = (
     <NavLinks key={1}>
       <NavLink href="/" >홈</NavLink>
-      <NavLink href="/menu">치즈</NavLink>
-      <NavLink href="order">주문</NavLink>
-      <NavLink href="/board">F&Q</NavLink>
+      <NavLink href="/cheese">치즈</NavLink>
+      <NavLink href="/review">F&Q</NavLink>
       <NavLink href="/survey">추천</NavLink>
       <NavLink href="/about">Admin</NavLink>
       <NavLink href="/login" tw="lg:ml-12!">Login</NavLink>

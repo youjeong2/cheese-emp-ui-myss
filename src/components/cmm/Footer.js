@@ -3,7 +3,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
-import LogoImage from "../images/logo.svg";
+import LogoImage from "../images/cheese-logo.png";
 // import LogoImage from "../../images/cheeseLogo.svg";
 import { ReactComponent as FacebookIcon } from "../images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "../images/twitter-icon.svg";
@@ -17,13 +17,13 @@ const WideColumn = tw(Column)`text-center md:text-left w-full md:w-2/5 mb-10 md:
 
 const ColumnHeading = tw.h5`font-bold`;
 
-const LinkList = tw.ul`mt-4 text-sm font-medium`;
+const LinkList = tw.ul`mt-1 text-sm font-medium`;
 const LinkListItem = tw.li`mt-3`;
-const Link = tw.a`border-b-2 border-transparent hocus:text-primary-500 hocus:border-primary-500 pb-1 transition duration-300`;
+const Link = tw.a`border-b-2 border-transparent hocus:text-yellow-500 hocus:border-yellow-500 pb-1 transition duration-300`;
 
 const LogoContainer = tw.div`flex items-center justify-center md:justify-start`;
 const LogoImg = tw.img`w-8`;
-const LogoText = tw.h5`ml-2 text-xl font-black text-primary-500`;
+const LogoText = tw.h5`ml-2 text-xl font-black text-yellow-500`;
 
 const CompanyDescription = tw.p`mt-4 max-w-xs font-medium text-sm mx-auto md:mx-0 md:mr-4 `;
 
@@ -42,7 +42,7 @@ export default () => {
         <WideColumn>
           <LogoContainer>
             <LogoImg src={LogoImage} />
-            <LogoText>Pick 2 Cheese Inc.</LogoText>
+            <LogoText>Pic 2 Cheese Inc.</LogoText>
           </LogoContainer>
           <CompanyDescription>
             Treact is an Internet Technology company providing design resources such as website templates and themes.
@@ -60,55 +60,34 @@ export default () => {
           </SocialLinksContainer>
         </WideColumn>
         <Column>
-          <ColumnHeading>Quick Links</ColumnHeading>
           <LinkList>
             <LinkListItem>
-              <Link href="#">Blog</Link>
+              <Link href="#">BRAND</Link>
             </LinkListItem>
             <LinkListItem>
-              <Link href="#">FAQs</Link>
+              <Link href="#">이용약관</Link>
             </LinkListItem>
             <LinkListItem>
-              <Link href="#">Support</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link href="#">About Us</Link>
+              <Link href="#">개인정보처리방침</Link>
             </LinkListItem>
           </LinkList>
         </Column>
         <Column>
-          <ColumnHeading>Product</ColumnHeading>
-          <LinkList>
-            <LinkListItem>
-              <Link href="#">Log In</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link href="#">Personal</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link href="#">Business</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link href="#">Team</Link>
-            </LinkListItem>
-          </LinkList>
+        <LinkList>
+                <p>Pic2 Cheese(주)</p>
+        <p>대표이사 : 옥수민,김유정,최민근,김병준</p>
+        <p>서울시 송파구 송파대로 570</p>
+        <p>사업자 등록번호 : 120-88-00767</p>
+        통신판매업신고 : 2017-서울송파-0680
+        </LinkList>
         </Column>
         <Column>
-          <ColumnHeading>Legal</ColumnHeading>
-          <LinkList>
-            <LinkListItem>
-              <Link href="#">GDPR</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link href="#">Privacy Policy</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link href="#">Terms of Service</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link href="#">Disclaimer</Link>
-            </LinkListItem>
-          </LinkList>
+        <LinkList>
+        <p>365고객센터 | 전자금융거래분쟁처리담당</p>
+        <p>1577-7011</p>
+        <p>서울시 송파구 송파대로 570</p>
+        <p>email : help@pic2cheese.com</p>
+        </LinkList>
         </Column>
       </FiveColumns>
     </Container>
