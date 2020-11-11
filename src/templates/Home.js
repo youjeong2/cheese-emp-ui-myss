@@ -10,7 +10,7 @@ import Testimonial from "../containers/cmm/hom/TwoColumnWithImage.js";
 import ContactUsForm from "../containers/cmm/hom/SimpleContactUs.js";
 import Footer from "../components/cmm/Footer.js";
 import Header from "../components/cmm/Header.js";
-// import { ChatbotContainer as Chatbot } from "../containers/cop/itm"
+import { ChatbotContainer as Chatbot } from "../containers/cop/itm/chatbot"
 
 
 const Home = () => <div className="home">
@@ -23,7 +23,7 @@ const Home = () => <div className="home">
     <ContactUsForm />
     <Footer />
   </AnimationRevealPage>
-  {/* <Chatbot/> */}
+  <Chatbot/>
 );
 </div>
 

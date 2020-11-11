@@ -6,12 +6,12 @@ import { alertActions } from '../alert.action'
 import history from '../history'
 
 export const reviewConstants = {
-    REGISTER_REQUEST: 'REVIEW_REGISTER_REQUEST',
-    REGISTER_SUCCESS: 'REVIEW_REGISTER_SUCCESS',
-    REGISTER_FAILURE: 'REVIEW_REGISTER_FAILURE',
+    REVIEW_REQUEST: 'REVIEW_GET_REQUEST',
+    REVIEW_SUCCESS: 'REVIEW_GET_SUCCESS',
+    REVIEW_FAILURE: 'REVIEW_GET_FAILURE',
 }
 
-export const registerSuccess = createAction(reviewConstants.REGISTER_SUCCESS);
+export const getReviewSuccess = createAction(reviewConstants.REVIEW_SUCCESS);
 
 // Initial State
 const initialState = {
@@ -20,6 +20,35 @@ const initialState = {
 
 // Reducer
 const reviewReducer = handleActions(
-    { [reviewConstants.REGISTER_SUCCESS]: (state, action) => ({ review: action.user }) },
-    initialState,
+    { [reviewConstants.REVIEW_SUCCESS]: (state, action) => ({ review: action.review }) },
+    initialState
   )
+
+  //Action
+  export const reviewActions = {
+    getAll
+
+  }
+
+  function getAll() {
+        return dispatch => {
+            dispatchEvent(request())
+
+            reviewService.getAll()
+            .then(
+                review => {
+                    dispatch(success(review))
+                    history.push('/review')
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                }
+            )
+        }
+
+        function request() { return { type: reviewConstants.REVIEW_REQUEST } }
+        function success(review) { return { type: reviewConstants.REVIEW_SUCCESS } }
+        function failure(review) { return { type: reviewConstants.REVIEW_FAILURE } }
+    }
+
+    export default reviewReducer

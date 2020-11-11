@@ -1,20 +1,21 @@
-import { useRadioGroup } from '@material-ui/core';
 import axios from 'axios'
-import { context as c } from './context'
+import { context as c } from '../../../context'
 
 
 export const cheeseService = {
-    pic2chs
+    getAll
 };
 
-async function pic2chs(cheese) {
+async function getAll() {
     const req = {
         method: c.get,
-        url: '${c.url}/api/cheese',
+        url: 'localhost:8080/api/cheese',
         data: {cheese}
     }
     const resp = await axios(req)
+
     const data = resp.data
+
     alert(' connection is successful !')
     return data
 }

@@ -10,6 +10,8 @@ import logo from "../images/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 
+import { FaRegUser } from "react-icons/fa"
+
 const Header = tw.header`
   flex justify-between items-center
   max-w-screen-xl mx-auto pt-5 pb-5
@@ -41,6 +43,30 @@ export const LogoLink = styled(NavLink)`
   }
 `;
 
+const UserLink = styled(NavLink)`
+    font-size: 1.0rem;
+    font-weight: 400;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: pre;
+    color: black;
+    &:hover{
+        color: yellow;
+    }
+    &.active{
+        font-weight: 700;
+        padding-bottom: 0.5rem;
+        color: black;
+        border-bottom: 2px solid #FFCE54;
+        &:hover{
+            color: #FFCE54;
+        }
+    }
+`
 export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between`;
 export const NavToggle = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-yellow-500 transition duration-300
@@ -67,9 +93,11 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <NavLink href="/cheese">치즈</NavLink>
       <NavLink href="/review">F&Q</NavLink>
       <NavLink href="/survey">추천</NavLink>
-      <NavLink href="/about">Admin</NavLink>
-      <NavLink href="/login" tw="lg:ml-12!">Login</NavLink>
-      {/* <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/login">Log In</PrimaryLink> */}
+      {/* <NavLink href="/about">Admin</NavLink> */}
+      {/* <NavLink to="/login">
+                <FaRegUser size={20} style={{color: 'black'}}/>
+      </NavLink>       */}
+      <NavLink href="/login" tw="lg:ml-12!">Sign in</NavLink>
       <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
     </NavLinks>
   );

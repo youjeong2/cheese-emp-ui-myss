@@ -37,7 +37,7 @@ export default () => {
                 설문지, 상품 리스트 페이지 */}
             </Heading>
             <PrimaryAction href="/components/blocks/Pricing/ThreePlansWithHalfPrimaryBackground">
-              Search Events Near Me
+              Find Your Cheese !
             </PrimaryAction>
           </Content>
         </HeroContainer>

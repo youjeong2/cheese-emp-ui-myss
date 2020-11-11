@@ -1,17 +1,16 @@
 
 import { createAction, handleActions } from 'redux-actions';
 import { cheeseService } from './cheese.service'
-import { alertAction } from '../alert.action'
-
-import history from '../history'
+import { alertAction } from '../../../alert.action'
+import history from '../../../history'
 
 export const cheeseConstants = {
-    REGISTER_REQUEST: 'CHEESES_REGISTER_REQUEST',
-    REGISTER_SUCCESS: 'CHEESES_REGISTER_SUCCESS',
-    REGISTER_FAILURE: 'CHEESES_REGISTER_FAILURE'
+    CHEESELIST_REQUEST: 'CHEESELIST_GET_REQUEST',
+    CHEESELIST_SUCCEESS: 'CHEESELIST_GET_SUCCESS',
+    CHEESELIST_FAILURE: 'CHEESELIST_GET_FAILURE'
 }
 
-export const registerSuccess = createAction(cheeseConstants,REGISTER_SUCCESS);
+export const getCheeseSuccess = createAction(cheeseConstants,CHEESELIST_SUCCEESS);
 
 // Initial State
 const initialState = {
@@ -20,27 +19,27 @@ const initialState = {
 
 // Reducer
 const cheeseReducer = handleActions(
-    { [cheeseConstants.REGISTER_SUCCESS]: (state, action) => ({ cheese: action.cheese}) },
-    initialState,
+    { [cheeseConstants.CHEESELIST_SUCCEESS]: (state, action) => ({ cheese: action.cheese}) },
+    initialState
 )
 
 // Action
-
 export const cheeseActions =  {
+    getAll
 
-    pic2Chs,
 }
 
-////////////////////// POST /////////////////////
+////////////////////// GET /////////////////////
 
-function pic2Chs(cheese) {
+function getAll() {
     return dispatch => {
-        distpatch(request(cheese));
+        dispatch(request());
 
-        cheeseService.pic2Chs(cheese)
+        cheeseService.getAll()
         .then(
             cheese => {
-                dispatch(successs());
+                dispatch(successs(cheese));
+                history.push('/cheese')
 
                 dispatch(alertActions.successs('Cheese Registeraion Succeessful'));
             },
@@ -52,7 +51,9 @@ function pic2Chs(cheese) {
         );
     };
     
-    function request(cheese) { return { type: cheeseConstants.REGISTER_REQUEST, cheese } }
-    function successs(cheese) { return { type: cheeseConstants.REGISTER_SUCCESS, cheese } }
-    function failure(cheese) { return { type: cheeseConstants.REGISTER_FAILURE, error} }
+    function request() { return { type: cheeseConstants.CHEESELIST_REQUEST } }
+    function successs(cheese) { return { type: cheeseConstants.CHEESELIST_SUCCEESS, cheese } }
+    function failure(cheese) { return { type: cheeseConstants.CHEESELIST_FAILURE, error} }
 }
+
+export default cheeseReducer

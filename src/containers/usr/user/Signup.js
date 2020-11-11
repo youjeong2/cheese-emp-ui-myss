@@ -1,24 +1,18 @@
-import React, {useCallback, useState} from "react";
-// import { useDispatch, useSelector } from "react-redux"
-// import { userActions } from '../modules/usr/user/user.action'
-
+import React from "react";
 // import AnimationRevealPage from "../home/AnimationRevealPage.js";
-import { Container as ContainerBase } from "../components/cmm/Layouts";
-import tw from "twin.macro";
-// import styled from "../components/common/node_modules/styled-components";
-// import {css} from "../components/common/node_modules/styled-components/macro"; //eslint-disable-line
-import {css} from "styled-components/macro"; //eslint-disable-line
+import { Container as ContainerBase } from "../../../components/cmm/Layouts";
+import tw from "twin.macro"; 
 import styled from "styled-components";
-import axios from "axios"
-import illustration from "../components/images/login-illustration.svg";
+import { css } from "styled-components/macro"; //eslint-disable-line
+import illustration from "../../../components/images/signup-illustration.svg";
 // import logo from "../images/logo.svg";
-import googleIconImageSrc from "../components/images/google-icon.png";
-import twitterIconImageSrc from "../components/images/twitter-icon.png";
-import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
-import Header from "../components/cmm/Header.js";
+import googleIconImageSrc from "../../../components/images/google-icon.png";
+import twitterIconImageSrc from "../../../components/images/twitter-icon.png";
+import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 
+import Header from "../../../components/cmm/Header.js";
 
-
+// const Header = tw(HeaderBase)`max-w-none`;
 
 const Container = tw(ContainerBase)`min-h-screen bg-yellow-500 text-white font-medium flex justify-center`;
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
@@ -60,48 +54,33 @@ const SubmitButton = styled.button`
 const IllustrationContainer = tw.div`sm:rounded-r-lg flex-1 bg-purple-100 text-center hidden lg:flex justify-center`;
 const IllustrationImage = styled.div`
   ${props => `background-image: url("${props.imageSrc}");`}
-  ${tw`m-12 xl:m-16 w-full max-w-sm bg-contain bg-center bg-no-repeat`}
+  ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
-
-const userAxios = () => {
-  axios.get(`http://localhost:8080/api/user`)
-    .then(res => {
-      alert(`Sign In Connection Success !!`)
-    }).catch(
-      e => alert(`Sign In Failure`)
-    )
-}
-
-// const [userId, setUserId] = useState('')
-// const [password, setPassword] = useState('')
-// const dispatch = useDispatch()
-
 
 export default ({
   logoLinkUrl = "/",
   illustrationImageSrc = illustration,
-  headingText = "Sign In To Treact",
+  headingText = "Sign Up For Treact",
   socialButtons = [
     {
       iconImageSrc: googleIconImageSrc,
-      text: "Sign In With Google",
+      text: "Sign Up With Google",
       url: "https://google.com"
     },
     {
       iconImageSrc: twitterIconImageSrc,
-      text: "Sign In With Twitter",
+      text: "Sign Up With Twitter",
       url: "https://twitter.com"
     }
   ],
-  submitButtonText = "Sign In",
-  SubmitButtonIcon = LoginIcon,
-  forgotPasswordUrl = "#",
-  signupUrl = "/signup",
-
-
+  submitButtonText = "Sign Up",
+  SubmitButtonIcon = SignUpIcon,
+  tosUrl = "#",
+  privacyPolicyUrl = "#",
+  signInUrl = "#"
 }) => (
   <div>
-    <Header />
+    <Header/>
     {/* <AnimationRevealPage> */}
       <Container>
         <Content>
@@ -110,21 +89,20 @@ export default ({
               <LogoImage src={logo} />
             </LogoLink> */}
             <MainContent>
-              <button onClick={userAxios}>SignIn axios</button>
               <Heading>{headingText}</Heading>
               <FormContainer>
                 <SocialButtonsContainer>
                   {socialButtons.map((socialButton, index) => (
                     <SocialButton key={index} href={socialButton.url}>
                       <span className="iconContainer">
-                        <img src={socialButton.iconImageSrc} className="icon" alt=""/>
+                        <img src={socialButton.iconImageSrc} className="icon" alt="" />
                       </span>
                       <span className="text">{socialButton.text}</span>
                     </SocialButton>
                   ))}
                 </SocialButtonsContainer>
                 <DividerTextContainer>
-                  <DividerText>Or Sign in with your e-mail</DividerText>
+                  <DividerText>Or Sign up with your e-mail</DividerText>
                 </DividerTextContainer>
                 <Form>
                   <Input type="email" placeholder="Email" />
@@ -133,18 +111,24 @@ export default ({
                     <SubmitButtonIcon className="icon" />
                     <span className="text">{submitButtonText}</span>
                   </SubmitButton>
+                  <p tw="mt-6 text-xs text-gray-600 text-center">
+                    I agree to abide by treact's{" "}
+                    <a href={tosUrl} tw="border-b border-gray-500 border-dotted">
+                      Terms of Service
+                    </a>{" "}
+                    and its{" "}
+                    <a href={privacyPolicyUrl} tw="border-b border-gray-500 border-dotted">
+                      Privacy Policy
+                    </a>
+                  </p>
+
+                  <p tw="mt-8 text-sm text-gray-600 text-center">
+                    Already have an account?{" "}
+                    <a href={signInUrl} tw="border-b border-gray-500 border-dotted">
+                      Sign In
+                    </a>
+                  </p>
                 </Form>
-                <p tw="mt-6 text-xs text-gray-600 text-center">
-                  <a href={forgotPasswordUrl} tw="border-b border-gray-500 border-dotted">
-                    Forgot Password ?
-                  </a>
-                </p>
-                <p tw="mt-8 text-sm text-gray-600 text-center">
-                  Dont have an account?{" "}
-                  <a href="/signup" tw="border-b border-gray-500 border-dotted">
-                    Sign Up
-                  </a>
-                </p>
               </FormContainer>
             </MainContent>
           </MainContainer>
