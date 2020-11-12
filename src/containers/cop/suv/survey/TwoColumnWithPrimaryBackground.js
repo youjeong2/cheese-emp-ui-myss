@@ -31,10 +31,11 @@ const Description = tw(SectionDescription)`mt-4 max-w-2xl text-gray-100 lg:text-
 const PrimaryButton = tw(PrimaryButtonBase)`mt-8 text-sm sm:text-base px-6 py-5 sm:px-10 sm:py-5 bg-yellow-400 inline-block text-black hocus:bg-yellow-500`;
 const Image = tw.img`w-144 ml-auto`
 
+
 export default ({
-  heading = "설문지 형식과 결과 페이지",
-  description = "설문지를 끝내고 제출하기 버튼 누르면 결과 페이지 볼 수 있도록 만들 것입니다.",
-  primaryButtonText = "Start Your 15 Day Free Trial",
+  heading = "나에게 맞는 서비스만 선택하세요",
+  description = "지금 바로 Pic 2 Cheese 회원으로 가입해서 서비스를 즐겨보세요!",
+  primaryButtonText = "지금 바로 구독하기",
   primaryButtonUrl = "#",
   imageSrc = serverIllustrationImageSrc,
 }) => {

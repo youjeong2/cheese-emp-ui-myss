@@ -24,7 +24,7 @@ export const NavLinks = tw.div`inline-block`;
  */
 export const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
-  font-semibold tracking-wide transition duration-300
+  font-semibold tracking-wide transition duration-300 
   pb-1 border-b-2 border-transparent hover:border-yellow-500 hocus:text-yellow-500
 `;
 
@@ -91,7 +91,8 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
     <NavLinks key={1}>
       <NavLink href="/" >홈</NavLink>
       <NavLink href="/cheese">치즈</NavLink>
-      <NavLink href="/review">F&Q</NavLink>
+      <NavLink href="/review">Review</NavLink>
+
       <NavLink href="/survey">추천</NavLink>
       {/* <NavLink href="/about">Admin</NavLink> */}
       {/* <NavLink to="/login">
@@ -124,7 +125,7 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
   const defaultLogoLink = (
     <LogoLink href="/">
       <img src={logo} alt="logo" />
-      Pick 2 Cheese
+      Pic 2 Cheese
     </LogoLink>
   );
 

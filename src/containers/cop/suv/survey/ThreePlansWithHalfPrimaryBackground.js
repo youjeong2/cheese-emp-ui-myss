@@ -70,7 +70,7 @@ const WhiteBackgroundOverlay = tw.div`absolute inset-x-0 bottom-0 h-1/6 lg:h-1/3
 
 export default ({
   subheading = "",
-  heading = "당신에게 맞는 빵을 추천받아보세요.",
+  heading = "당신에게 맞는 치즈를 추천받아보세요.",
   description = "아래 양식을 작성하고 제출 버튼을 누르시면 취향에 맞는 빵을 추천해드립니다.",
   plans = null,
   primaryButtonText = "제출(버튼은 중앙에 하나)"
@@ -105,7 +105,7 @@ export default ({
       name: "기분",
       price: ["오늘 기분은 어떤가요?"],
       oldPrice: "0",
-      description: "오늘의 기분에 맞게 빵을 추천해드릴게요.",
+      description: "오늘의 기분에 맞게 치즈를 추천해드릴게요.",
       features: [
         "좋음",
         "나쁨",

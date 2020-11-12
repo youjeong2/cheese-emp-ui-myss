@@ -29,7 +29,7 @@ export default () => {
   const imageCss = tw`rounded-4xl`;
 
   const cheeseAxios = () => {
-    axios.get(`http://localhost:8080/api/cheese`)
+    axios.get(`http://localhost:8080/api/cheeses`)
       .then(res => {
         alert(`Cheese Connection Success !!`)
       }).catch(

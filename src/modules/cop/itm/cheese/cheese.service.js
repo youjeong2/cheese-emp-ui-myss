@@ -9,8 +9,8 @@ export const cheeseService = {
 async function getAll() {
     const req = {
         method: c.get,
-        url: 'localhost:8080/api/cheese',
-        data: {cheese}
+        url: 'localhost:8080/api/cheeses',
+        data: {cheeses}
     }
     const resp = await axios(req)
 

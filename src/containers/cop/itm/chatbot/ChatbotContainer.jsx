@@ -24,13 +24,15 @@ export const ItemSearch2 = () => {
 const theme = {
     background: '#f5f8fb',
     fontFamily: 'Helvetica Neue',
-    headerBgColor: '#FFCE54',
+    headerBgColor: '#ffb74d',
     headerFontColor: '#fff',
     headerFontSize: '15px',
-    botBubbleColor: '#FFCE54',
+    botBubbleColor: '#ffb74d',
     botFontColor: '#black',
     userBubbleColor: '#fff',
     userFontColor: '#4a4a4a',
+    width: "500",
+    height: "900"
   };
 
 export default function ChatBotContainer(){
