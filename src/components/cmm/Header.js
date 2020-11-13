@@ -92,8 +92,8 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <NavLink href="/" >홈</NavLink>
       <NavLink href="/cheese">치즈</NavLink>
       <NavLink href="/review">Review</NavLink>
-
       <NavLink href="/survey">추천</NavLink>
+      <NavLink href="/review">cart</NavLink>
       {/* <NavLink href="/about">Admin</NavLink> */}
       {/* <NavLink to="/login">
                 <FaRegUser size={20} style={{color: 'black'}}/>

@@ -29,9 +29,11 @@ export default () => {
   const imageCss = tw`rounded-4xl`;
 
   const cheeseAxios = () => {
-    axios.get(`http://localhost:8080/api/cheeses`)
+    axios.get(`http://192.168.0.5:8080/api/cheeses`)
       .then(res => {
-        alert(`Cheese Connection Success !!`)
+        //const temp = JSON.parse(res.data)
+        alert(`Cheese Connection Success !!${res.data}`)
+
       }).catch(
         e => alert(`Cheese Failure`)
       )

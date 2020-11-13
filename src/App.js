@@ -19,7 +19,7 @@ export default function App(){
                     <Route path='/survey' component={Survey}></Route>
                     <Route path='/cheese' component={Cheese}></Route>
                     <Route path='/review' component={Review}></Route>
- /                </Switch>
+                 </Switch>
         </BrowserRouter>
 
 </>)}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import axios from 'axios'
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -156,6 +157,19 @@ export default ({
   const tabsKeys = Object.keys(tabs);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
 
+
+  const cheeseAxios = () => {
+    axios.get(`http://192.168.0.5:8080/api/cheeses`)
+      .then(res => {
+        const cheeses = res.data
+        alert(`Cheese Connection Success !!${res.data}`)
+        
+
+      }).catch(
+        e => alert(`Cheese Failure`)
+      )
+  }
+
   return (
     <Container>
       <ContentWithPaddingXl>
@@ -213,6 +227,7 @@ export default ({
                       }}
                       transition={{ duration: 0.3 }}
                     >
+                      <button onClick={cheeseAxios}>Cheese axios</button>
                       <CardButton>Buy Now</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>

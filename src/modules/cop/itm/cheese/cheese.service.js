@@ -9,7 +9,7 @@ export const cheeseService = {
 async function getAll() {
     const req = {
         method: c.get,
-        url: 'localhost:8080/api/cheeses',
+        url: 'http://192.168.0.5:8080/api/cheeses',
         data: {cheeses}
     }
     const resp = await axios(req)
