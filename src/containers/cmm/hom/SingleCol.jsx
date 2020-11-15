@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { SectionHeading, Subheading as SubheadingBase } from "../../../components/cmm/Headings.js";
-import { SectionDescription } from "../../../components/cmm/Typography.js";
-import { Container, ContentWithPaddingXl } from "../../../components/cmm/Layouts.js";
+import { SectionHeading, Subheading as SubheadingBase } from "../../../components/cmm/Headings.jsx";
+import { SectionDescription } from "../../../components/cmm/Typography.jsx";
+import { Container, ContentWithPaddingXl } from "../../../components/cmm/Layouts.jsx";
 import { ReactComponent as ChevronDownIcon } from "feather-icons/dist/icons/chevron-down.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/images/svg-decorator-blob-7.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/images/svg-decorator-blob-8.svg";

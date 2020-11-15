@@ -10,7 +10,7 @@ import googleIconImageSrc from "../../../components/images/google-icon.png";
 import twitterIconImageSrc from "../../../components/images/twitter-icon.png";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 
-import Header from "../../../components/cmm/Header.js";
+import Header from "../../../components/cmm/Header.jsx";
 
 // const Header = tw(HeaderBase)`max-w-none`;
 
@@ -57,7 +57,7 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
 
-export default ({
+export default function SignUp (
   logoLinkUrl = "/",
   illustrationImageSrc = illustration,
   headingText = "Sign Up For Treact",
@@ -78,7 +78,8 @@ export default ({
   tosUrl = "#",
   privacyPolicyUrl = "#",
   signInUrl = "#"
-}) => (
+) {
+  return (
   <div>
     <Header/>
     {/* <AnimationRevealPage> */}
@@ -139,4 +140,5 @@ export default ({
       </Container>
     {/* </AnimationRevealPage> */}
   </div>
-);
+  );
+}

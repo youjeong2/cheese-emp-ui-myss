@@ -16,8 +16,8 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import { withStyles } from '@material-ui/core/styles';
 
-import Header from "../components/cmm/Header.js";
-import Footer from "../components/cmm/Footer.js";
+import Header from "../components/cmm/Header.jsx";
+import Footer from "../components/cmm/Footer.jsx";
 export const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300

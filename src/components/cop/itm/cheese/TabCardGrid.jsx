@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { Container, ContentWithPaddingXl } from "../../../../components/cmm/Layouts.js";
-import { SectionHeading } from "../../../../components/cmm/Headings.js";
-import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.js";
+import { Container, ContentWithPaddingXl } from "../../../cmm/Layouts.jsx";
+import { SectionHeading } from "../../../cmm/Headings.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "../../../cmm/Buttons.jsx";
 import { ReactComponent as StarIcon } from "../../../../components/images/star-icon.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/images/svg-decorator-blob-7.svg";

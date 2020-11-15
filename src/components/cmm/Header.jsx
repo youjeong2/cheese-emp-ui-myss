@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
-import useAnimatedNavToggler from "../../containers/cmm/hom/useAnimatedNavToggler.js";
+import useAnimatedNavToggler from "../../containers/cmm/hom/useAnimatedNavToggler.jsx";
 
 import logo from "../images/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";

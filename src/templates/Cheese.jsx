@@ -1,27 +1,27 @@
 import React from "react";
 import tw from "twin.macro";
 import axios from "axios"
-import AnimationRevealPage from "../containers/cmm/hom/AnimationPage.js";
-import Hero from "../containers/cop/itm/cheese/TwoColumnWithVideo.js";
+import AnimationRevealPage from "../containers/cmm/hom/AnimationPage.jsx";
+import Hero from "../containers/cop/itm/cheese/TwoColumnWithVideo.jsx";
 // import StyledHeader from '../home/BackgroundAsImageWithCenteredContent'
 
-// import Features from "./ThreeColSimple.js";
-// import MainFeature from "./TwoColWithButton.js";
-// import MainFeature2 from "./TwoColSingleFeatureWithStats2.js";
+// import Features from "./ThreeColSimple.jsx";
+// import MainFeature from "./TwoColWithButton.jsx";
+// import MainFeature2 from "./TwoColSingleFeatureWithStats2.jsx";
 
-import TabGrid from "../containers/cop/itm/cheese/TabCardGrid.js";
-import Testimonial from "../containers/cop/itm/cheese/ThreeColumnWithProfileImage.js";
-// import Footer from "./FiveColumnWithInputForm.js";
-import Footer from "../components/cmm/Footer.js";
+import TabGrid from "../containers/cop/itm/cheese/TabCardGrid.jsx";
+import Testimonial from "../containers/cop/itm/cheese/ThreeColumnWithProfileImage.jsx";
+// import Footer from "./FiveColumnWithInputForm.jsx";
+import Footer from "../components/cmm/Footer.jsx";
 
 // import chefIconImageSrc from "../images/chef-icon.svg";
 // import celebrationIconImageSrc from "../images/celebration-icon.svg";
 // import shopIconImageSrc from "../images/shop-icon.svg";
 
-import Header from "../components/cmm/Header.js";
-import Blog from "../containers/cmm/hom/Blogs.js";
+import Header from "../components/cmm/Header.jsx";
+import Blog from "../containers/cmm/hom/Blogs.jsx";
 
-export default () => {
+export default function Cheese () {
   // const Subheading = tw.span`tracking-wider text-sm font-medium`;
   const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   // const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
@@ -31,7 +31,7 @@ export default () => {
   const cheeseAxios = () => {
     axios.get(`http://192.168.0.5:8080/api/cheeses`)
       .then(res => {
-        //const temp = JSON.parse(res.data)
+        //const temp = jsxON.parse(res.data)
         alert(`Cheese Connection Success !!${res.data}`)
 
       }).catch(
@@ -39,6 +39,7 @@ export default () => {
       )
   }
 
+  
   return (
     <div>
       <Header />

@@ -15,7 +15,7 @@ import illustration from "../components/images/login-illustration.svg";
 import googleIconImageSrc from "../components/images/google-icon.png";
 import twitterIconImageSrc from "../components/images/twitter-icon.png";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
-import Header from "../components/cmm/Header.js";
+import Header from "../components/cmm/Header.jsx";
 
 
 
@@ -77,7 +77,7 @@ const userAxios = () => {
 // const dispatch = useDispatch()
 
 
-export default ({
+export default function Logiin (
   logoLinkUrl = "/",
   illustrationImageSrc = illustration,
   headingText = "Sign In To Treact",
@@ -99,60 +99,62 @@ export default ({
   signupUrl = "/signup",
 
 
-}) => (
-  <div>
-    <Header />
-    {/* <AnimationRevealPage> */}
-      <Container>
-        <Content>
-          <MainContainer>
-            {/* <LogoLink href={logoLinkUrl}>
-              <LogoImage src={logo} />
-            </LogoLink> */}
-            <MainContent>
-              <button onClick={userAxios}>SignIn axios</button>
-              <Heading>{headingText}</Heading>
-              <FormContainer>
-                <SocialButtonsContainer>
-                  {socialButtons.map((socialButton, index) => (
-                    <SocialButton key={index} href={socialButton.url}>
-                      <span className="iconContainer">
-                        <img src={socialButton.iconImageSrc} className="icon" alt=""/>
-                      </span>
-                      <span className="text">{socialButton.text}</span>
-                    </SocialButton>
-                  ))}
-                </SocialButtonsContainer>
-                <DividerTextContainer>
-                  <DividerText>Or Sign in with your e-mail</DividerText>
-                </DividerTextContainer>
-                <Form>
-                  <Input type="email" placeholder="Email" />
-                  <Input type="password" placeholder="Password" />
-                  <SubmitButton type="submit">
-                    <SubmitButtonIcon className="icon" />
-                    <span className="text">{submitButtonText}</span>
-                  </SubmitButton>
-                </Form>
-                <p tw="mt-6 text-xs text-gray-600 text-center">
-                  <a href={forgotPasswordUrl} tw="border-b border-gray-500 border-dotted">
-                    Forgot Password ?
-                  </a>
-                </p>
-                <p tw="mt-8 text-sm text-gray-600 text-center">
-                  Dont have an account?{" "}
-                  <a href="/signup" tw="border-b border-gray-500 border-dotted">
-                    Sign Up
-                  </a>
-                </p>
-              </FormContainer>
-            </MainContent>
-          </MainContainer>
-          <IllustrationContainer>
-            <IllustrationImage imageSrc={illustrationImageSrc} />
-          </IllustrationContainer>
-        </Content>
-      </Container>
-    {/* </AnimationRevealPage> */}
-  </div>
-);
+) {
+    return (
+      <div>
+        <Header />
+        {/* <AnimationRevealPage> */}
+          <Container>
+            <Content>
+              <MainContainer>
+                {/* <LogoLink href={logoLinkUrl}>
+                  <LogoImage src={logo} />
+                </LogoLink> */}
+                <MainContent>
+                  <button onClick={userAxios}>SignIn axios</button>
+                  <Heading>{headingText}</Heading>
+                  <FormContainer>
+                    <SocialButtonsContainer>
+                      {socialButtons.map((socialButton, index) => (
+                        <SocialButton key={index} href={socialButton.url}>
+                          <span className="iconContainer">
+                            <img src={socialButton.iconImageSrc} className="icon" alt=""/>
+                          </span>
+                          <span className="text">{socialButton.text}</span>
+                        </SocialButton>
+                      ))}
+                    </SocialButtonsContainer>
+                    <DividerTextContainer>
+                      <DividerText>Or Sign in with your e-mail</DividerText>
+                    </DividerTextContainer>
+                    <Form>
+                      <Input type="email" placeholder="Email" />
+                      <Input type="password" placeholder="Password" />
+                      <SubmitButton type="submit">
+                        <SubmitButtonIcon className="icon" />
+                        <span className="text">{submitButtonText}</span>
+                      </SubmitButton>
+                    </Form>
+                    <p tw="mt-6 text-xs text-gray-600 text-center">
+                      <a href={forgotPasswordUrl} tw="border-b border-gray-500 border-dotted">
+                        Forgot Password ?
+                      </a>
+                    </p>
+                    <p tw="mt-8 text-sm text-gray-600 text-center">
+                      Dont have an account?{" "}
+                      <a href="/signup" tw="border-b border-gray-500 border-dotted">
+                        Sign Up
+                      </a>
+                    </p>
+                  </FormContainer>
+                </MainContent>
+              </MainContainer>
+              <IllustrationContainer>
+                <IllustrationImage imageSrc={illustrationImageSrc} />
+              </IllustrationContainer>
+            </Content>
+          </Container>
+        {/* </AnimationRevealPage> */}
+      </div>
+    );
+  }

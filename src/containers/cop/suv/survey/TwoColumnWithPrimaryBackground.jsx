@@ -6,12 +6,12 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 //   LogoLink as LogoLinkBase,
 //   // NavLink as NavLinkBase,
 //   // PrimaryLink as PrimaryLinkBase
-// } from "../home/common/Header.js";
+// } from "../home/common/Header.jsx";
 
-import { Container as ContainerBase, ContentWithVerticalPadding, Content2Xl } from "../../../../components/cmm/Layouts.js";
-import { SectionHeading } from "../../../../components/cmm/Headings.js";
-import { SectionDescription } from "../../../../components/cmm/Typography.js";
-import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.js";
+import { Container as ContainerBase, ContentWithVerticalPadding, Content2Xl } from "../../../../components/cmm/Layouts.jsx";
+import { SectionHeading } from "../../../../components/cmm/Headings.jsx";
+import { SectionDescription } from "../../../../components/cmm/Typography.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
 // import logoImageSrc from "../images/logo-light.svg";
 import serverIllustrationImageSrc from "../../../../components/images/server-illustration-2.svg";
 

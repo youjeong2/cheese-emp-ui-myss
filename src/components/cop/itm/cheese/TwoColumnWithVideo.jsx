@@ -3,8 +3,8 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-next-line
 
-import ReactModalAdapter from "./ReactModalAdapter.js";
-import ResponsiveVideoEmbed from "./ResponsiveVideoEmbed.js";
+import ReactModalAdapter from "./ReactModalAdapter.jsx";
+import ResponsiveVideoEmbed from "./ResponsiveVideoEmbed.jsx";
 
 import { ReactComponent as PlayIcon } from "feather-icons/dist/icons/play-circle.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";

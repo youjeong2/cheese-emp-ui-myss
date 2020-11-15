@@ -1,22 +1,23 @@
 import React from "react";
 import tw from "twin.macro"; //eslint-disable-line
 import { Link } from 'react-router-dom'; //eslint-disable-line
-import AnimationRevealPage from "../containers/cmm/hom/AnimationRevealPage.js";
+import AnimationRevealPage from "../containers/cmm/hom/AnimationRevealPage.jsx";
 // import Header from "./common/header-practice.js"
-import Hero from "../containers/cmm/hom/BackgroundAsImageWithCenteredContent.js";
-import Features from "../containers/cmm/hom/VerticalWithAlternateImageAndText.js";
-import Blog from "../containers/cmm/hom/Blogs.js";
-import Testimonial from "../containers/cmm/hom/TwoColumnWithImage.js";
-import ContactUsForm from "../containers/cmm/hom/SimpleContactUs.js";
-import Footer from "../components/cmm/Footer.js";
-import Header from "../components/cmm/Header.js";
+import Hero from "../containers/cmm/hom/BackgroundAsImageWithCenteredContent.jsx";
+import Features from "../containers/cmm/hom/VerticalWithAlternateImageAndText.jsx";
+import Blog from "../containers/cmm/hom/Blogs.jsx";
+import Testimonial from "../containers/cmm/hom/TwoColumnWithImage.jsx";
+import ContactUsForm from "../containers/cmm/hom/SimpleContactUs.jsx";
+import Footer from "../components/cmm/Footer.jsx";
+import Header from "../components/cmm/Header.jsx";
 import { ChatbotContainer as Chatbot } from "../containers/cop/itm/chatbot"
-import FAQ from "../containers/cmm/hom/SingleCol.js";
+import FAQ from "../containers/cmm/hom/SingleCol.jsx";
 
   const Subheading = tw.span`uppercase tracking-widest font-bold text-primary-500`;
   const HighlightedText = tw.span`text-primary-500`;
 
-const Home = () => <div className="home">
+export default function Home () {
+  return( <div className="home">
   <Header />
   <AnimationRevealPage>
     <Hero />
@@ -67,8 +68,5 @@ const Home = () => <div className="home">
     <ContactUsForm />
     <Footer />
   </AnimationRevealPage>      
-</div>
-
-export default Home
-
-
+</div>)
+}

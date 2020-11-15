@@ -4,9 +4,9 @@ import axios from 'axios'
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { Container, ContentWithPaddingXl } from "../../../../components/cmm/Layouts.js";
-import { SectionHeading } from "../../../../components/cmm/Headings.js";
-import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.js";
+import { Container, ContentWithPaddingXl } from "../../../../components/cmm/Layouts.jsx";
+import { SectionHeading } from "../../../../components/cmm/Headings.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
 import { ReactComponent as StarIcon } from "../../../../components/images/star-icon.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/images/svg-decorator-blob-7.svg";
@@ -59,7 +59,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
-export default ({
+export default  ({
   heading = "Checkout the Menu",
   tabs = {
     Starters: [
