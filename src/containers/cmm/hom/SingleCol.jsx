@@ -38,7 +38,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 
 
 
-export default ({
+export default function SingleCol({
   subheading = "FAQS",
   heading = "You have Questions ?",
   description = "자주 묻는 질문 리스트입니다!",
@@ -64,7 +64,7 @@ export default ({
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
   ]
-}) => {
+}) {
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(null);
 
   const toggleQuestion = questionIndex => {

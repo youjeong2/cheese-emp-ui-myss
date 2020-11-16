@@ -27,7 +27,7 @@ const QuestionToggleIcon = styled(motion.span)`
 `;
 const Answer = tw(motion.div)`hidden text-sm font-normal mt-4 text-gray-300`;
 
-export default ({
+export default function TwoColumnPrimaryBackground ({
   subheading = "",
   heading = "당신이 좋아하는 치즈상품은 '[브리미]보코치니' 입니다.",
   description = "새알을 빚어놓은 듯 깜찍한 미니 모짜렐라",
@@ -63,7 +63,7 @@ export default ({
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     }
   ]
-}) => {
+}) {
   const faqCol1 = [];
   const faqCol2 = [];
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(null);

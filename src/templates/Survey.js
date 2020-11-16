@@ -12,7 +12,7 @@ import Footer from "../components/cmm/Footer.jsx";
 
 // const Header = tw(HeaderBase)`max-w-none`;
 
-const Survey = () => {
+export default function Survey () {
   return (<>
     <Header />
     <Hero />
@@ -23,5 +23,3 @@ const Survey = () => {
     <Footer />
   </>)
 }
-
-export default Survey

@@ -34,7 +34,7 @@ const Actions = styled.div`
   }
 `;
 
-export default () => {
+export default function BackgroundAsImageWithCenteredContent() {
   return (
     <div>
       <Container>

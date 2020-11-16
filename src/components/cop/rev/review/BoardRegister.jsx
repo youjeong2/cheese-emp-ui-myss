@@ -4,7 +4,7 @@ import '../styles/table.style.css'
 
 
 
-const UserRegister = () => {
+export default function  BoardRegister() {
     const [userid, setUserid] = useState()
     const [password, setPassword] = useState()
     const [name, setName] = useState()
@@ -27,7 +27,6 @@ const UserRegister = () => {
 
     }
 
-    
     return (<>
         <h1>UserRegister</h1><form>
         <table className='tab_layer'>
@@ -75,5 +74,3 @@ const UserRegister = () => {
         </table></form>
     </>)
 }
-
-export default UserRegister

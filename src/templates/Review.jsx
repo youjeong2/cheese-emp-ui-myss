@@ -87,7 +87,6 @@ class BoardPage extends Component {
                 e => alert(`Fnq Failure`)
             )
     }   
-
     return (<>
         <Header />
         <Container>

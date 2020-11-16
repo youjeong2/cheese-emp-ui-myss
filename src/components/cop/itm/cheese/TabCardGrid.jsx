@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import axios from 'axios'
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { Container, ContentWithPaddingXl } from "../../../cmm/Layouts.jsx";
-import { SectionHeading } from "../../../cmm/Headings.jsx";
-import { PrimaryButton as PrimaryButtonBase } from "../../../cmm/Buttons.jsx";
+import { Container, ContentWithPaddingXl } from "../../../../components/cmm/Layouts.jsx";
+import { SectionHeading } from "../../../../components/cmm/Headings.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
 import { ReactComponent as StarIcon } from "../../../../components/images/star-icon.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/images/svg-decorator-blob-7.svg";
@@ -58,7 +59,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
-export default ({
+export default function TabGrid({
   heading = "Checkout the Menu",
   tabs = {
     Starters: [
@@ -147,7 +148,7 @@ export default ({
     Soup: getRandomCards(),
     Desserts: getRandomCards()
   }
-}) => {
+}) {
   /*
    * To customize the tabs, pass in data using the `tabs` prop. It should be an object which contains the name of the tab
    * as the key and value of the key will be its content (as an array of objects).
@@ -155,6 +156,19 @@ export default ({
    */
   const tabsKeys = Object.keys(tabs);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
+
+
+  const cheeseAxios = () => {
+    axios.get(`http://192.168.0.5:8080/api/cheeses`)
+      .then(res => {
+        const cheeses = res.data
+        alert(`Cheese Connection Success !!${res.data}`)
+        
+
+      }).catch(
+        e => alert(`Cheese Failure`)
+      )
+  }
 
   return (
     <Container>
@@ -213,6 +227,7 @@ export default ({
                       }}
                       transition={{ duration: 0.3 }}
                     >
+                      <button onClick={cheeseAxios}>Cheese axios</button>
                       <CardButton>Buy Now</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>

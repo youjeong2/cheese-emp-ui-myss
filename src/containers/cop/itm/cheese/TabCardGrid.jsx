@@ -59,7 +59,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
-export default  ({
+export default function TabGrid({
   heading = "Checkout the Menu",
   tabs = {
     Starters: [
@@ -148,7 +148,7 @@ export default  ({
     Soup: getRandomCards(),
     Desserts: getRandomCards()
   }
-}) => {
+}) {
   /*
    * To customize the tabs, pass in data using the `tabs` prop. It should be an object which contains the name of the tab
    * as the key and value of the key will be its content (as an array of objects).

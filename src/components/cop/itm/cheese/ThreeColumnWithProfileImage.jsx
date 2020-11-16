@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { ContentWithPaddingXl, Container } from "../../../cmm/Layouts.jsx";
-import { SectionHeading as Heading, Subheading as SubheadingBase } from "../../../cmm/Headings.jsx";
+import { ContentWithPaddingXl, Container } from "../../../../components/cmm/Layouts.jsx";
+import { SectionHeading as Heading, Subheading as SubheadingBase } from "../../../../components/cmm/Headings.jsx";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/images/svg-decorator-blob-7.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/images/svg-decorator-blob-8.svg";
 
@@ -22,7 +22,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute right-0 bottom-0 h-64 w-64 opacity-15 transform translate-x-2/3 text-yellow-500`}
 `;
 
-export default ({
+export default function ThreeColumnWithProfileImage({
   subheading = "Testimonials",
   heading = "Customer's Review",
   testimonials = [
@@ -48,7 +48,7 @@ export default ({
       customerName: "Steven Marcetti"
     }
   ]
-}) => {
+}) {
   return (
     <Container>
       <ContentWithPaddingXl>

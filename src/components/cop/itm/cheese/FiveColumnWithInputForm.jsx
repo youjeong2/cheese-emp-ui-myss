@@ -1,7 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { PrimaryButton as PrimaryButtonBase } from "../../../cmm/Buttons.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "../../../../components/츠ㅡ/Buttons.jsx";
 
 import LogoImage from "../images/logo.svg";
 import { ReactComponent as FacebookIcon } from "../images/facebook-icon.svg";
@@ -45,7 +45,7 @@ const SocialLink = styled.a`
   }
 `;
 
-export default () => {
+export default function FiveColumnWithInputForm() {
   return (
     <Container>
       <Content>

@@ -2,10 +2,10 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { SectionHeading, Subheading as SubheadingBase } from "../../../cmm/Headings.jsx";
-import { SectionDescription } from "../../../cmm/Typography.jsx";
-import { PrimaryButton as PrimaryButtonBase } from "../../../cmm/Buttons.jsx";
-import { Container as ContainerBase, ContentWithPaddingXl as ContentBase } from "../../../cmm/Layouts.jsx";
+import { SectionHeading, Subheading as SubheadingBase } from "../../../../components/cmm/Headings.jsx";
+import { SectionDescription } from "../../../../components/cmm/Typography.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
+import { Container as ContainerBase, ContentWithPaddingXl as ContentBase } from "../../../../components/cmm/Layouts.jsx";
 import { ReactComponent as CheckboxIcon } from "../../../../components/images/checkbox-circle.svg";
 
 const Container = tw(ContainerBase)`bg-yellow-900 text-gray-100 -mx-8 px-8`;
@@ -68,13 +68,13 @@ const ActionButton = styled(PrimaryButtonBase)`
 
 const WhiteBackgroundOverlay = tw.div`absolute inset-x-0 bottom-0 h-1/6 lg:h-1/3 bg-white z-0`;
 
-export default ({
+export default function ThreePlansWithHalfPrimaryBackground ({
   subheading = "",
-  heading = "당신에게 맞는 빵을 추천받아보세요.",
+  heading = "당신에게 맞는 치즈를 추천받아보세요.",
   description = "아래 양식을 작성하고 제출 버튼을 누르시면 취향에 맞는 빵을 추천해드립니다.",
   plans = null,
   primaryButtonText = "제출(버튼은 중앙에 하나)"
-}) => {
+}) {
   const defaultPlans = [
     {
       name: "날씨",
@@ -105,7 +105,7 @@ export default ({
       name: "기분",
       price: ["오늘 기분은 어떤가요?"],
       oldPrice: "0",
-      description: "오늘의 기분에 맞게 빵을 추천해드릴게요.",
+      description: "오늘의 기분에 맞게 치즈를 추천해드릴게요.",
       features: [
         "좋음",
         "나쁨",

@@ -32,13 +32,13 @@ const PrimaryButton = tw(PrimaryButtonBase)`mt-8 text-sm sm:text-base px-6 py-5 
 const Image = tw.img`w-144 ml-auto`
 
 
-export default ({
+export default function TwoColumnWithPrimaryBackground ({
   heading = "나에게 맞는 서비스만 선택하세요",
   description = "지금 바로 Pic 2 Cheese 회원으로 가입해서 서비스를 즐겨보세요!",
   primaryButtonText = "지금 바로 구독하기",
   primaryButtonUrl = "#",
   imageSrc = serverIllustrationImageSrc,
-}) => {
+}) {
   // const logoLink = (
   //   <LogoLink href="/">
   //     <img src={logoImageSrc} alt="Logo" />
