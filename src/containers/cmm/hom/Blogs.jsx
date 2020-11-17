@@ -1,9 +1,12 @@
-import React from "react";
+// import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { SectionHeading as HeadingTitle } from "../../../components/cmm/Headings.jsx";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/images/svg-decorator-blob-1.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/images/svg-decorator-blob-3.svg";
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -20,7 +23,7 @@ const Image = styled.div(props => [
 ]);
 const Category = tw.div`mt-4 text-secondary-100 font-bold text-sm`;
 const Title = tw.h4`mt-2 leading-relaxed font-bold text-lg`;
-const Link = tw.a`inline-block mt-2 text-sm text-primary-500 font-bold cursor-pointer transition duration-300 border-b-2 border-transparent hover:border-primary-500`;
+const Contents = tw.a`inline-block mt-2 text-sm text-primary-500 font-bold cursor-pointer transition duration-300 border-b-2 border-transparent hover:border-primary-500`;
 
 const DecoratorBlob1 = tw(
   SvgDecoratorBlob1
@@ -33,41 +36,74 @@ export default function Blogs() {
   const blogPosts = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        "https://img-cf.kurly.com/shop/data/goods/157708476458l0.jpg",
       category: "Event Tips",
-      title: "Finding Amazing Events Near You - Fast, Cheap & Free",
+      title: "[포인트레이스]오리지널 블루",
       url: "https://timerse.com"
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1543365067-fa127bcb2303?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        "https://img-cf.kurly.com/shop/data/goods/1563949642720l0.jpg",
       category: "Reviews",
-      title: "The Top Rated Musical Concerts Worldwide in 2019",
+      title: "[라퀘유]푸름 당베르",
       url: "https://reddit.com"
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        "https://img-cf.kurly.com/shop/data/goods/155591204450l0.jpg",
       category: "Discover",
-      title: "This female band is making buzz all over the world",
+      title: "[프레지덩]쁘띠 까망베르",
       url: "https://timerse.com"
     }
   ];
+  const [cheeses, setCheeses] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCheeses = async () => {
+      try {
+        
+        setError(null);
+        setCheeses(null);
+        
+        setLoading(true);
+        const response = await axios.get(
+          'http://localhost:8080/api/cheeses'
+        );
+        // alert(response.data[0].img)
+        setCheeses(response.data); 
+      } catch (e) {
+        setError(e);
+      }
+      setLoading(false);
+    };
+
+    fetchCheeses();
+  }, []);
+
+  if (loading) return <div>..</div>;
+  if (error) return <div>error</div>;
+  if (!cheeses) return null;
+  
   return (
     <Container>
       <Content>
         <HeadingInfoContainer>
-          <HeadingTitle>Popular Blog Posts</HeadingTitle>
+          <HeadingTitle>NEW IN</HeadingTitle>
           <HeadingDescription>Some amazing blog posts that are written by even more amazing people.</HeadingDescription>
         </HeadingInfoContainer>
         <ThreeColumn>
-          {blogPosts.map((post, index) => (
-            <Column key={index}>
+          {cheeses.map(cheese => (
+            <Column key={cheese.ranking}>
               <Card>
-                <Image imageSrc={post.imageSrc} />
-                <Category>{post.category}</Category>
-                <Title>{post.title}</Title>
-                <Link href={post.url}>Read Post</Link>
+                {/* <Image img={cheese.img} />
+                <Category>{cheese.category}</Category> */}
+                <Image imageSrc={cheese.img}/>
+                <Title>{cheese.name}</Title>
+                <Contents>{cheese.brand}</Contents>
+                <Category>{cheese.content}</Category>
+                {/* <Link href={cheese.content}>Read Post</Link> */}
               </Card>
             </Column>
           ))}

@@ -227,7 +227,7 @@ export default function TabGrid({
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <button onClick={cheeseAxios}>Cheese axios</button>
+                      {/* <button onClick={cheeseAxios}>Cheese axios</button> */}
                       <CardButton>Buy Now</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>

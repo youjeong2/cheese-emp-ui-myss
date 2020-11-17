@@ -40,7 +40,7 @@ export default function SimpleContactUs() {
       <Content>
         <FormContainer>
           <div tw="mx-auto max-w-4xl">
-            <h2>Organize an Event</h2>
+            <h2>Subscribe Now !</h2>
             <form action="#">
               <TwoColumn>
                 <Column>

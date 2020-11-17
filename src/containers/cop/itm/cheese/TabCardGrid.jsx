@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios'
+
 import { cheeseActions } from '../../../../modules/cop/itm/cheese/cheese.action';
 import { motion } from "framer-motion";
-import axios from 'axios'
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -489,7 +490,7 @@ export default function TabGrid({
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <button onClick={cheeseAxios}>Cheese axios</button>
+                      {/* <button onClick={cheeseActions.getAll}>Cheese axios</button> */}
                       <CardButton>Buy Now</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>

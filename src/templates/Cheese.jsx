@@ -6,7 +6,6 @@ import Hero from "../containers/cop/itm/cheese/TwoColumnWithVideo.jsx";
 // import StyledHeader from '../home/BackgroundAsImageWithCenteredContent'
 
 // import Features from "./ThreeColSimple.jsx";
-// import MainFeature from "./TwoColWithButton.jsx";
 import MainFeature2 from "../containers/cop/itm/cheese/TwoColSingleFeatureWithStats2.jsx";
 
 import TabGrid from "../containers/cop/itm/cheese/TabCardGrid.jsx";
@@ -47,42 +46,14 @@ export default function Cheese () {
         <Hero
           heading={<>Delicious & Affordable <HighlightedText>Cheese Near You.</HighlightedText></>}
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          imageSrc="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
+          imageSrc="https://img-cf.kurly.com/shop/data/goods/1515396236580l0.jpg"
           imageCss={imageCss}
           imageDecoratorBlob={true}
           primaryButtonText="Subscribe Now"
           watchVideoButtonText="Meet The Chefs"
+          
         />
-        {/* <MainFeature
-          subheading={<Subheading>Established Since 2014</Subheading>}
-          heading={
-            <>
-              We've been serving for
-              <wbr /> <HighlightedText>over 5 years.</HighlightedText>
-            </>
-          }
-          description={
-            <Description>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-              <br />
-              <br />
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </Description>
-          }
-          buttonRounded={false}
-          textOnLeft={false}
-          primaryButtonText="Latest Offers"
-          imageSrc={
-            "https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
-          }
-          imageCss={imageCss}
-          imageDecoratorBlob={true}
-          imageDecoratorBlobCss={tw`left-1/2 -translate-x-1/2 md:w-32 md:h-32 opacity-25`}
-        /> */}
-        <Blog />
         </AnimationRevealPage>
-
         {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
         <TabGrid
           heading={
@@ -92,37 +63,8 @@ export default function Cheese () {
           }
         />
         <AnimationRevealPage>
-        {/* <Features
-          heading={
-            <>
-              Amazing <HighlightedText>Services.</HighlightedText>
-            </>
-          }
-          cards={[
-            {
-              imageSrc: shopIconImageSrc,
-              title: "230+ Locations",
-              description: "Lorem ipsum donor amet siti ceali placeholder text",
-              url: "https://google.com"
-            },
-            {
-              imageSrc: chefIconImageSrc,
-              title: "Professional Chefs",
-              description: "Lorem ipsum donor amet siti ceali placeholder text",
-              url: "https://timerse.com"
-            },
-            {
-              imageSrc: celebrationIconImageSrc,
-              title: "Birthday Catering",
-              description: "Lorem ipsum donor amet siti ceali placeholder text",
-              url: "https://reddit.com"
-            }
-          ]}
-
-          imageContainerCss={tw`p-2!`}
-          imageCss={tw`w-20! h-20!`}
-        />*/}
-        <MainFeature2
+        <Blog />
+        {/* <MainFeature2
           subheading={<Subheading>A Reputed Brand</Subheading>}
           heading={<>Why <HighlightedText>Choose Us ?</HighlightedText></>}
           statistics={[
@@ -148,7 +90,7 @@ export default function Cheese () {
           imageDecoratorBlob={true}
           imageDecoratorBlobCss={tw`left-1/2 md:w-32 md:h-32 -translate-x-1/2 opacity-25`}
           textOnLeft={true}
-        /> 
+        />  */}
         <Testimonial
           subheading=""
           heading={<>Customers <HighlightedText>Love Us.</HighlightedText></>}
