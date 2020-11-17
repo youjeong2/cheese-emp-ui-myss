@@ -1,7 +1,6 @@
-
 import { createAction, handleActions } from 'redux-actions';
 import { cheeseService } from './cheese.service'
-import { alertAction } from '../../../alert.action'
+import { alertActions } from '../../../alert.action'
 import history from '../../../history'
 
 export const cheeseConstants = {
@@ -10,7 +9,7 @@ export const cheeseConstants = {
     CHEESELIST_FAILURE: 'CHEESELIST_GET_FAILURE'
 }
 
-export const getCheeseSuccess = createAction(cheeseConstants,CHEESELIST_SUCCEESS);
+export const getCheeseSuccess = createAction(cheeseConstants.CHEESELIST_SUCCEESS);
 
 // Initial State
 const initialState = {
@@ -39,21 +38,21 @@ function getAll() {
         .then(
             cheeses => {
                 console.log(cheeses)
-                dispatch(successs(cheese));
+                dispatch(success(cheeses));
                 history.push('api/cheeses')
-                dispatch(alertActions.successs('Cheese Registeraion Succeessful'));
+                dispatch(alertActions.success('Cheese Registeraion Succeessful'));
             },
             error => {
-                distpatch(failure(error.toString()));
-                dispatch(alertAction.error(error.toString()));
+                dispatch(failure(error.toString()));
+                dispatch(alertActions.error(error.toString()));
 
             }
         );
     };
     
     function request() { return { type: cheeseConstants.CHEESELIST_REQUEST } }
-    function successs(cheeses) { return { type: cheeseConstants.CHEESELIST_SUCCEESS, cheeses } }
-    function failure(cheeses) { return { type: cheeseConstants.CHEESELIST_FAILURE, error} }
+    function success(cheeses) { return { type: cheeseConstants.CHEESELIST_SUCCEESS, cheeses } }
+    function failure(error) { return { type: cheeseConstants.CHEESELIST_FAILURE, error} }
 }
 
 export default cheeseReducer

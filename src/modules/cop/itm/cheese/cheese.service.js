@@ -10,7 +10,7 @@ async function getAll() {
     const req = {
         method: c.get,
         url: 'http://192.168.0.5:8080/api/cheeses',
-        data: {cheeses}
+        // data: {cheeses}
     }
     const resp = await axios(req)
 

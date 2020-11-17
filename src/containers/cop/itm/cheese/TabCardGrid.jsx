@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { cheeseActions } from '../.././../../../modules/cop/itm/cheese.action';
+import { cheeseActions } from '../../../../modules/cop/itm/cheese/cheese.action';
 import { motion } from "framer-motion";
 import axios from 'axios'
 import tw from "twin.macro";
