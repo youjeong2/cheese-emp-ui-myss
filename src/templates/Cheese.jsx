@@ -7,7 +7,7 @@ import Hero from "../containers/cop/itm/cheese/TwoColumnWithVideo.jsx";
 
 // import Features from "./ThreeColSimple.jsx";
 // import MainFeature from "./TwoColWithButton.jsx";
-// import MainFeature2 from "./TwoColSingleFeatureWithStats2.jsx";
+import MainFeature2 from "../containers/cop/itm/cheese/TwoColSingleFeatureWithStats2.jsx";
 
 import TabGrid from "../containers/cop/itm/cheese/TabCardGrid.jsx";
 import Testimonial from "../containers/cop/itm/cheese/ThreeColumnWithProfileImage.jsx";
@@ -22,7 +22,7 @@ import Header from "../components/cmm/Header.jsx";
 import Blog from "../containers/cmm/hom/Blogs.jsx";
 
 export default function Cheese () {
-  // const Subheading = tw.span`tracking-wider text-sm font-medium`;
+  const Subheading = tw.span`tracking-wider text-sm font-medium`;
   const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   // const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
   // const Description = tw.span`inline-block mt-8`;
@@ -44,14 +44,13 @@ export default function Cheese () {
     <div>
       <Header />
       <AnimationRevealPage>
-        <button onClick={cheeseAxios}>Cheese axios</button>
         <Hero
-          heading={<>Delicious & Affordable <HighlightedText>Cheese Near You. 랜덤 치즈 (이벤트,광고) 보여주기</HighlightedText></>}
+          heading={<>Delicious & Affordable <HighlightedText>Cheese Near You.</HighlightedText></>}
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           imageSrc="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
           imageCss={imageCss}
           imageDecoratorBlob={true}
-          primaryButtonText="Order Now"
+          primaryButtonText="Subscribe Now"
           watchVideoButtonText="Meet The Chefs"
         />
         {/* <MainFeature
@@ -122,7 +121,7 @@ export default function Cheese () {
 
           imageContainerCss={tw`p-2!`}
           imageCss={tw`w-20! h-20!`}
-        />
+        />*/}
         <MainFeature2
           subheading={<Subheading>A Reputed Brand</Subheading>}
           heading={<>Why <HighlightedText>Choose Us ?</HighlightedText></>}
@@ -149,7 +148,7 @@ export default function Cheese () {
           imageDecoratorBlob={true}
           imageDecoratorBlobCss={tw`left-1/2 md:w-32 md:h-32 -translate-x-1/2 opacity-25`}
           textOnLeft={true}
-        /> */}
+        /> 
         <Testimonial
           subheading=""
           heading={<>Customers <HighlightedText>Love Us.</HighlightedText></>}
