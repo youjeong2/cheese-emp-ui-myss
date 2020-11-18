@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { context as c } from '../context'
+import { context as c } from '../../context'
 
 export const userService = {
     login,
@@ -11,11 +11,11 @@ export const userService = {
     delete: _delete
   };
   /*
-  access : async (userId, password) => {
+  access : async (user_id, password, name, phone, email) => {
     const req = {
         method: c.post,
         url: `${c.url}/api/access`,
-        data: {id:userId, password:password},
+        data: {id:user_id, password:password, name:name, phone:phone, email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -26,11 +26,13 @@ export const userService = {
   */
 
 
-  async function login(userId, password) {
+  async function login(user_id, password ) {
+    alert(`CCCC ${user_id} & ${password}`)
+
     const req = {
         method: c.post,
-        url: `${c.url}/api/access`,
-        data: {id:userId, password:password},
+        url: `http://192.168.0.21:8080/api/login`,
+        data: {id:user_id, password:password},
         auth: c.auth
     }
     const resp = await axios(req)
@@ -39,16 +41,16 @@ export const userService = {
     return data
   }
   
-  async function logout(userId, password) {
+  async function logout(user_id, password, name, phone, email) {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
   }
   
-  async function getAll(userId, password) {
+  async function getAll(user_id, password, name, phone, email) {
     const req = {
         method: c.post,
-        url: `${c.url}/api/access`,
-        data: {id:userId, password:password},
+        url: `${c.url}/api/signup`,
+        data: {id:user_id, password:password, name:name, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -57,11 +59,11 @@ export const userService = {
     return data
   }
   
-  async function getById(userId, password) {
+  async function getById(user_id, password, name, phone, email) {
     const req = {
         method: c.post,
-        url: `${c.url}/api/access`,
-        data: {id:userId, password:password},
+        url: `${c.url}/api/user`,
+        data: {id:user_id, password:password, name:name, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -70,11 +72,11 @@ export const userService = {
     return data
   }
   
-  async function register(userId, password) {
+  async function register(user_id, password, name, phone, email) {
     const req = {
         method: c.post,
-        url: `${c.url}/api/access`,
-        data: {id:userId, password:password},
+        url: 'http://192.168.0.21:8080/api/signup',
+        data: {id:user_id, password:password, name:name, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -83,11 +85,11 @@ export const userService = {
     return data
   }
   
-  async function update(userId, password) {
+  async function update(user_id, password, name, phone, email) {
     const req = {
         method: c.post,
-        url: `${c.url}/api/access`,
-        data: {id:userId, password:password},
+        url: `${c.url}/api/signup`,
+        data: {id:user_id, password:password, name:name, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -97,11 +99,11 @@ export const userService = {
   }
   
   // prefixed function name with underscore because delete is a reserved word in javascript
-  async function _delete(userId, password) {
+  async function _delete(user_id, password, name, phone, email) {
     const req = {
         method: c.post,
-        url: `${c.url}/api/access`,
-        data: {id:userId, password:password},
+        url: `${c.url}/api/user`,
+        data: {id:user_id, password:password, name:name, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -114,11 +116,11 @@ export const userService = {
   
   ///////////////////////////////////////////////////////////////////////////
   const UserServiceSample = {
-    access : async (userId, password) => {
+    access : async (user_id, password, name, phone, email) => {
       const req = {
           method: c.post,
           url: `${c.url}/api/access`,
-          data: {id:userId, password:password},
+          data: {id:user_id, password:password, name:name, phone:phone, email:email },
           auth: c.auth
       }
       const resp = await axios(req)

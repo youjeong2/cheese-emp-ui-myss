@@ -94,15 +94,15 @@ export default function Blogs() {
           <HeadingDescription>Some amazing blog posts that are written by even more amazing people.</HeadingDescription>
         </HeadingInfoContainer>
         <ThreeColumn>
-          {cheeses.map(cheese => (
-            <Column key={cheese.ranking}>
+          {cheeses.map(c => (
+            <Column key={c.ranking}>
               <Card>
                 {/* <Image img={cheese.img} />
                 <Category>{cheese.category}</Category> */}
-                <Image imageSrc={cheese.img}/>
-                <Title>{cheese.name}</Title>
-                <Contents>{cheese.brand}</Contents>
-                <Category>{cheese.content}</Category>
+                <Image imageSrc={c.img}/>
+                <Title>{c.name}</Title>
+                <Contents>{c.brand}</Contents>
+                <Category>{c.content}</Category>
                 {/* <Link href={cheese.content}>Read Post</Link> */}
               </Card>
             </Column>

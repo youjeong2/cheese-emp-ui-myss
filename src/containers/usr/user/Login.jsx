@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from "react";
-// import { useDispatch, useSelector } from "react-redux"
-// import { userActions } from '../modules/usr/user/user.action'
+import { useDispatch, useSelector } from "react-redux"
+import { userActions } from '../../../modules/usr/user/user.action'
 import {User} from '../../../templates'
 
 
@@ -73,14 +73,9 @@ const userAxios = () => {
       e => alert(`Sign In Failure`)
     )
 }
-
-// const [userId, setUserId] = useState('')
-// const [password, setPassword] = useState('')
-// const dispatch = useDispatch()
-
 const logoLinkUrl = "/",
       cheeseLoginImageSrc  = cheeseLogin,
-      headingText = "Sign In To Pic 2 Cheese",  
+      headingText = "Sign In for Pic 2 Cheese",  
       submitButtonText = "Sign In",
       SubmitButtonIcon = LoginIcon,
       forgotPasswordUrl = "#",
@@ -119,6 +114,10 @@ export default function Logiin (
   // forgotPasswordUrl = "#",
   // signupUrl = "/signup",
 ) {
+  const [user_id, setUserId] = useState('')
+  const [password, setPassword] = useState('')
+  const dispatch = useDispatch()
+  
     return (<User>
       <div>
         <Header />
@@ -144,16 +143,23 @@ export default function Logiin (
                       ))}
                     </SocialButtonsContainer>
                     <DividerTextContainer>
-                      <DividerText>Or Sign in with your e-mail</DividerText>
+                      <DividerText>Sign in with your Id</DividerText>
                     </DividerTextContainer>
                     <Form>
                       {/* <Input type="email" placeholder="Email" /> */}
-                      <Input type="text" placeholder="ID"/>
-                      <Input type="password" placeholder="Password" />
-                      <SubmitButton type="submit">
+                      <Input type="text" placeholder="ID" onChange={e => setUserId(`${e.target.value}`)}/>
+                      <Input type="password" placeholder="Password"  onChange={e => setPassword(`${e.target.value}`)}/>
+                      
+                      <SubmitButton type="submit" onClick= {
+                        
+                        
+                        e => dispatch(userActions.login(user_id,password))
+                        
+                        }>
                         <SubmitButtonIcon className="icon" />
                         <span className="text">{submitButtonText}</span>
                       </SubmitButton>
+                    
                     </Form>
                     <p tw="mt-6 text-xs text-gray-600 text-center">
                       <a href={forgotPasswordUrl} tw="border-b border-gray-500 border-dotted">

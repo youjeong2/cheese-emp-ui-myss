@@ -1,8 +1,8 @@
 import { createAction, handleActions } from 'redux-actions';
 import { userService } from './user.service'
-import { alertActions } from './alert.action'
+import { alertActions } from '../../alert.action'
 // Action Types
-import history from '../history'
+import history from '../../history'
 
 export const userConstants = {
   REGISTER_REQUEST: 'USERS_REGISTER_REQUEST',
@@ -83,16 +83,17 @@ function register(user) {
 }
 
 
-function login(userId, password){
+function login(user_id, password){
+    alert(`BBBBB ${user_id} & ${password}`)
     return dispatch => {
-        dispatch(request({ userId }))
+        dispatch(request({ user_id }))
 
-        userService.login(userId, password)
+        userService.login(user_id, password)
             .then(
                 user => { 
-                    console.log(user.name)
+                    console.log(`이름 ========== : ${user.name}`)
                     dispatch(success(user))
-                    history.push('/user-detail')
+                    // history.push('/user-detail')
              },
             error => {
                 dispatch(failure(error.toString()));
@@ -213,7 +214,7 @@ const fetchSomeUsers = useCallback(async e=>{
         const req = {
             method: c.get,
             url: `${c.url}/api/users`,
-            data: {params: e.target.getAttribute('userId')},
+            data: {params: e.target.getAttribute('user_id')},
             auth: c.auth
         }
         const res = await axios(req)   
@@ -226,11 +227,11 @@ const fetchOneUser = useCallback(async e => {
     e.preventDefault()
     try {
         
-        const userId = e.target.getAttribute('userId')
-        console.log(`Search Id is ${userId}`) 
+        const user_id = e.target.getAttribute('user_id')
+        console.log(`Search Id is ${user_id}`) 
         const req = {
             method: c.get,
-            url: `${c.url}/api/user/${userId}`,
+            url: `${c.url}/api/user/${user_id}`,
             auth: c.auth
         }
         const res = await axios(req)   
