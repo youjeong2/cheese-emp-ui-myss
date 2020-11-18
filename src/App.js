@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 // import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { BrowserRouter as Router, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom'
 // import { Nav } from './components'
-import {Home, Login, Cheese, Survey, Review} from './templates'
-import {Signup} from './containers/usr/user'
+import {Home, User, Cheese, Survey, Review} from './templates'
+import {Login, Signup, UserList} from './containers/usr/user'
 
 export default function App(){
     const [loggedIn, setLoggedIn] = useState(sessionStorage.getItem('sessionUser'))

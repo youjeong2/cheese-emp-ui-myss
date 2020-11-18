@@ -1,21 +1,23 @@
 import React, {useCallback, useState} from "react";
 // import { useDispatch, useSelector } from "react-redux"
 // import { userActions } from '../modules/usr/user/user.action'
+import {User} from '../../../templates'
+
 
 // import AnimationRevealPage from "../home/AnimationRevealPage.js";
-import { Container as ContainerBase } from "../components/cmm/Layouts";
+import { Container as ContainerBase } from "../../../components/cmm/Layouts";
 import tw from "twin.macro";
 // import styled from "../components/common/node_modules/styled-components";
 // import {css} from "../components/common/node_modules/styled-components/macro"; //eslint-disable-line
 import {css} from "styled-components/macro"; //eslint-disable-line
 import styled from "styled-components";
 import axios from "axios"
-import illustration from "../components/images/login-illustration.svg";
+import cheeseLogin from "../../../components/images/cheese/cheeseImg2.png";
 // import logo from "../images/logo.svg";
-import googleIconImageSrc from "../components/images/google-icon.png";
-import twitterIconImageSrc from "../components/images/twitter-icon.png";
+import googleIconImageSrc from "../../../components/images/google-icon.png";
+import twitterIconImageSrc from "../../../components/images/twitter-icon.png";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
-import Header from "../components/cmm/Header.jsx";
+import Header from "../../../components/cmm/Header.jsx";
 
 
 
@@ -57,8 +59,8 @@ const SubmitButton = styled.button`
     ${tw`ml-3`}
   }
 `;
-const IllustrationContainer = tw.div`sm:rounded-r-lg flex-1 bg-purple-100 text-center hidden lg:flex justify-center`;
-const IllustrationImage = styled.div`
+const CheeseLoginContainer = tw.div`sm:rounded-r-lg flex-1 bg-purple-100 text-center hidden lg:flex justify-center`;
+const CheeseLoginImage = styled.div`
   ${props => `background-image: url("${props.imageSrc}");`}
   ${tw`m-12 xl:m-16 w-full max-w-sm bg-contain bg-center bg-no-repeat`}
 `;
@@ -76,31 +78,48 @@ const userAxios = () => {
 // const [password, setPassword] = useState('')
 // const dispatch = useDispatch()
 
+const logoLinkUrl = "/",
+      cheeseLoginImageSrc  = cheeseLogin,
+      headingText = "Sign In To Pic 2 Cheese",  
+      submitButtonText = "Sign In",
+      SubmitButtonIcon = LoginIcon,
+      forgotPasswordUrl = "#",
+      signupUrl = "/signup",
+      socialButtons = [
+        {
+          iconImageSrc: googleIconImageSrc,
+          text: "Sign In With Google",
+          url: "https://google.com"
+        },
+        {
+          iconImageSrc: twitterIconImageSrc,
+          text: "Sign In With Twitter",
+          url: "https://twitter.com"
+        }
+      ]
 
 export default function Logiin (
-  logoLinkUrl = "/",
-  illustrationImageSrc = illustration,
-  headingText = "Sign In To Treact",
-  socialButtons = [
-    {
-      iconImageSrc: googleIconImageSrc,
-      text: "Sign In With Google",
-      url: "https://google.com"
-    },
-    {
-      iconImageSrc: twitterIconImageSrc,
-      text: "Sign In With Twitter",
-      url: "https://twitter.com"
-    }
-  ],
-  submitButtonText = "Sign In",
-  SubmitButtonIcon = LoginIcon,
-  forgotPasswordUrl = "#",
-  signupUrl = "/signup",
-
-
+  // logoLinkUrl = "/",
+  // illustrationImageSrc = illustration,
+  // headingText = "Sign In To Treact",
+  // socialButtons = [
+  //   {
+  //     iconImageSrc: googleIconImageSrc,
+  //     text: "Sign In With Google",
+  //     url: "https://google.com"
+  //   },
+  //   {
+  //     iconImageSrc: twitterIconImageSrc,
+  //     text: "Sign In With Twitter",
+  //     url: "https://twitter.com"
+  //   }
+  // ]
+  // submitButtonText = "Sign In",
+  // SubmitButtonIcon = LoginIcon,
+  // forgotPasswordUrl = "#",
+  // signupUrl = "/signup",
 ) {
-    return (
+    return (<User>
       <div>
         <Header />
         {/* <AnimationRevealPage> */}
@@ -128,7 +147,8 @@ export default function Logiin (
                       <DividerText>Or Sign in with your e-mail</DividerText>
                     </DividerTextContainer>
                     <Form>
-                      <Input type="email" placeholder="Email" />
+                      {/* <Input type="email" placeholder="Email" /> */}
+                      <Input type="text" placeholder="ID"/>
                       <Input type="password" placeholder="Password" />
                       <SubmitButton type="submit">
                         <SubmitButtonIcon className="icon" />
@@ -149,12 +169,12 @@ export default function Logiin (
                   </FormContainer>
                 </MainContent>
               </MainContainer>
-              <IllustrationContainer>
-                <IllustrationImage imageSrc={illustrationImageSrc} />
-              </IllustrationContainer>
+              <CheeseLoginContainer>
+                <CheeseLoginImage imageSrc={cheeseLoginImageSrc} />
+              </CheeseLoginContainer>
             </Content>
           </Container>
         {/* </AnimationRevealPage> */}
       </div>
-    );
+    </User>);
   }
