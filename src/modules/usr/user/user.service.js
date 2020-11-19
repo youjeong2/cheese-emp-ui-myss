@@ -72,11 +72,11 @@ export const userService = {
     return data
   }
   
-  async function register(user_id, password, name, phone, email) {
+  async function register(user_id, password, name, gender, age, phone, email) {
     const req = {
         method: c.post,
-        url: 'http://192.168.0.21:8080/api/signup',
-        data: {id:user_id, password:password, name:name, phone:phone, email:email },
+        url: 'http://192.168.0.21:8080/api/user',
+        data: {user_id:user_id, password:password, name:name, gender: gender, age: age, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -85,11 +85,11 @@ export const userService = {
     return data
   }
   
-  async function update(user_id, password, name, phone, email) {
+  async function update(user_id, password, name, gender, age, phone, email) {
     const req = {
         method: c.post,
         url: `${c.url}/api/signup`,
-        data: {id:user_id, password:password, name:name, phone:phone, email:email },
+        data: {id:user_id, password:password, name:name, gender: gender, age: age, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)

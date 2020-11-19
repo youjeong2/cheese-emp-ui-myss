@@ -232,8 +232,8 @@ export default function SignUp () {
     user_id: '',
     password: '',
     name: '',
-    // gender: '',
-    // age: '',
+    gender: '',
+    age: '',
     phone: '',
     email: ''
   });
@@ -258,7 +258,7 @@ export default function SignUp () {
     e.preventDefault();
 
     setSubmitted(true);
-    if (user.user_id && user.password && user.name && user.phone && user.email) {
+    if (user.user_id && user.password && user.name && user.gender && user.age && user.phone && user.email) {
       dispatch(userActions.register(user));
     }
 }
@@ -289,7 +289,7 @@ export default function SignUp () {
                 </DividerTextContainer>
                 <Form name="form" onSubmit={handleSubmit}>
                   {/* <Input type="email" placeholder="Email" /> */}
-                  <Input type="text" placeholder="Id" name= "user_id"value={user.user_id} onChange={handleChange}
+                  <Input type="text" placeholder="Id" name= "user_id" value={user.user_id} onChange={handleChange}
                   className={'form-control' + (submitted && !user.user_id ? 'is-invalid' : '')}/>
                   {submitted && !user.user_id &&
                       <div className="invalied-feedback">User Id is required</div>}
@@ -308,12 +308,21 @@ export default function SignUp () {
 
                    
                   <RadioGroup defaultValue="female" aria-label="gender" name="gender" value={user.gender} onChange={handleChange}>
-                    <FormControlLabel value="female" control={<Radio />} label="Female" />
-                    <FormControlLabel value="male" control={<Radio />} label="Male" />
+                    <FormControlLabel value="F" control={<Radio />} label="Female" />
+                    <FormControlLabel value="M" control={<Radio />} label="Male" />
                   </RadioGroup>
-                  
 
-                  <Input type="tel" placeholder="Tel" name="phone" value={user.phone} onChange={handleChange} 
+
+                  <Input type="text" placeholder="age" name="age" value={user.age} onChange={handleChange} 
+                  size="small"
+                  control={<Radio color="yellow" />}
+                  className={'form-control' + (submitted && !user.age ? 'is-invalid' : '')}/>
+                  {submitted && !user.age &&
+                    <div className="invalid-feedback">Tel is required</div>
+                  }  
+
+
+                  <Input type="text" placeholder="Tel" name="phone" value={user.phone} onChange={handleChange} 
                   size="small"
                   control={<Radio color="yellow" />}
                   className={'form-control' + (submitted && !user.phone ? 'is-invalid' : '')}/>

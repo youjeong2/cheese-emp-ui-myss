@@ -26,6 +26,7 @@ export const userConstants = {
 let sessionUser = JSON.parse(sessionStorage.getItem("user"));
 
 export const loginSuccess = createAction(userConstants.LOGIN_SUCCESS);
+// export const registerSuccess = createAction(userConstants.REGISTER_SUCCESS)
 
 // Initial State
 const initialState = {
@@ -36,11 +37,15 @@ const initialState = {
 
 
 // Reducer
-const userReducer = handleActions(
-    { [userConstants.LOGIN_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
-    initialState,
-  )
+// const userReducer = handleActions(
+//     { [userConstants.LOGIN_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
+//     initialState,
+//   )
 
+const userReducer = handleActions(
+{ [userConstants.REGISTER_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
+initialState,
+)
 
 // Actions
 
