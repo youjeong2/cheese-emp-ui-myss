@@ -32,7 +32,7 @@ export const userService = {
     const req = {
         method: c.post,
         url: `http://192.168.0.21:8080/api/login`,
-        data: {id:user_id, password:password},
+        data: {user_id:user_id, password:password},
         auth: c.auth
     }
     const resp = await axios(req)

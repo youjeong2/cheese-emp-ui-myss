@@ -92,6 +92,7 @@ function login(user_id, password){
             .then(
                 user => { 
                     console.log(`이름 ========== : ${user.name}`)
+                    alert(`이름 ======== : ${user.name}`)
                     dispatch(success(user))
                     // history.push('/user-detail')
              },
