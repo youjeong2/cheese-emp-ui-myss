@@ -18,13 +18,13 @@ import FAQ from "../containers/cmm/hom/SingleCol.jsx";
 
 export default function Home () {
   return( <div className="home">
-  <Header />
+  {/* <Header /> */}
   <AnimationRevealPage>
     <Hero />
+    <Chatbot/>
     <Features />
     <Blog />
     <Testimonial />
-  <Chatbot/>
   <FAQ
         subheading={<Subheading>FAQS</Subheading>}
         heading={

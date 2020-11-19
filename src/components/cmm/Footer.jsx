@@ -35,7 +35,7 @@ const SocialLink = styled.a`
   }
 `;
 
-export default () => {
+const Footer =  () => {
   return (
     <Container>
       <FiveColumns>
@@ -93,3 +93,5 @@ export default () => {
     </Container>
   );
 };
+
+export default Footer

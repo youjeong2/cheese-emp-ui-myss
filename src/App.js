@@ -2,17 +2,21 @@ import React, { useState } from 'react'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { BrowserRouter as Router, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom'
 // import { Nav } from './components'
+import { Header } from './components/cmm'
 import {Home, User, Cheese, Survey, Review} from './templates'
 import {Login, Signup } from './containers/usr/user'
-// import { Cart } from "./containers/cop/cart/Cart";
+// import { Cart } from "./containers/cop/cart_1";
 
+// import { HelmetProvider } from 'react-helmet-async';
+// import ProductsContextProvider from './containers/cop/cart_1/contexts/ProductsContextProvider';
+// import CartContextProvider from './containers/cop/cart_1/contexts/CartContextProvider';
 
 export default function App(){
     const [loggedIn, setLoggedIn] = useState(sessionStorage.getItem('sessionUser'))
     return (<>
         <BrowserRouter>
-
-                {/* <Nav isAuth = {loggedIn}/> */}
+                <Header />
+                {/* <Header isAuth = {loggedIn}/> */}
                 <Switch>
                     <Route exact path='/' component={Home}></Route>
                     <Redirect from = {'/home'} to={'/'}/> 
@@ -21,7 +25,16 @@ export default function App(){
                     <Route path='/survey' component={Survey}></Route>
                     <Route path='/cheese' component={Cheese}></Route>
                     <Route path='/review' component={Review}></Route>
+                    {/* <HelmetProvider>
+                        <ProductsContextProvider>
+                            <CartContextProvider>
+                            <Route path="/cart" component={Cart} />
+                            </CartContextProvider>
+                        </ProductsContextProvider>
+                    </HelmetProvider> */}
+
                     {/* <Route path="/cart" component={Cart} /> */}
+
                  </Switch>
         </BrowserRouter>
 

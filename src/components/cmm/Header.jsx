@@ -1,41 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import {useHistory} from 'react-router-dom'
+import { CartContext } from '../../containers/cop/cart_1/contexts/CartContext';
+import { history } from '../../modules/history'
 
 import useAnimatedNavToggler from "../../containers/cmm/hom/useAnimatedNavToggler.jsx";
 
-import logo from "../images/cheese-logo.png";
+import logo from "../images/cheese/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+import {CartIcon} from '../../containers/cop/cart_1/Icons' //eslint-disable-line
 
-import { FaRegUser } from "react-icons/fa"
+import { FaRegUser } from "react-icons/fa"  //eslint-disable-line
 
-const Header = tw.header`
+
+
+
+const HeaderBlock = tw.header`
   flex justify-between items-center
-  max-w-screen-xl mx-auto pt-5 pb-5
+  max-w-screen-xl mx-auto pt-3 pb-3
 `;
 
-export const NavLinks = tw.div`inline-block`;
+const NavLinks = tw.div`inline-block`;
 
 /* hocus: stands for "on hover or focus"
  * hocus:bg-primary-700 will apply the bg-primary-700 class on hover or focus
  */
-export const NavLink = tw.a`
+const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300 
   pb-1 border-b-2 border-transparent hover:border-yellow-500 hocus:text-yellow-500
 `;
 
-export const PrimaryLink = tw(NavLink)`
+const PrimaryLink = tw(NavLink)`
   lg:mx-0
   px-8 py-3 rounded bg-yellow-500 text-black
   hocus:bg-yellow-700 hocus:text-gray-200 focus:shadow-outline
   border-b-0
 `;
 
-export const LogoLink = styled(NavLink)`
+const LogoLink = styled(NavLink)`
   ${tw`flex items-center font-black border-b-0 text-2xl! ml-0!`};
 
   img {
@@ -67,57 +74,38 @@ const UserLink = styled(NavLink)`
         }
     }
 `
-export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between`;
-export const NavToggle = tw.button`
+const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between`;
+const NavToggle = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-yellow-500 transition duration-300
 `;
-export const MobileNavLinks = motion.custom(styled.div`
+const MobileNavLinks = motion.custom(styled.div`
   ${tw`lg:hidden z-10 fixed top-0 inset-x-0 mx-4 my-6 p-8 border text-center rounded-lg text-gray-900 bg-white`}
   ${NavLinks} {
     ${tw`flex flex-col items-center`}
   }
 `);
 
-export const DesktopNavLinks = tw.nav`
+const DesktopNavLinks = tw.nav`
   hidden lg:flex flex-1 justify-between items-center
 `;
 
-export const selectedStyle = {
+const selectedStyle = {
   backgroundColor: "white", color: "yellow"
 }
 
-export default ({ roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg" }) => {
-  const defaultLinks = (
-    <NavLinks key={1}>
-      <NavLink href="/" >홈</NavLink>
-      <NavLink href="/cheese">치즈</NavLink>
-      <NavLink href="/review">Review</NavLink>
-      <NavLink href="/survey">추천</NavLink>
-      <NavLink href="/review">cart</NavLink>
-      {/* <NavLink href="/about">Admin</NavLink> */}
-      {/* <NavLink to="/login">
-                <FaRegUser size={20} style={{color: 'black'}}/>
-      </NavLink>       */}
-      <NavLink href="/login" tw="lg:ml-12!">Sign In</NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
-    </NavLinks>
-  );
 
-  // const defaultLinks = ({ match }) => <div className={ "about-menu" }>
-  //   <li>
-  //     <NavLinks key={1}>
-  //       <NavLink href="/" style={ match.isExact && selectedStyle }>홈</NavLink>
-  //       <NavLink href="/menu" activeStyle={ selectedStyle }>치즈</NavLink>
-  //       <NavLink href="order" activeStyle={ selectedStyle }>주문</NavLink>
-  //       <NavLink href="/board" activeStyle={ selectedStyle }>F&Q</NavLink>
-  //       <NavLink href="/survey" activeStyle={ selectedStyle }>추천</NavLink>
-  //       <NavLink href="/admin" activeStyle={ selectedStyle }>Admin</NavLink>
-  //       <NavLink href="/login" activeStyle={ selectedStyle } tw="lg:ml-12!">Login</NavLink>
-  //       {/* <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/login">Log In</PrimaryLink> */}
-  //       <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
-  //     </NavLinks>
-  //   </li>
-  // </div>
+
+
+const Header = (props, { roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg" }) => {
+  
+  const history = useHistory()
+  const logout = e => {
+    alert('logout')
+    e.preventDefault()
+    sessionStorage.removeItem("sessionUser")
+    history.push('/')
+    window.location.reload()
+  }
 
   const { showNavLinks, animation, toggleNavbar } = useAnimatedNavToggler();
   const collapseBreakpointCss = collapseBreakPointCssMap[collapseBreakpointClass];
@@ -130,10 +118,11 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
   );
 
   logoLink = logoLink || defaultLogoLink;
-  links = links || defaultLinks;
+  
+  // const {itemCount} = useContext(CartContext)
 
-  return (
-    <Header className={className || "header-light"}>
+  return (<>
+    <HeaderBlock className={className || "header-light"}>
       <DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}>
         {logoLink}
         {links}
@@ -148,10 +137,44 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
           {showNavLinks ? <CloseIcon tw="w-6 h-6" /> : <MenuIcon tw="w-6 h-6" />}
         </NavToggle>
       </MobileNavLinksContainer>
-    </Header>
-  );
-};
 
+
+      <NavLinks key={1}>
+          <NavLink href="/" >홈</NavLink>
+          <NavLink href="/cheese">치즈</NavLink>
+          <NavLink href="/review">Review</NavLink>
+          <NavLink href="/survey">추천</NavLink>
+          <NavLink href="/cart">cart</NavLink>
+          <NavLink href="/login" tw="lg:ml-12!">Sign in</NavLink>
+          <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
+      </NavLinks> 
+
+
+      {/* <NavLinks key={1}>
+        { props.isAuth !== null
+        ? <ul>
+          <NavLink href="/" >홈</NavLink>
+          <NavLink href="/cheese">치즈</NavLink>
+          <NavLink href="/review">Review</NavLink>
+          <NavLink href="/survey">추천</NavLink>
+          {/* <NavLink href="/cart"><CartIcon/>Cart ({itemCount})</NavLink> */}
+          {/*<NavLink href="/cart">Cart</NavLink>
+          <NavLink onClick={logout} tw="lg:ml-12!" style={{textDecoration: 'underline'}}>Logout</NavLink>
+        </ul>:
+        <ul>
+          <NavLink href="/" >홈</NavLink>
+          <NavLink href="/cheese">치즈</NavLink>
+          <NavLink href="/review">Review</NavLink>
+          <NavLink href="/survey">추천</NavLink>
+          <NavLink href="/login" tw="lg:ml-10!">Sign in</NavLink>
+          <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
+        </ul>
+        }
+      </NavLinks> */}
+    </HeaderBlock>
+  </>);
+};
+export default Header
 /* The below code is for generating dynamic break points for navbar.
  * Using this you can specify if you want to switch
  * to the toggleable mobile navbar at "sm", "md" or "lg" or "xl" above using the collapseBreakpointClass prop

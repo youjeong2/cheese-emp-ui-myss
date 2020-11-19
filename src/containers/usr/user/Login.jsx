@@ -120,7 +120,7 @@ export default function Logiin (
   
     return (<User>
       <div>
-        <Header />
+        {/* <Header /> */}
         {/* <AnimationRevealPage> */}
           <Container>
             <Content>

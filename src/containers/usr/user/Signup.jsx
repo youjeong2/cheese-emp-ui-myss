@@ -266,7 +266,7 @@ export default function SignUp () {
 
   return (<User>
   <div>
-    <Header/>
+    {/* <Header/> */}
     {/* <AnimationRevealPage> */}
       <Container>
         <Content>

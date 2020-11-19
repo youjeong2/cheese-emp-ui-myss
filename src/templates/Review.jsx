@@ -249,7 +249,7 @@ class BoardPage extends Component {
     if (!reviews) return null;
 
     return (<>
-        <Header />
+        {/* <Header /> */}
         <Container>
             {/* <button onClick={fnqAxios}>Fnq axios(검색어 입력창)</button> */}
             <PrimaryLink  margin="10em" href="/boardregister">검색</PrimaryLink>

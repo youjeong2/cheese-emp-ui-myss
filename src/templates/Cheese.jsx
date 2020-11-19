@@ -41,7 +41,7 @@ export default function Cheese () {
   
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <AnimationRevealPage>
         <Hero
           heading={<>Delicious & Affordable <HighlightedText>Cheese Near You.</HighlightedText></>}

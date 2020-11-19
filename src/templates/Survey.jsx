@@ -14,7 +14,7 @@ import Footer from "../components/cmm/Footer.jsx";
 
 export default function Survey () {
   return (<>
-    <Header />
+    {/* <Header /> */}
     <Hero />
     <AnimationRevealPage>
       <Pricing />

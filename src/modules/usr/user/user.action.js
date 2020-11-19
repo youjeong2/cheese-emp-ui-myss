@@ -37,15 +37,15 @@ const initialState = {
 
 
 // Reducer
-// const userReducer = handleActions(
-//     { [userConstants.LOGIN_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
-//     initialState,
-//   )
-
 const userReducer = handleActions(
-{ [userConstants.REGISTER_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
-initialState,
-)
+    { [userConstants.LOGIN_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
+    initialState,
+  )
+
+// const userReducer = handleActions(
+// { [userConstants.REGISTER_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
+// initialState,
+// )
 
 // Actions
 
@@ -67,10 +67,11 @@ export const userActions = {
 function register(user) {
     return dispatch => {
         dispatch(request(user));
-  
+
         userService.register(user)
             .then(
                 user => { 
+                    alert(JSON.stringify(user))
                     dispatch(success());
                     
                     dispatch(alertActions.success('Registration successful'));
@@ -99,7 +100,7 @@ function login(user_id, password){
                     console.log(`이름 ========== : ${user.name}`)
                     alert(`이름 ======== : ${user.name}`)
                     dispatch(success(user))
-                    // history.push('/user-detail')
+                    history.push('/user-detail')
              },
             error => {
                 dispatch(failure(error.toString()));
