@@ -98,7 +98,7 @@ export default function Login (
   const login = e => {
     // 유저 로그인 한다
     e.preventDefault()
-    axios.post(`http://localhost:8080/api/login`, {"user_id":user_id, "password":password})
+    axios.post(`http://192.168.0.21:8080/api/login`, {"user_id":user_id, "password":password})
         .then(user => {
             // alert(`Welcome ! ${res.data["fname"]}.  ${res.data["usr_id"]}'s connection is successful. ! `)
 

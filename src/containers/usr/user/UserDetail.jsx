@@ -41,9 +41,11 @@ export default function UserDetail() {
             </tr>
             <tr>
                 {/* <td colspan={2}><button onClick={dispatch(userActions.goToDest('/modifying-user-info'))}> */}
-                <td colspan={2}><button>
+                <td colspan={2}>
+                    {/* <button onClick={dispatch(userActions.goToDest('/user-detail'))}>
                     Go Update</button>
-                    <button>Cancel</button></td>
+                    <button>Cancel</button> */}
+                </td>
             </tr>
         </table></form>
     </User>)

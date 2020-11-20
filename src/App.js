@@ -6,6 +6,7 @@ import { Header } from './components/cmm'
 import {Home, User, Cheese, Survey, Review} from './templates'
 import {Login, Signup, UserDetail, UserProfile } from './containers/usr/user'
 // import { Cart } from "./containers/cop/cart_1";
+// import { Cart } from "./templates/Cart.tsx";
 
 // import { HelmetProvider } from 'react-helmet-async';
 // import ProductsContextProvider from './containers/cop/cart_1/contexts/ProductsContextProvider';
@@ -32,7 +33,7 @@ export default function App(){
                     <Route path='/cheese' component={Cheese}></Route>
                     <Route path='/review' component={Review}></Route>
 
-
+                    {/* <Route path='/cart' component={Cart}></Route> */}
                     {/* <HelmetProvider>
                         <ProductsContextProvider>
                             <CartContextProvider>

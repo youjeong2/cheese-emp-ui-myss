@@ -73,14 +73,17 @@ export const userService = {
     return data
   }
   
-  async function register(user_id, password, name, gender, phone, email) {
+  async function register(user) {
+    alert('user service: ' + JSON.stringify(user))
     const req = {
         method: c.post,
         url: 'http://192.168.0.21:8080/api/signup',
-        data: {user_id, password, name, gender, phone, email },
+        data: user,
         auth: c.auth
     }
+    alert('user service req: ' + JSON.stringify(req))
     const resp = await axios(req)
+    alert('user service resp: ' + resp)
     const data = resp.data
     alert(`Welcome ! ${data.name}'s connection is successful. ! `)
     return data

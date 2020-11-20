@@ -67,7 +67,8 @@ export const userActions = {
 function register(user) {
     return dispatch => {
         dispatch(request(user));
-
+        //alert(user.data)
+        alert('user action: ' + JSON.stringify(user))
         userService.register(user)
             .then(
                 user => { 

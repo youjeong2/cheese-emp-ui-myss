@@ -142,7 +142,7 @@ export default function SignUp () {
                   {/* <DividerText>Or Sign up with your Id</DividerText> */}
                 </DividerTextContainer>
                 <Form name="form" onSubmit={handleSubmit}>
-                  {/* <Input type="email" placeholder="Email" /> */}
+                  {/* <Input type="email" placeholder="Email" />  */}
                   <Input type="text" placeholder="Id" name= "user_id" value={user.user_id} onChange={handleChange}
                   className={'form-control' + (submitted && !user.user_id ? 'is-invalid' : '')}/>
                   {submitted && !user.user_id &&
@@ -194,6 +194,7 @@ export default function SignUp () {
                     <SubmitButtonIcon className="icon" />
                     <span className="text" >{submitButtonText}</span>
                   </SubmitButton>
+
 
                   <p tw="mt-6 text-xs text-gray-600 text-center">
                     I agree to abide by treact's{" "}

@@ -43,10 +43,11 @@ const UserProfile = () => {
   */
   const classes = useStyles()
   const [password, setPassword] = useState()
-  const [fname, setFname] = useState()
-  const [lname, setLname] = useState()
-  const [age, setAge] = useState()
+  const [name, setName] = useState()
   const [gender, setGender] = useState()
+  const [age, setAge] = useState()
+  const [email, setEmail] = useState()
+
   const edit = (id) => {
     // 수정을 가능 하게 만들어 준다.
     document.getElementById(id).disabled = false
@@ -57,16 +58,15 @@ const fetchOneUser = () => {
   /*
   로그인 된 유저 정보를 불러온다. 
   */
-  const u_id = sessionStorage.getItem('sessionUser')
-  axios.get(`http://localhost:8080/api/user/${u_id}`)
+  const user_id = sessionStorage.getItem('sessionUser')
+  axios.get(`http://192.168.0.0.21:8080/api/user/${user_id}`)
     .then(res=>{
-      setFname(res.data['fname'])
-      setAge(res.data['age'])
-      setPassword(res.data['password'])
-      setLname(res.data['lname'])
-      // setEmail(res.data['email'])
-      setAge(res.data['age'])
+      // setPassword(res.data['password'])
+      setName(res.data['name'])
       setGender(res.data['gender'])
+      setAge(res.data['age'])
+      setEmail(res.data['email'])
+
       setData(res.data)
     })
     .catch( e => {alert(`Search failed`) 
@@ -79,9 +79,9 @@ const fetchOneUser = () => {
   const editConfirm = e => {
     // 유저 정보를 수정한다
     e.preventDefault()
-    const u_id = sessionStorage.getItem('sessionUser')
-    axios.put(`http://localhost:8080/api/user/${u_id}`, {
-        'user_id':u_id, 'password':password,  'gender':gender,  'lname':lname, 'fname':fname, 'age':age, 'email':u_id
+    const user_id = sessionStorage.getItem('sessionUser')
+    axios.put(`http://localhost:8080/api/user/${user_id}`, {
+        'user_id':user_id, 'password':password,  'name':name, 'gender':gender,  'age':age, 'email':email
     })
     .then(res=>{
         alert(`아이디 업데이트`)
@@ -97,11 +97,11 @@ const fetchOneUser = () => {
   const history = useHistory()
   const deleteConfirm = useCallback(async () => {
     // 해당 유저를 삭제 한다
-    const u_id = sessionStorage.getItem('sessionUser')
+    const user_id = sessionStorage.getItem('sessionUser')
     try {
       const req = {
         method: c.post,
-        url: `${c.url}/api/delete/${u_id}`,
+        url: `${c.url}/api/delete/${user_id}`,
         auth: c.auth
       }
       axios(req) 
@@ -127,19 +127,19 @@ const fetchOneUser = () => {
         <form className={classes.form} noValidate>
           <Grid container spacing={3}>
           <Grid item xs={12} sm={5} >
-            <h1>Last Name</h1>
+            <h1>Name</h1>
           </Grid>
           <Grid item xs={12} sm={5}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
-                label={(data['lname'])}
-                name="lastName"
-                autoComplete="lname"
-                onChange={e => {setLname(`${e.target.value}`)}}
-                defaultValue = {(data['lname'])}
+                id="Name"
+                label={(data['name'])}
+                name="Name"
+                autoComplete="name"
+                onChange={e => {setName(`${e.target.value}`)}}
+                defaultValue = {(data['name'])}
                 disabled
               />
             </Grid>
@@ -149,7 +149,7 @@ const fetchOneUser = () => {
               </Button>
             </Grid>
               
-            <Grid item xs={5}>
+            {/* <Grid item xs={5}>
               <h1>First Name</h1>
             </Grid>
             <Grid item xs={5}>
@@ -171,7 +171,7 @@ const fetchOneUser = () => {
               <Button variant="contained" color="primary" onClick = {e => edit("firstName")}>
                 Edit
               </Button>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} sm ={5}>
               <h1>Email/ID</h1>
             </Grid>

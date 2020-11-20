@@ -14,8 +14,27 @@ import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import {CartIcon} from '../../containers/cop/cart_1/Icons' //eslint-disable-line
 
+import Button from '@material-ui/core/Button';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import { makeStyles } from '@material-ui/core/styles';
+
+
 import { FaRegUser } from "react-icons/fa"  //eslint-disable-line
 
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+  paper: {
+    marginRight: theme.spacing(2),
+  },
+}));
 
 
 
@@ -94,6 +113,8 @@ const selectedStyle = {
 }
 
 
+
+
 // const constructor = (props) => {
 //   super(props);
 //   this.state = {
@@ -128,6 +149,40 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
   
   // const {itemCount} = useContext(CartContext)
 
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  function handleListKeyDown(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
+
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
+
+
   return (<>
     <HeaderBlock className={className || "header-light"}>
       <DesktopNavLinks css={collapseBreakpointCss.desktopNavLinks}>
@@ -154,9 +209,30 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
           <NavLink href="/survey">추천</NavLink>
           {/* <NavLink href="/cart"><CartIcon/>Cart ({itemCount})</NavLink> */}
           <NavLink href="/cart">Cart</NavLink>
-          <NavLink href="/user-detail" tw="lg:ml-20!">My Page</NavLink>
+          {/* <NavLink href="/user-detail" tw="lg:ml-20!">My Page</NavLink> */}
+          <NavLink ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup="true" onClick={handleToggle} tw="lg:ml-20!">My Page
+            <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+              {({ TransitionProps, placement }) => (
+                <Grow
+                  {...TransitionProps}
+                  style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                >
+                  <Paper>
+                    <ClickAwayListener onClickAway={handleClose}>
+                      <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                        <NavLink href="/user-detail" onClick={handleClose} styled="mb-10">나의 정보</NavLink><br/>
+                        <NavLink href="/cart" onClick={handleClose}>장바구니</NavLink>
+                        {/* <MenuItem onClick={handleClose}>Logout</MenuItem> */}
+                      </MenuList>
+                    </ClickAwayListener>
+                  </Paper>
+                </Grow>
+              )}
+            </Popper>
+          </NavLink>
           <NavLink onClick={logout} tw="lg:ml-4!" style={{textDecoration: 'underline'}}>Logout</NavLink>
         </ul>:
+
         <ul>
           <NavLink href="/" >홈</NavLink>
           <NavLink href="/cheese">치즈</NavLink>
