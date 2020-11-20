@@ -2,8 +2,8 @@
 import tw from "twin.macro";
 import styled from "styled-components";
 import { SectionHeading as HeadingTitle } from "../../../components/cmm/Headings.jsx";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/images/svg-decorator-blob-1.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/images/svg-decorator-blob-3.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/cmm/images/svg-decorator-blob-1.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/cmm/images/svg-decorator-blob-3.svg";
 import { context as c } from '../../../modules/context'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';

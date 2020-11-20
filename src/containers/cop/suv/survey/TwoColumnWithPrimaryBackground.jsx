@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios"
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import { context as c } from '../../../../modules/context'
 // import HeaderBase, {
 //   LogoLink as LogoLinkBase,
 //   // NavLink as NavLinkBase,
@@ -13,7 +14,7 @@ import { SectionHeading } from "../../../../components/cmm/Headings.jsx";
 import { SectionDescription } from "../../../../components/cmm/Typography.jsx";
 import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
 // import logoImageSrc from "../images/logo-light.svg";
-import serverIllustrationImageSrc from "../../../../components/images/server-illustration-2.svg";
+import serverIllustrationImageSrc from "../../../../components/cmm/images/server-illustration-2.svg";
 
 const PrimaryBackgroundContainer = tw.div`-mx-8 px-8 bg-yellow-500 text-gray-100`;
 // const Header = tw(HeaderBase)`max-w-none -mt-8 py-8 -mx-8 px-8`;
@@ -47,7 +48,7 @@ export default function TwoColumnWithPrimaryBackground ({
   // );
 
   const recommendAxios = () => {
-    axios.get(`http://localhost:8080/api/recommend`)
+    axios.get(`${c.url}/api/recommend`)
       .then(res => {
         alert(`Recommend Connection Success !!`)
       }).catch(

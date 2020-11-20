@@ -2,15 +2,14 @@ import React, {useState} from "react";
 import { userActions } from '../../../modules/usr/user/user.action'
 import { useDispatch, useSelector } from "react-redux"
 
-
 import { Container as ContainerBase } from "../../../components/cmm/Layouts";
 import tw from "twin.macro"; 
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import illustration from "../../../components/images/signup-illustration.svg";
+import illustration from "../../../components/cmm/images/signup-illustration.svg";
 // import logo from "../images/logo.svg";
-import googleIconImageSrc from "../../../components/images/google-icon.png";
-import twitterIconImageSrc from "../../../components/images/twitter-icon.png";
+import googleIconImageSrc from "../../../components/cmm/images/google-icon.png";
+import twitterIconImageSrc from "../../../components/cmm/images/twitter-icon.png";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 import Header from "../../../components/cmm/Header.jsx";
 import {FormControl,FormLabel, RadioGroup, Radio, Card } from '@material-ui/core'

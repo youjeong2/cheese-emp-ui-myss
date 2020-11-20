@@ -8,4 +8,4 @@ export {default as ThreeColumnWithProfileImage} from './ThreeColumnWithProfileIm
 export {default as TwoColSingleFeatureWithStats2} from './TwoColSingleFeatureWithStats2'
 export {default as TwoColumnWithVideo} from './TwoColumnWithVideo'
 export {default as TwoColWithButton} from './TwoColWithButton'
-export {default as useAnimatedNavToggler} from './useAnimatedNavToggler'
+export {default as useAnimatedNavToggler} from '../../../../components/cmm/AnimatedNavToggler'

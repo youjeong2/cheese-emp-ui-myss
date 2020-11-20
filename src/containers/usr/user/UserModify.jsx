@@ -59,7 +59,7 @@ const fetchOneUser = () => {
   로그인 된 유저 정보를 불러온다. 
   */
   const user_id = sessionStorage.getItem('sessionUser')
-  axios.get(`http://192.168.0.21:8080/api/user/${user_id}`)
+  axios.get(`${c.url}/api/user/${user_id}`)
     .then(res=>{
       // alert('user_profile'+ JSON.stringify(res))
       // alert('user_profile'+ JSON.stringify(res.data))
@@ -83,7 +83,7 @@ const fetchOneUser = () => {
     // 유저 정보를 수정한다
     e.preventDefault()
     const user_id = sessionStorage.getItem('sessionUser')
-    axios.put(`http://localhost:8080/api/user/${user_id}`, {
+    axios.put(`${c.url}/api/user/${user_id}`, {
         'user_id':user_id, 'password':password,  'name':name, 'gender':gender,  'age':age, 'email':email
     })
     .then(res=>{

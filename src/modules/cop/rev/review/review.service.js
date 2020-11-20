@@ -9,7 +9,7 @@ export const reviewService = {
 async function getReviews(reviews) {
     const req = {
         method: c.get,
-        url: `http://localhost:8080/api/reviews/${reviews}`,
+        url: `${c.url}/api/reviews/${reviews}`,
         // data: {cheese}
     }
     const resp = await axios(req)

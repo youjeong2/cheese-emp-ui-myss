@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios"
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import { context as c } from '../../../../modules/context'
 // import HeaderBase, {
 //   LogoLink as LogoLinkBase,
 //   // NavLink as NavLinkBase,
@@ -47,7 +48,7 @@ export default function TwoColumnWithPrimaryBackground ({
   // );
 
   const recommendAxios = () => {
-    axios.get(`http://localhost:8080/api/recommend`)
+    axios.get(`${c.url}/api/recommend`)
       .then(res => {
         alert(`Recommend Connection Success !!`)
       }).catch(

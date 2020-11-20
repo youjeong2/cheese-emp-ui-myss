@@ -4,12 +4,12 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading as HeadingTitle } from "../../../components/cmm/Headings.jsx";
-import { ReactComponent as QuotesLeftIcon } from "../../../components/images/quotes-l.svg";
-import { ReactComponent as QuotesRightIcon } from "../../../components/images/quotes-r.svg";
-import { ReactComponent as ArrowLeftIcon } from "../../../components/images/arrow-left-2-icon.svg";
-import { ReactComponent as ArrowRightIcon } from "../../../components/images/arrow-right-2-icon.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/images/svg-decorator-blob-4.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/images/svg-decorator-blob-5.svg";
+import { ReactComponent as QuotesLeftIcon } from "../../../components/cmm/images/quotes-l.svg";
+import { ReactComponent as QuotesRightIcon } from "../../../components/cmm/images/quotes-r.svg";
+import { ReactComponent as ArrowLeftIcon } from "../../../components/cmm/images/arrow-left-2-icon.svg";
+import { ReactComponent as ArrowRightIcon } from "../../../components/cmm/images/arrow-right-2-icon.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/cmm/images/svg-decorator-blob-4.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/cmm/images/svg-decorator-blob-5.svg";
 
 import "slick-carousel/slick/slick.css";
 

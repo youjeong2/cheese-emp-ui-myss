@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import axios from 'axios'
 import tw from "twin.macro";
 import styled from "styled-components";
+import { context as c } from '../../../../modules/context'
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "../../../../components/cmm/Layouts.jsx";
 import { SectionHeading } from "../../../../components/cmm/Headings.jsx";
@@ -159,7 +160,7 @@ export default function TabGrid({
 
 
   const cheeseAxios = () => {
-    axios.get(`http://192.168.0.5:8080/api/cheeses`)
+    axios.get(`${c.url}/api/cheeses`)
       .then(res => {
         const cheeses = res.data
         alert(`Cheese Connection Success !!${res.data}`)

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import tw from "twin.macro"; //eslint-disable-line
 import axios from 'axios'
 import Customer from '../containers/cop/rev/review/Customer'
+import { context as c } from '../modules/context'
 import '../App.css';
 // import styled from "../components/common/node_modules/styled-components";
 // import { css } from "../components/common/node_modules/styled-components/macro"; //eslint-disable-line
@@ -80,7 +81,7 @@ class BoardPage extends Component {
     const { classes } = this.props;
 
     const fnqAxios = () => {
-        axios.get(`http://localhost:8080/api/fnq`)
+        axios.get(`${c.url}/api/fnq`)
             .then(res => {
                 alert(`Fnq Connection Success !!`)
             }).catch(

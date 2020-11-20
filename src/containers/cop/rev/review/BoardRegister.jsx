@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { context as c } from '../../../../modules/context'
 import '../styles/table.style.css'
 
 
@@ -15,7 +16,7 @@ export default function UserRegister () {
 
     const register = e => {
         e.preventDefault()
-        axios.post(`http:localhost:8080/user/register`,  {
+        axios.post(`${c.url}/user/register`,  {
             userid,password,name,pclass,gender,birthYear,embarked
         })
         .then(

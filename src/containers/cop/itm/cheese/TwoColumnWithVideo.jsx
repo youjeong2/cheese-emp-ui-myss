@@ -8,9 +8,9 @@ import ResponsiveVideoEmbed from "./ResponsiveVideoEmbed.jsx";
 
 import { ReactComponent as PlayIcon } from "feather-icons/dist/icons/play-circle.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/images/svg-decorator-blob-1.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/images/dot-pattern.svg";
-import DesignIllustration from "../../../../components/images/design-illustration.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/cmm/images/svg-decorator-blob-1.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/cmm/images/dot-pattern.svg";
+import DesignIllustration from "../../../../components/cmm/images/design-illustration.svg";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;

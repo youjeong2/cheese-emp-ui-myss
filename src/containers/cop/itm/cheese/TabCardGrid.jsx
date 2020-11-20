@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios'
+import { context as c } from '../../../../modules/context'
 
 import { cheeseActions } from '../../../../modules/cop/itm/cheese/cheese.action';
 import { motion } from "framer-motion";
@@ -10,9 +11,9 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "../../../../components/cmm/Layouts.jsx";
 import { SectionHeading } from "../../../../components/cmm/Headings.jsx";
 import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
-import { ReactComponent as StarIcon } from "../../../../components/images/star-icon.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/images/svg-decorator-blob-5.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/images/svg-decorator-blob-7.svg";
+import { ReactComponent as StarIcon } from "../../../../components/cmm/images/star-icon.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/cmm/images/svg-decorator-blob-5.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/cmm/images/svg-decorator-blob-7.svg";
 
 // import { dummyProducts } from './dummy.jsx';
 
@@ -412,7 +413,7 @@ export default function TabGrid({
 
 
   const cheeseAxios = () => {
-    axios.get(`http://192.168.0.5:8080/api/cheeses`)
+    axios.get(`${c.url}/api/cheeses`)
       .then(res => {
         const cheeses = res.data
         alert(`Cheese Connection Success !!${res.data}`)

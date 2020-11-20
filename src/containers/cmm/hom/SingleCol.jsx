@@ -7,8 +7,8 @@ import { SectionHeading, Subheading as SubheadingBase } from "../../../component
 import { SectionDescription } from "../../../components/cmm/Typography.jsx";
 import { Container, ContentWithPaddingXl } from "../../../components/cmm/Layouts.jsx";
 import { ReactComponent as ChevronDownIcon } from "feather-icons/dist/icons/chevron-down.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/images/svg-decorator-blob-7.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/images/svg-decorator-blob-8.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/cmm/images/svg-decorator-blob-7.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/cmm/images/svg-decorator-blob-8.svg";
 
 const Subheading = tw(SubheadingBase)`mb-4 text-center`;
 const Heading = tw(SectionHeading)`w-full`;

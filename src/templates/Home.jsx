@@ -1,7 +1,7 @@
 import React from "react";
 import tw from "twin.macro"; //eslint-disable-line
 import { Link } from 'react-router-dom'; //eslint-disable-line
-import AnimationRevealPage from "../containers/cmm/hom/AnimationRevealPage.jsx";
+import AnimationRevealPage from "../components/cmm/AnimationEffect.jsx";
 // import Header from "./common/header-practice.js"
 import Hero from "../containers/cmm/hom/BackgroundAsImageWithCenteredContent.jsx";
 import Features from "../containers/cmm/hom/VerticalWithAlternateImageAndText.jsx";

@@ -7,9 +7,9 @@ import {useHistory} from 'react-router-dom'
 import { CartContext } from '../../containers/cop/cart/contexts/CartContext';
 import { history } from '../../modules/history'
 
-import useAnimatedNavToggler from "../../containers/cmm/hom/useAnimatedNavToggler.jsx";
+import useAnimatedNavToggler from "./AnimatedNavToggler";
 
-import logo from "../images/cheese/cheese-logo.png";
+import logo from "./images/cheese/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import {CartIcon} from '../../containers/cop/cart/Icons' //eslint-disable-line

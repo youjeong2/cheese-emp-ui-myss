@@ -1,7 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
-import axios from "axios"
-import AnimationRevealPage from "../containers/cmm/hom/AnimationPage.jsx";
+import AnimationRevealPage from "../components/cmm/AnimationEffect.jsx";
 import Hero from "../containers/cop/itm/cheese/TwoColumnWithVideo.jsx";
 // import StyledHeader from '../home/BackgroundAsImageWithCenteredContent'
 
@@ -23,18 +22,6 @@ export default function Cheese () {
   // const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
   // const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
-
-  // const cheeseAxios = () => {
-  //   axios.get(`http://192.168.0.5:8080/api/cheeses`)
-  //     .then(res => {
-  //       //const temp = jsxON.parse(res.data)
-  //       alert(`Cheese Connection Success !!${res.data}`)
-
-  //     }).catch(
-  //       e => alert(`Cheese Failure`)
-  //     )
-  // }
-
   
   return (
     <div>

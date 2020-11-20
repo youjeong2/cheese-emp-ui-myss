@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { userActions } from '../../../modules/usr/user/user.action'
-
+import { context as c } from '../../../modules/context'
 import axios from 'axios'
 import {useHistory } from "react-router-dom"
 
@@ -12,7 +12,7 @@ import tw from "twin.macro";
 // import {css} from "../components/common/node_modules/styled-components/macro"; //eslint-disable-line
 import {css} from "styled-components/macro"; //eslint-disable-line
 import styled from "styled-components";
-import cheeseLogin from "../../../components/images/cheese/cheeseImg2.png";
+import cheeseLogin from "../../../components/cmm/images/cheese/cheeseImg2.png";
 // import logo from "../images/logo.svg";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
 
@@ -98,7 +98,7 @@ export default function Login (
   const login = e => {
     // 유저 로그인 한다
     e.preventDefault()
-    axios.post(`http://192.168.0.21:8080/api/login`, {"user_id":user_id, "password":password})
+    axios.post(`${c.url}/api/login`, {"user_id":user_id, "password":password})
         .then(user => {
             // alert(`Welcome ! ${res.data["fname"]}.  ${res.data["usr_id"]}'s connection is successful. ! `)
 
