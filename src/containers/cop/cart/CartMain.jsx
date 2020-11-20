@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import Layout from './Layout'
-
+import { Cart } from '../../../templates'
 import CartProducts from './CartProducts';
 import { CartContextProvider } from './contexts';
 import { formatNumber } from './Helps';
 import { Link } from 'react-router-dom';
 
-export default function Cart () {
+export default function CartMain () {
 
     const { total, cartItems, itemCount, clearCart, checkout, handleCheckout } = useContext(CartContextProvider);
     
-    return ( 
+    return (<Cart>
         <Layout title="Cart" description="This is the Cart page" >
             <div >
                 <div className="text-center mt-5">
@@ -56,6 +56,7 @@ export default function Cart () {
                 </div>
             </div>
         </Layout>
-     );
+    </Cart>
+    );
+
 }
- 

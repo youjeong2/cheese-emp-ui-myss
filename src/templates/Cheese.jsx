@@ -1,5 +1,6 @@
 import React from "react";
 import tw from "twin.macro";
+import axios from "axios"
 import AnimationRevealPage from "../containers/cmm/hom/AnimationPage.jsx";
 import Hero from "../containers/cop/itm/cheese/TwoColumnWithVideo.jsx";
 // import StyledHeader from '../home/BackgroundAsImageWithCenteredContent'
@@ -9,8 +10,6 @@ import MainFeature2 from "../containers/cop/itm/cheese/TwoColSingleFeatureWithSt
 
 import TabGrid from "../containers/cop/itm/cheese/TabCardGrid.jsx";
 import Testimonial from "../containers/cop/itm/cheese/ThreeColumnWithProfileImage.jsx";
-// import Footer from "./FiveColumnWithInputForm.jsx";
-import Footer from "../components/cmm/Footer.jsx";
 
 // import chefIconImageSrc from "../images/chef-icon.svg";
 // import celebrationIconImageSrc from "../images/celebration-icon.svg";
@@ -25,11 +24,20 @@ export default function Cheese () {
   // const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
 
+  // const cheeseAxios = () => {
+  //   axios.get(`http://192.168.0.5:8080/api/cheeses`)
+  //     .then(res => {
+  //       //const temp = jsxON.parse(res.data)
+  //       alert(`Cheese Connection Success !!${res.data}`)
+
+  //     }).catch(
+  //       e => alert(`Cheese Failure`)
+  //     )
+  // }
 
   
   return (
     <div>
-      {/* <Header /> */}
       <AnimationRevealPage>
         <Hero
           heading={<>Delicious & Affordable <HighlightedText>Cheese Near You.</HighlightedText></>}
@@ -84,8 +92,6 @@ export default function Cheese () {
           heading={<>Customers <HighlightedText>Love Us.</HighlightedText></>}
         />
       </AnimationRevealPage>
-      <Footer />
-      
     </div>
   );
 }

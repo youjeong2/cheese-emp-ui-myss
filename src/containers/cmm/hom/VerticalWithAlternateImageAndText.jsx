@@ -44,9 +44,19 @@ export default function VerticalWithAlternateImageAndText() {
   const cards = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1550699026-4114bbf4fb49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=632&q=80",
-      subtitle: "Paid",
-      title: "Curated cheese",
+        "https://img-cf.kurly.com/shop/data/goods/1515396236580l0.jpg",
+      subtitle: "후레쉬",
+      title: "부라타치즈",
+      description:
+        "부라타 치즈는 프레시 모짜렐라 치즈와 이탈리아산 크림을 섞어 만듭니다. 신선한 우유의 맛과 버터처럼 보드라운 질감을 가진 치즈입니다. 마치 버터처럼 쫄깃하기보다는 부드럽습니다. 부라타 치즈는 담백하면서도 고소하고 은은하게 단맛이 감돌기 때문에 ",
+      url: "https://timerse.com"
+    },
+
+    {
+      imageSrc:
+        "https://img-cf.kurly.com/shop/data/goods/1544576315159l0.jpg",
+      subtitle: "후레쉬",
+      title: "모짜렐라 카우",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       url: "https://timerse.com"
@@ -54,19 +64,9 @@ export default function VerticalWithAlternateImageAndText() {
 
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1543423924-b9f161af87e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
-      subtitle: "Free",
-      title: "Best groceries & recipe",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      url: "https://timerse.com"
-    },
-
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80",
-      subtitle: "Beyond cooking & foods",
-      title: "Lollapalooza, Manhattan",
+        "https://img-cf.kurly.com/shop/data/goods/1566382934703l0.jpg",
+      subtitle: "후레쉬",
+      title: "덴마크 브리 치즈",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       url: "https://timerse.com"
@@ -77,9 +77,12 @@ export default function VerticalWithAlternateImageAndText() {
     <Container>
       <SingleColumn>
         <HeadingInfoContainer>
-          <HeadingTitle>Find Your Cheese !</HeadingTitle>
+          {/* <HeadingTitle>Find Your Cheese !</HeadingTitle> */}
+          <HeadingTitle>이런 치즈는 어떠신가요?</HeadingTitle>
           <HeadingDescription>
-            Here are some of the most popular events in New York City curated by professionals.
+            처음 방문하셨나요?<br/>
+            먼저 챗봇에서 개인 취향 분석을 해주세요!<br/>
+            아래의 치즈들은 가장 많이 구매한 치즈들입니다
           </HeadingDescription>
         </HeadingInfoContainer>
 

@@ -68,14 +68,15 @@ function register(user) {
     return dispatch => {
         dispatch(request(user));
         //alert(user.data)
-        alert('user action: ' + JSON.stringify(user))
+        // alert('user action: ' + JSON.stringify(user))
         userService.register(user)
             .then(
                 user => { 
-                    alert(JSON.stringify(user))
+                    // alert(JSON.stringify(user))
                     dispatch(success());
-                    
                     dispatch(alertActions.success('Registration successful'));
+                    history.push('/login')
+                    window.location.reload('/login')
                 },
                 error => {
                     dispatch(failure(error.toString()));

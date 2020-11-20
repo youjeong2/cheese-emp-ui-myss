@@ -104,12 +104,13 @@ export default function Login (
 
             sessionStorage.setItem("sessionUser", user.data['user_id'])
             
-            history.push("/user-detail")
+            // history.push("/user-detail")
+            history.push("/user-profile")
             window.location.reload()
 
         })
         .catch(error => {
-            alert("Please check your ID or password.")
+            alert("아이디 또는 비밀번호를 다시 확인해주세요.")
             window.location.reload()
         })
   }

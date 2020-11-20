@@ -45,7 +45,7 @@ const Footer =  () => {
             <LogoText>Pic 2 Cheese Inc.</LogoText>
           </LogoContainer>
           <CompanyDescription>
-            Treact is an Internet Technology company providing design resources such as website templates and themes.
+            당신에게 맞는 치즈를 추천해드립니다.
           </CompanyDescription>
           <SocialLinksContainer>
             <SocialLink href="https://facebook.com">
@@ -74,18 +74,20 @@ const Footer =  () => {
         </Column>
         <Column>
         <LinkList>
-                <p>Pic2 Cheese(주)</p>
-        <p>대표이사 : 옥수민,김유정,최민근,김병준</p>
-        <p>서울시 송파구 송파대로 570</p>
+        <br/><br/>
+                <p>Pic2 Cheese</p>
+        <p>팀원 : 옥수민,김유정,최민근</p>
+        {/* <p>서울시 송파구 송파대로 570</p>
         <p>사업자 등록번호 : 120-88-00767</p>
-        통신판매업신고 : 2017-서울송파-0680
+        통신판매업신고 : 2017-서울송파-0680 */}
         </LinkList>
         </Column>
         <Column>
         <LinkList>
-        <p>365고객센터 | 전자금융거래분쟁처리담당</p>
+        <br/><br/>
+        {/* <p>365고객센터 | 전자금융거래분쟁처리담당</p>
         <p>1577-7011</p>
-        <p>서울시 송파구 송파대로 570</p>
+        <p>서울시 송파구 송파대로 570</p> */}
         <p>email : help@pic2cheese.com</p>
         </LinkList>
         </Column>

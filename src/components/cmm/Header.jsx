@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {useHistory} from 'react-router-dom'
-import { CartContext } from '../../containers/cop/cart_1/contexts/CartContext';
+import { CartContext } from '../../containers/cop/cart/contexts/CartContext';
 import { history } from '../../modules/history'
 
 import useAnimatedNavToggler from "../../containers/cmm/hom/useAnimatedNavToggler.jsx";
@@ -12,7 +12,7 @@ import useAnimatedNavToggler from "../../containers/cmm/hom/useAnimatedNavToggle
 import logo from "../images/cheese/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
-import {CartIcon} from '../../containers/cop/cart_1/Icons' //eslint-disable-line
+import {CartIcon} from '../../containers/cop/cart/Icons' //eslint-disable-line
 
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
@@ -127,6 +127,7 @@ const selectedStyle = {
 const Header = (props, { roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg" }) => {
   
   const history = useHistory()
+  
   const logout = e => {
     alert('다음 치즈도 pic 2 cheese와 함께~')
     e.preventDefault()
@@ -215,12 +216,13 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
               {({ TransitionProps, placement }) => (
                 <Grow
                   {...TransitionProps}
-                  style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                  style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center top' }}
                 >
                   <Paper>
                     <ClickAwayListener onClickAway={handleClose}>
                       <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                        <NavLink href="/user-detail" onClick={handleClose} styled="mb-10">나의 정보</NavLink><br/>
+                        <NavLink href="/user-detail" onClick={handleClose}>나의 정보</NavLink><br/><br/>
+                        <NavLink href="/user-profile" onClick={handleClose} >나의 프로필</NavLink><br/><br/>
                         <NavLink href="/cart" onClick={handleClose}>장바구니</NavLink>
                         {/* <MenuItem onClick={handleClose}>Logout</MenuItem> */}
                       </MenuList>

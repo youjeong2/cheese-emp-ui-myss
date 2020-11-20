@@ -3,14 +3,14 @@ import { context as c } from '../../../context'
 
 
 export const reviewService = {
-    getAll
+    getReviews
 };
 
-async function getAll() {
+async function getReviews(reviews) {
     const req = {
         method: c.get,
-        url: 'localhost:8080/api/cheese',
-        data: {cheese}
+        url: `http://localhost:8080/api/reviews/${reviews}`,
+        // data: {cheese}
     }
     const resp = await axios(req)
 

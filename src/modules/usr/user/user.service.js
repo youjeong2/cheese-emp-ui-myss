@@ -38,7 +38,7 @@ export const userService = {
     }
     const resp = await axios(req)
     const data = resp.data
-    alert(`Welcome ! ${data.name}'s connection is successful. ! `)
+    alert(`${data.name}'님, 환영합니다~! `)
     return data
   }
   
@@ -51,7 +51,7 @@ export const userService = {
     const req = {
         method: c.post,
         url: `${c.url}/api/signup`,
-        data: {id:user_id, password:password, name:name, phone:phone, email:email },
+        data: {user_id:user_id, password:password, name:name, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -64,7 +64,7 @@ export const userService = {
     const req = {
         method: c.post,
         url: `${c.url}/api/user`,
-        data: {id:user_id, password:password, name:name, phone:phone, email:email },
+        data: {user_id:user_id, password:password, name:name, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -77,15 +77,15 @@ export const userService = {
     alert('user service: ' + JSON.stringify(user))
     const req = {
         method: c.post,
-        url: 'http://192.168.0.21:8080/api/signup',
+        url: `${c.url}/api/signup`,
         data: user,
         auth: c.auth
     }
-    alert('user service req: ' + JSON.stringify(req))
+    // alert('user service req: ' + JSON.stringify(req))
     const resp = await axios(req)
-    alert('user service resp: ' + resp)
+    // alert('user service resp: ' + resp)
     const data = resp.data
-    alert(`Welcome ! ${data.name}'s connection is successful. ! `)
+    alert(` ${data.name}'님, 환영합니다. 로그인 후 이용해주세요!`)
     return data
   }
   
@@ -93,7 +93,7 @@ export const userService = {
     const req = {
         method: c.post,
         url: `${c.url}/api/signup`,
-        data: {id:user_id, password:password, name:name, gender: gender, age: age, phone:phone, email:email },
+        data: {user_id:user_id, password:password, name:name, gender: gender, age: age, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -103,11 +103,11 @@ export const userService = {
   }
   
   // prefixed function name with underscore because delete is a reserved word in javascript
-  async function _delete(user_id, password, name, phone, email) {
+  async function _delete(user_id, password, name, gender, age, phone, email) {
     const req = {
         method: c.post,
         url: `${c.url}/api/user`,
-        data: {id:user_id, password:password, name:name, phone:phone, email:email },
+        data: {user_id:user_id, password:password, name:name, gender: gender, age: age, phone:phone, email:email },
         auth: c.auth
     }
     const resp = await axios(req)
@@ -124,7 +124,7 @@ export const userService = {
       const req = {
           method: c.post,
           url: `${c.url}/api/access`,
-          data: {id:user_id, password:password, name:name, phone:phone, email:email },
+          data: {user_id:user_id, password:password, name:name, phone:phone, email:email },
           auth: c.auth
       }
       const resp = await axios(req)

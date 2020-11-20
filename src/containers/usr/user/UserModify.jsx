@@ -59,9 +59,11 @@ const fetchOneUser = () => {
   로그인 된 유저 정보를 불러온다. 
   */
   const user_id = sessionStorage.getItem('sessionUser')
-  axios.get(`http://192.168.0.0.21:8080/api/user/${user_id}`)
+  axios.get(`http://192.168.0.21:8080/api/user/${user_id}`)
     .then(res=>{
-      // setPassword(res.data['password'])
+      // alert('user_profile'+ JSON.stringify(res))
+      // alert('user_profile'+ JSON.stringify(res.data))
+      setPassword(res.data['password'])
       setName(res.data['name'])
       setGender(res.data['gender'])
       setAge(res.data['age'])
@@ -71,6 +73,7 @@ const fetchOneUser = () => {
     })
     .catch( e => {alert(`Search failed`) 
     }
+
   )
 }
 
@@ -100,8 +103,8 @@ const fetchOneUser = () => {
     const user_id = sessionStorage.getItem('sessionUser')
     try {
       const req = {
-        method: c.post,
-        url: `${c.url}/api/delete/${user_id}`,
+        method: c.delete,
+        url: `${c.url}/api/user/${user_id}`,
         auth: c.auth
       }
       axios(req) 
@@ -113,14 +116,21 @@ const fetchOneUser = () => {
     }
   })
   
+  const show = e => {
+    alert('data: ' + JSON.stringify(data))
+    alert('data: ' + JSON.stringify(data[0].name))
+    // alert('data: ' + JSON.stringify(data.name))
+  }
+
   return (<>
     <Container component="main" >
 
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          
-        </Avatar>
+        {/* <button onClick={show}>show</button> */}
+        {/* <Avatar className={classes.avatar}>
+
+        </Avatar> */}
         <Typography component="h1" variant="h5">
           회원정보
         </Typography>
@@ -135,12 +145,12 @@ const fetchOneUser = () => {
                 required
                 fullWidth
                 id="Name"
-                label={(data['name'])}
+                label= {(data['name'])}
                 name="Name"
                 autoComplete="name"
                 onChange={e => {setName(`${e.target.value}`)}}
                 defaultValue = {(data['name'])}
-                disabled
+                // disabled
               />
             </Grid>
             <Grid item xs={2}> 
@@ -148,30 +158,6 @@ const fetchOneUser = () => {
                 Edit
               </Button>
             </Grid>
-              
-            {/* <Grid item xs={5}>
-              <h1>First Name</h1>
-            </Grid>
-            <Grid item xs={5}>
-              <TextField
-                autoComplete="fname"
-                name="firstName"
-                variant="outlined"
-                required
-                fullWidth
-                id="firstName"
-                label= {data['fname']}
-                autoFocus
-                Defaultvalue = {(data['fname'])}
-                onChange={e => {setFname(`${e.target.value}`)}}
-                disabled
-              />
-            </Grid>
-            <Grid item xs={2}> 
-              <Button variant="contained" color="primary" onClick = {e => edit("firstName")}>
-                Edit
-              </Button>
-            </Grid> */}
             <Grid item xs={12} sm ={5}>
               <h1>Email/ID</h1>
             </Grid>
@@ -186,7 +172,7 @@ const fetchOneUser = () => {
                 autoComplete="email"
                 // onChange={e => {setEmail(`${e.target.value}`)}}
                 defaultValue = {(data['user_id'])}
-                disabled
+                // disabled
               />
             </Grid>
             <Grid item xs={2}> 
@@ -210,7 +196,7 @@ const fetchOneUser = () => {
                 autoComplete="password"
                 onChange={e => {setPassword(`${e.target.value}`)}}
                 defaultValue = {data['password']}
-                disabled
+                // disabled
               />
             </Grid>
             <Grid item xs={2}> 
@@ -235,7 +221,7 @@ const fetchOneUser = () => {
                 autoComplete="current-gender"
                 onChange={e => {setGender(`${e.target.value}`)}}
                 DefaultValue = {(data['gender'])}
-                disabled
+                // disabled
               />
             </Grid>
             <Grid item xs={2}> 
@@ -259,7 +245,7 @@ const fetchOneUser = () => {
                 autoComplete="current-age"
                 DefaultValue = {(data['age'])}
                 onChange={e => {setAge(`${e.target.value}`)}}
-                disabled
+                // disabled
               />
             </Grid>
             <Grid item xs={2}> 
@@ -270,7 +256,7 @@ const fetchOneUser = () => {
           </Grid>
           <Button
             type="submit"
-            fullWidth
+            right-position
             variant="contained"
             color="primary"
             className={classes.submit}
@@ -280,7 +266,6 @@ const fetchOneUser = () => {
           </Button>
           <Button
             type="submit"
-            fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}

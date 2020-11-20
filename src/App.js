@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { BrowserRouter as Router, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom'
 // import { Nav } from './components'
-import { Header } from './components/cmm'
+import { Header, Footer } from './components/cmm'
 import {Home, User, Cheese, Survey, Review} from './templates'
-import {Login, Signup, UserDetail, UserProfile } from './containers/usr/user'
-// import { Cart } from "./containers/cop/cart_1";
-// import { Cart } from "./templates/Cart.tsx";
+import {Login, Signup, UserDetail, UserInfo } from './containers/usr/user'
+// import { Cart } from "./containers/cop/cart";
+// import { Cart } from "./templates/Cart";
 
 // import { HelmetProvider } from 'react-helmet-async';
 // import ProductsContextProvider from './containers/cop/cart_1/contexts/ProductsContextProvider';
@@ -24,7 +24,7 @@ export default function App(){
                     <Route path='/login' component={Login}></Route>
                     <Route path='/signup' component={Signup}></Route>
                     <Route path='/user-detail' component={ UserDetail }/>
-                    <Route path='/user-profile' component={UserProfile}/>
+                    <Route path='/user-profile' component={UserInfo}/>
                     {/* <Route path='/modifying-user-info' component={ UserModify }/>
                     <Route path='/membership-withdrawal' component={ UserWithdrawal }/>
                     <Route path='/userlist' component={ UserList }/> */}
@@ -45,6 +45,7 @@ export default function App(){
                     {/* <Route path="/cart" component={Cart} /> */}
 
                  </Switch>
+                 <Footer />
         </BrowserRouter>
 
 </>)}

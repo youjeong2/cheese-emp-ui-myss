@@ -8,8 +8,6 @@ import Features from "../containers/cmm/hom/VerticalWithAlternateImageAndText.js
 import Blog from "../containers/cmm/hom/Blogs.jsx";
 import Testimonial from "../containers/cmm/hom/TwoColumnWithImage.jsx";
 import ContactUsForm from "../containers/cmm/hom/SimpleContactUs.jsx";
-import Footer from "../components/cmm/Footer.jsx";
-import Header from "../components/cmm/Header.jsx";
 import { ChatbotContainer as Chatbot } from "../containers/cop/itm/chatbot"
 import FAQ from "../containers/cmm/hom/SingleCol.jsx";
 
@@ -66,7 +64,6 @@ export default function Home () {
         ]}
       />
     <ContactUsForm />
-    <Footer />
   </AnimationRevealPage>      
 </div>)
 }

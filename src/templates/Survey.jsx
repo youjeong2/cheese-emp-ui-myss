@@ -8,18 +8,14 @@ import Header from "../components/cmm/Header.jsx";
 import Hero from "../containers/cop/suv/survey/TwoColumnWithPrimaryBackground.jsx";
 import Pricing from "../containers/cop/suv/survey/ThreePlansWithHalfPrimaryBackground.jsx";
 import FAQ from "../containers/cop/suv/survey/TwoColumnPrimaryBackground.jsx";
-import Footer from "../components/cmm/Footer.jsx";
 
-// const Header = tw(HeaderBase)`max-w-none`;
 
 export default function Survey () {
   return (<>
-    {/* <Header /> */}
     <Hero />
     <AnimationRevealPage>
       <Pricing />
       <FAQ />
     </AnimationRevealPage>
-    <Footer />
   </>)
 }

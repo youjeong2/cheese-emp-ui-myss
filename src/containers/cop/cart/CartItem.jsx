@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Cart from './Cart'
+import Cart from './CartMain'
 import { PlusCircleIcon, MinusCircleIcon, TrashIcon } from './Icons'
 import { CartContextProvider } from './contexts';
 

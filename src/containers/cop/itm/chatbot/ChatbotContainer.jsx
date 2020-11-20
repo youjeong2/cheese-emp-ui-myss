@@ -96,11 +96,6 @@ export default function ChatBotContainer(){
                     component: <ItemSearch2/>,
                     trigger: '1',
                 },
-                {
-                    id: 'endChat',
-                    message: 'Bye!',
-                    end: true,
-                  },
             ]}
         />
     </ThemeProvider>    
