@@ -20,8 +20,8 @@ export default function Home () {
   return( <div className="home">
   {/* <Header /> */}
   <AnimationRevealPage>
-    <Hero />
     <Chatbot/>
+    <Hero />
     <Features />
     <Blog />
     <Testimonial />

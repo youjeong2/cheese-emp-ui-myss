@@ -94,13 +94,20 @@ const selectedStyle = {
 }
 
 
-
+// const constructor = (props) => {
+//   super(props);
+//   this.state = {
+//     showCart: false,
+//     cart: this.props.cartItems,
+//     mobileSearch: false
+//   }
+// }
 
 const Header = (props, { roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg" }) => {
   
   const history = useHistory()
   const logout = e => {
-    alert('logout')
+    alert('다음 치즈도 pic 2 cheese와 함께~')
     e.preventDefault()
     sessionStorage.removeItem("sessionUser")
     history.push('/')
@@ -138,19 +145,7 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
         </NavToggle>
       </MobileNavLinksContainer>
 
-
       <NavLinks key={1}>
-          <NavLink href="/" >홈</NavLink>
-          <NavLink href="/cheese">치즈</NavLink>
-          <NavLink href="/review">Review</NavLink>
-          <NavLink href="/survey">추천</NavLink>
-          <NavLink href="/cart">cart</NavLink>
-          <NavLink href="/login" tw="lg:ml-12!">Sign in</NavLink>
-          <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
-      </NavLinks> 
-
-
-      {/* <NavLinks key={1}>
         { props.isAuth !== null
         ? <ul>
           <NavLink href="/" >홈</NavLink>
@@ -158,22 +153,24 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
           <NavLink href="/review">Review</NavLink>
           <NavLink href="/survey">추천</NavLink>
           {/* <NavLink href="/cart"><CartIcon/>Cart ({itemCount})</NavLink> */}
-          {/*<NavLink href="/cart">Cart</NavLink>
-          <NavLink onClick={logout} tw="lg:ml-12!" style={{textDecoration: 'underline'}}>Logout</NavLink>
+          <NavLink href="/cart">Cart</NavLink>
+          <NavLink href="/user-detail" tw="lg:ml-20!">My Page</NavLink>
+          <NavLink onClick={logout} tw="lg:ml-4!" style={{textDecoration: 'underline'}}>Logout</NavLink>
         </ul>:
         <ul>
           <NavLink href="/" >홈</NavLink>
           <NavLink href="/cheese">치즈</NavLink>
           <NavLink href="/review">Review</NavLink>
           <NavLink href="/survey">추천</NavLink>
-          <NavLink href="/login" tw="lg:ml-10!">Sign in</NavLink>
+          <NavLink href="/login" tw="lg:ml-20!">Sign in</NavLink>
           <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
         </ul>
         }
-      </NavLinks> */}
+      </NavLinks>
     </HeaderBlock>
   </>);
 };
+
 export default Header
 /* The below code is for generating dynamic break points for navbar.
  * Using this you can specify if you want to switch

@@ -1,8 +1,9 @@
 import React, {useCallback, useState} from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { userActions } from '../../../modules/usr/user/user.action'
-import {User} from '../../../templates'
 
+import axios from 'axios'
+import {useHistory } from "react-router-dom"
 
 // import AnimationRevealPage from "../home/AnimationRevealPage.js";
 import { Container as ContainerBase } from "../../../components/cmm/Layouts";
@@ -11,14 +12,9 @@ import tw from "twin.macro";
 // import {css} from "../components/common/node_modules/styled-components/macro"; //eslint-disable-line
 import {css} from "styled-components/macro"; //eslint-disable-line
 import styled from "styled-components";
-import axios from "axios"
 import cheeseLogin from "../../../components/images/cheese/cheeseImg2.png";
 // import logo from "../images/logo.svg";
-import googleIconImageSrc from "../../../components/images/google-icon.png";
-import twitterIconImageSrc from "../../../components/images/twitter-icon.png";
 import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg";
-import Header from "../../../components/cmm/Header.jsx";
-
 
 
 
@@ -65,35 +61,15 @@ const CheeseLoginImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-sm bg-contain bg-center bg-no-repeat`}
 `;
 
-const userAxios = () => {
-  axios.get(`http://localhost:8080/api/user`)
-    .then(res => {
-      alert(`Sign In Connection Success !!`)
-    }).catch(
-      e => alert(`Sign In Failure`)
-    )
-}
 const logoLinkUrl = "/",
       cheeseLoginImageSrc  = cheeseLogin,
       headingText = "Sign In for Pic 2 Cheese",  
       submitButtonText = "Sign In",
       SubmitButtonIcon = LoginIcon,
       forgotPasswordUrl = "#",
-      signupUrl = "/signup",
-      socialButtons = [
-        {
-          iconImageSrc: googleIconImageSrc,
-          text: "Sign In With Google",
-          url: "https://google.com"
-        },
-        {
-          iconImageSrc: twitterIconImageSrc,
-          text: "Sign In With Twitter",
-          url: "https://twitter.com"
-        }
-      ]
+      signupUrl = "/signup"
 
-export default function Logiin (
+export default function Login (
   // logoLinkUrl = "/",
   // illustrationImageSrc = illustration,
   // headingText = "Sign In To Treact",
@@ -117,8 +93,27 @@ export default function Logiin (
   const [user_id, setUserId] = useState('')
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
-  
-    return (<User>
+
+  const history = useHistory()
+  const login = e => {
+    // 유저 로그인 한다
+    e.preventDefault()
+    axios.post(`http://localhost:8080/api/login`, {"user_id":user_id, "password":password})
+        .then(user => {
+            // alert(`Welcome ! ${res.data["fname"]}.  ${res.data["usr_id"]}'s connection is successful. ! `)
+
+            sessionStorage.setItem("sessionUser", user.data['user_id'])
+            
+            history.push("/user-detail")
+            window.location.reload()
+
+        })
+        .catch(error => {
+            alert("Please check your ID or password.")
+            window.location.reload()
+        })
+  }
+    return (
       <div>
         {/* <Header /> */}
         {/* <AnimationRevealPage> */}
@@ -129,19 +124,8 @@ export default function Logiin (
                   <LogoImage src={logo} />
                 </LogoLink> */}
                 <MainContent>
-                  <button onClick={userAxios}>SignIn axios</button>
                   <Heading>{headingText}</Heading>
                   <FormContainer>
-                    <SocialButtonsContainer>
-                      {socialButtons.map((socialButton, index) => (
-                        <SocialButton key={index} href={socialButton.url}>
-                          <span className="iconContainer">
-                            <img src={socialButton.iconImageSrc} className="icon" alt=""/>
-                          </span>
-                          <span className="text">{socialButton.text}</span>
-                        </SocialButton>
-                      ))}
-                    </SocialButtonsContainer>
                     <DividerTextContainer>
                       <DividerText>Sign in with your Id</DividerText>
                     </DividerTextContainer>
@@ -150,12 +134,14 @@ export default function Logiin (
                       <Input type="text" placeholder="ID" onChange={e => setUserId(`${e.target.value}`)}/>
                       <Input type="password" placeholder="Password"  onChange={e => setPassword(`${e.target.value}`)}/>
                       
-                      <SubmitButton type="submit" onClick= {
-                        
-                        
+                      {/* <SubmitButton type="submit" onClick= {
                         e => dispatch(userActions.login(user_id,password))
-                        
                         }>
+                        <SubmitButtonIcon className="icon" />
+                        <span className="text">{submitButtonText}</span>
+                      </SubmitButton> */}
+
+                      <SubmitButton type="submit" onClick= {login}>
                         <SubmitButtonIcon className="icon" />
                         <span className="text">{submitButtonText}</span>
                       </SubmitButton>
@@ -182,5 +168,5 @@ export default function Logiin (
           </Container>
         {/* </AnimationRevealPage> */}
       </div>
-    </User>);
+    );
   }

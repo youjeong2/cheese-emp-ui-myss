@@ -1,9 +1,11 @@
 import { createAction, handleActions } from 'redux-actions';
 import { userService } from './user.service'
 import { alertActions } from '../../alert.action'
-// Action Types
+import { useHistory } from 'react-router-dom'
 import history from '../../history'
 
+
+// Action Types
 export const userConstants = {
   REGISTER_REQUEST: 'USERS_REGISTER_REQUEST',
   REGISTER_SUCCESS: 'USERS_REGISTER_SUCCESS',
@@ -23,6 +25,7 @@ export const userConstants = {
   DELETE_SUCCESS: 'USERS_DELETE_SUCCESS',
   DELETE_FAILURE: 'USERS_DELETE_FAILURE'    
 }
+
 let sessionUser = JSON.parse(sessionStorage.getItem("user"));
 
 export const loginSuccess = createAction(userConstants.LOGIN_SUCCESS);
@@ -33,9 +36,6 @@ const initialState = {
     user: {}, 
     loggingIn: false
 }
-
-
-
 // Reducer
 const userReducer = handleActions(
     { [userConstants.LOGIN_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
@@ -99,8 +99,10 @@ function login(user_id, password){
                 user => { 
                     console.log(`이름 ========== : ${user.name}`)
                     alert(`이름 ======== : ${user.name}`)
+                    sessionStorage.setItem("sessionUser", user.data['user_id'])
                     dispatch(success(user))
                     history.push('/user-detail')
+                    window.location.reload()
              },
             error => {
                 dispatch(failure(error.toString()));
@@ -111,8 +113,8 @@ function login(user_id, password){
 
   function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
   function success(user) { 
-    console.log(`#2 Login User Name is ${user.name}`) 
-      return { type: userConstants.LOGIN_SUCCESS, user } 
+    console.log(`#2 Login User Name is ${user.name}`)
+    return { type: userConstants.LOGIN_SUCCESS, user } 
   }
   function failure(error) { return { type: userConstants.LOGIN_FAILURE, error } }
 }

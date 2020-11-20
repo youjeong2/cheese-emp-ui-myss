@@ -1,6 +1,5 @@
 import React from "react";
 import tw from "twin.macro";
-import axios from "axios"
 import AnimationRevealPage from "../containers/cmm/hom/AnimationPage.jsx";
 import Hero from "../containers/cop/itm/cheese/TwoColumnWithVideo.jsx";
 // import StyledHeader from '../home/BackgroundAsImageWithCenteredContent'
@@ -17,7 +16,6 @@ import Footer from "../components/cmm/Footer.jsx";
 // import celebrationIconImageSrc from "../images/celebration-icon.svg";
 // import shopIconImageSrc from "../images/shop-icon.svg";
 
-import Header from "../components/cmm/Header.jsx";
 import Blog from "../containers/cmm/hom/Blogs.jsx";
 
 export default function Cheese () {
@@ -27,16 +25,6 @@ export default function Cheese () {
   // const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
 
-  const cheeseAxios = () => {
-    axios.get(`http://192.168.0.5:8080/api/cheeses`)
-      .then(res => {
-        //const temp = jsxON.parse(res.data)
-        alert(`Cheese Connection Success !!${res.data}`)
-
-      }).catch(
-        e => alert(`Cheese Failure`)
-      )
-  }
 
   
   return (
