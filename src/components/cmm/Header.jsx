@@ -23,6 +23,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import { makeStyles } from '@material-ui/core/styles';
 
+import Tooltip from '@material-ui/core/Tooltip'
 
 import { FaRegUser } from "react-icons/fa"  //eslint-disable-line
 
@@ -236,12 +237,34 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
         </ul>:
 
         <ul>
-          <NavLink href="/" >홈</NavLink>
+          {/* <NavLink href="/" >홈</NavLink>
           <NavLink href="/cheese">치즈</NavLink>
           <NavLink href="/review">Review</NavLink>
           <NavLink href="/survey">추천</NavLink>
+          <NavLink href="/cart" onClick={handleClose}>장바구니</NavLink>
           <NavLink href="/login" tw="lg:ml-20!">Sign in</NavLink>
+          <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink> */}
+          <Tooltip title="우리 사이트 소개 & 치즈 소개">
+          <NavLink href="/" >홈</NavLink>
+          </Tooltip>
+          <Tooltip title="치즈 상품 리스트 & 장바구니와 연결">
+          <NavLink href="/cheese">치즈</NavLink>
+          </Tooltip>
+          <Tooltip title="구매 고객 리뷰 리스트 CRUD">
+          <NavLink href="/review">Review</NavLink>
+          </Tooltip>
+          <Tooltip title="챗봇을 통해 추천 받은 치즈 카테고리와 함께 치즈 상품 2~3개 추천 리스트 보여주는 기능(모델링 적용)">
+            <NavLink href="/survey">추천</NavLink>
+          </Tooltip>
+          <Tooltip title="구독 상품과 치즈 상품을 구매할 수 있는 장바구니 기능">
+            <NavLink href="/cart" onClick={handleClose}>장바구니</NavLink>
+          </Tooltip>
+          <Tooltip title="로그인 기능">
+          <NavLink href="/login" tw="lg:ml-20!">Sign in</NavLink>
+          </Tooltip>
+          <Tooltip title="회원가입 기능">
           <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
+          </Tooltip>
         </ul>
         }
       </NavLinks>
