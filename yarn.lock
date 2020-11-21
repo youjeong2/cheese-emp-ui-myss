@@ -4040,6 +4040,11 @@ core-js@^3.5.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
   integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
 
+core-js@^3.6.5:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.7.0.tgz#b0a761a02488577afbf97179e4681bf49568520f"
+  integrity sha512-NwS7fI5M5B85EwpWuIwJN4i/fbisQUwLwiSNUWeXlkAZ0sbBjLEvLvFLf1uzAUV66PcEPt4xCGCmOZSxVf3xzA==
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -11558,6 +11563,13 @@ react-feather@^2.0.8:
   integrity sha512-J0dCEOvOxpovHeOVj3+8mAhN3/UERTfX6rSxnV6x4E+0s+STY536jhSjRfpSvTQA0SSFjYr4KrpPfdsLmK+zZg==
   dependencies:
     prop-types "^15.7.2"
+
+react-full-page@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/react-full-page/-/react-full-page-0.1.11.tgz#1b74fc4d746fb9de4b1a2b026084a82a1858dbd2"
+  integrity sha512-8pSXt2Ik799DWtXqS4746T+OnHEFadOF5gNQ10as6CIwgpGwaMAV0NJ7ItXUfEYAX1E/ky0A/mjeWfvjjldfHQ==
+  dependencies:
+    core-js "^3.6.5"
 
 react-helmet-async@^1.0.7:
   version "1.0.7"

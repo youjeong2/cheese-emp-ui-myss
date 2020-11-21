@@ -23,6 +23,7 @@
     "react-dev-utils": "^11.0.0",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
+    "react-full-page": "^0.1.11",
     "react-helmet-async": "^1.0.7",
     "react-icons": "^3.11.0",
     "react-modal": "^3.11.2",
