@@ -243,10 +243,10 @@ const fetchOneUser = () => {
                 required
                 fullWidth
                 id="phone"
-                label="Phone"
+                label={(data['phone'])}
                 name="phone"
                 autoComplete="phone"
-                // onChange={e => {setPhone(`${e.target.value}`)}}
+                onChange={e => {setPhone(`${e.target.value}`)}}
                 // defaultValue = {data['phone']}
                 disabled
               />

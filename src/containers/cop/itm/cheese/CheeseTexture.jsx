@@ -15,9 +15,6 @@ import { ReactComponent as StarIcon } from "../../../../components/cmm/images/st
 import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/cmm/images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/cmm/images/svg-decorator-blob-7.svg";
 
-// import { dummyProducts } from './dummy.jsx';
-
-
 
 const HeaderRow = tw.div`flex justify-between items-center flex-col xl:flex-row`;
 const Header = tw(SectionHeading)``;
@@ -67,7 +64,7 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-80 w-80 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
-export default function TabGrid({
+export default function CheeseTexture({
   heading = "Checkout the Menu",
   tabs = {
     후레쉬치즈: [
@@ -491,7 +488,6 @@ export default function TabGrid({
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      {/* <button onClick={cheeseActions.getAll}>Cheese axios</button> */}
                       <CardButton>Buy Now</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>

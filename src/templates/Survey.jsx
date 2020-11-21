@@ -4,17 +4,17 @@ import "tailwindcss/dist/base.css";
 import axios from "axios" //eslint-disable-line
 import "../components/cmm/styles/globalStyles.css";
 import AnimationRevealPage from "../components/cmm/AnimationEffect.jsx";
-import Hero from "../containers/cop/suv/survey/TwoColumnWithPrimaryBackground.jsx";
-import Pricing from "../containers/cop/suv/survey/ThreePlansWithHalfPrimaryBackground.jsx";
-import FAQ from "../containers/cop/suv/survey/TwoColumnPrimaryBackground.jsx";
+import SurveyTop from "../modules/cop/suv/survey/SurveyTop.jsx";
+import SurveyRecommend from "../modules/cop/suv/survey/SurveyRecommend.jsx";
+import SurveyResult from "../modules/cop/suv/survey/SurveyResult.jsx";
 
 
 export default function Survey () {
   return (<>
-    <Hero />
+    <SurveyTop />
     <AnimationRevealPage>
-      <Pricing />
-      <FAQ />
+      <SurveyRecommend />
+      <SurveyResult />
     </AnimationRevealPage>
   </>)
 }

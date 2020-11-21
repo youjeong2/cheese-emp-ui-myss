@@ -105,7 +105,7 @@ export default function Login (
             sessionStorage.setItem("sessionUser", user.data['user_id'])
             
             // history.push("/user-detail")
-            history.push("/user-profile")
+            history.push("/user-info")
             window.location.reload()
 
         })

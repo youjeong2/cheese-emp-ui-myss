@@ -8,36 +8,28 @@ export const cheeseConstants = {
     CHEESELIST_SUCCEESS: 'CHEESELIST_GET_SUCCESS',
     CHEESELIST_FAILURE: 'CHEESELIST_GET_FAILURE'
 }
-
 export const getCheeseSuccess = createAction(cheeseConstants.CHEESELIST_SUCCEESS);
-
 // Initial State
 const initialState = {
-    cheeses: {}
+    cheeses: []
 }
-
 // Reducer
 const cheeseReducer = handleActions(
-    { [cheeseConstants.CHEESELIST_SUCCEESS]: (state, action) => ({ cheeses: action.cheeses}) },
+    { [cheeseConstants.CHEESELIST_SUCCEESS]: (state, action) => ({ cheeses: action.cheeses})
+},
     initialState
 )
-
 // Action
 export const cheeseActions =  {
-    getAll
-
+    getCheese
 }
-
 ////////////////////// GET /////////////////////
-
-function getAll() {
+function getCheese() {
     return dispatch => {
         dispatch(request());
-
-        cheeseService.getAll()
+        cheeseService.getCheese()
         .then(
             cheeses => {
-                console.log(cheeses)
                 dispatch(success(cheeses));
                 history.push('api/cheeses')
                 dispatch(alertActions.success('Cheese Registeraion Succeessful'));
@@ -45,14 +37,11 @@ function getAll() {
             error => {
                 dispatch(failure(error.toString()));
                 dispatch(alertActions.error(error.toString()));
-
             }
         );
     };
-    
     function request() { return { type: cheeseConstants.CHEESELIST_REQUEST } }
     function success(cheeses) { return { type: cheeseConstants.CHEESELIST_SUCCEESS, cheeses } }
     function failure(error) { return { type: cheeseConstants.CHEESELIST_FAILURE, error} }
 }
-
 export default cheeseReducer

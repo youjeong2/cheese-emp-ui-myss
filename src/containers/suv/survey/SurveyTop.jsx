@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios"
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { context as c } from '../../../../modules/context'
+import { context as c } from '../../../context'
 // import HeaderBase, {
 //   LogoLink as LogoLinkBase,
 //   // NavLink as NavLinkBase,
@@ -40,27 +40,10 @@ export default function TwoColumnWithPrimaryBackground ({
   primaryButtonUrl = "#",
   imageSrc = serverIllustrationImageSrc,
 }) {
-  // const logoLink = (
-  //   <LogoLink href="/">
-  //     <img src={logoImageSrc} alt="Logo" />
-  //     메인페이지
-  //   </LogoLink>
-  // );
-
-  const recommendAxios = () => {
-    axios.get(`${c.url}/api/recommend`)
-      .then(res => {
-        alert(`Recommend Connection Success !!`)
-      }).catch(
-        e => alert(`Recommend Failure`)
-      )
-  }
 
   return (
     <PrimaryBackgroundContainer>
       <Content2Xl>
-        {/* <Header logoLink={logoLink} links={navLinks} /> */}
-        <button onClick={recommendAxios}>Recommend axios</button>
         <Container>
           <ContentWithVerticalPadding>
             <Row>

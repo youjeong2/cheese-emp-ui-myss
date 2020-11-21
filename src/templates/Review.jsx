@@ -4,12 +4,9 @@ import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { context as c } from '../modules/context'
-import { reviewActions } from '../modules/cop/rev/review/review.action'
+// import { reviewActions } from '../modules/cop/rev/review/review.action'
 
-// import Customer from '../containers/cop//rev/review/Customer'
 import '../App.css';
-// import styled from "../components/common/node_modules/styled-components";
-// import { css } from "../components/common/node_modules/styled-components/macro"; //eslint-disable-line
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
@@ -37,21 +34,9 @@ export const PrimaryLink = tw(NavLink)`
 `;
 
 
-const PrimaryAction = tw.button`rounded-full sm:px-4 sm:py-2 font-bold shadow transition duration-300 bg-yellow-500 text-black hocus:bg-yellow-700 hocus:text-gray-200 focus:outline-none focus:shadow-outline`;
 
 const Container = styled.div`
   ${tw`relative -mx-3 px-10 bg-center bg-cover h-screen min-h-144 pt-10 `}`;
-
-const styles = theme => ({
-    root: {
-        width: "100%",
-        marginTop: theme.spacing.unit * 3,
-        overflowX: "auto",
-    },
-    table: {
-        minWidth: 500
-    }
-});
 
 
 export default function Review(){
@@ -71,10 +56,8 @@ export default function Review(){
             const response = await axios.get(
               `${c.url}/api/reviews`
             );
-            // alert(response.data[0].img)
+
             setReviews(response.data.reivews);
-            // alert(JSON.stringify(response.data)) 
-            // console.log(response.data)
             console.log(response.data.reivews)
           } catch (e) {
             setError(e);
@@ -103,7 +86,7 @@ export default function Review(){
                             <TableCell>No</TableCell>
                             <TableCell>제목</TableCell>
                             <TableCell>내용</TableCell>
-                            <TableCell>ID</TableCell>
+                            {/* <TableCell>ID</TableCell> */}
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -112,7 +95,7 @@ export default function Review(){
                             <TableCell>{c.review_no}</TableCell>
                             <TableCell>{c.review_title}</TableCell>
                             <TableCell>{c.review_detail}</TableCell>
-                            <TableCell>{c.review_id}</TableCell>
+                            {/* <TableCell>{c.review_id}</TableCell> */}
                         </TableRow> 
                     ))}                    
                     </TableBody>

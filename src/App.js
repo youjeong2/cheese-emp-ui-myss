@@ -24,7 +24,7 @@ export default function App(){
                     <Route path='/login' component={Login}></Route>
                     <Route path='/signup' component={Signup}></Route>
                     <Route path='/user-detail' component={ UserDetail }/>
-                    <Route path='/user-profile' component={UserInfo}/>
+                    <Route path='/user-info' component={UserInfo}/>
                     {/* <Route path='/modifying-user-info' component={ UserModify }/>
                     <Route path='/membership-withdrawal' component={ UserWithdrawal }/>
                     <Route path='/userlist' component={ UserList }/> */}

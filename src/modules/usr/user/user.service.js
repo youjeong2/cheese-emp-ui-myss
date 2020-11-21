@@ -73,18 +73,18 @@ export const userService = {
   }
   
   async function register(user) {
-    alert('user service: ' + JSON.stringify(user))
+    // alert('user service: ' + JSON.stringify(user))
     const req = {
         method: c.post,
         url: `${c.url}/api/signup`,
         data: user,
         auth: c.auth
     }
-    // alert('user service req: ' + JSON.stringify(req))
+    alert('user service req: ' + JSON.stringify(req))
     const resp = await axios(req)
     // alert('user service resp: ' + resp)
     const data = resp.data
-    alert(` ${data.name}'님, 환영합니다. 로그인 후 이용해주세요!`)
+    alert(` ${data.name}님, 환영합니다. 로그인 후 이용해주세요!`)
     return data
   }
   

@@ -3,19 +3,18 @@ import { context as c } from '../../../context'
 
 
 export const cheeseService = {
-    getAll
+    getCheese
 };
 
-async function getAll() {
+async function getCheese() {
     const req = {
         method: c.get,
         url: `${c.url}/api/cheeses`,
-        // data: {cheeses}
     }
     const resp = await axios(req)
 
     const data = resp.data
 
-    alert(' connection is successful !')
+    // alert(' connection is successful !')
     return data
 }

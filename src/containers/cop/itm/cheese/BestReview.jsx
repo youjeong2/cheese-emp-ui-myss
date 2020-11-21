@@ -3,13 +3,13 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { SectionHeading as HeadingTitle } from "../../../components/cmm/Headings.jsx";
-import { ReactComponent as QuotesLeftIcon } from "../../../components/cmm/images/quotes-l.svg";
-import { ReactComponent as QuotesRightIcon } from "../../../components/cmm/images/quotes-r.svg";
-import { ReactComponent as ArrowLeftIcon } from "../../../components/cmm/images/arrow-left-2-icon.svg";
-import { ReactComponent as ArrowRightIcon } from "../../../components/cmm/images/arrow-right-2-icon.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../../components/cmm/images/svg-decorator-blob-4.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../../components/cmm/images/svg-decorator-blob-5.svg";
+import { SectionHeading as HeadingTitle } from "../../../../components/cmm/Headings.jsx";
+import { ReactComponent as QuotesLeftIcon } from "../../../../components/cmm/images/quotes-l.svg";
+import { ReactComponent as QuotesRightIcon } from "../../../../components/cmm/images/quotes-r.svg";
+import { ReactComponent as ArrowLeftIcon } from "../../../../components/cmm/images/arrow-left-2-icon.svg";
+import { ReactComponent as ArrowRightIcon } from "../../../../components/cmm/images/arrow-right-2-icon.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../../../components/cmm/images/svg-decorator-blob-4.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../../../../components/cmm/images/svg-decorator-blob-5.svg";
 
 import "slick-carousel/slick/slick.css";
 
@@ -69,7 +69,7 @@ const DecoratorBlob2 = tw(
   SvgDecoratorBlob2
 )`absolute w-32 bottom-0 right-0 -z-10 text-pink-500 opacity-15 transform translate-x-2/3 translate-y-8`;
 
-export default function TwoColumnWithImage() {
+export default function BestReview() {
   /*
    * You can modify the testimonials shown by modifying the array below
    * You can add or remove objects from the array as you need.

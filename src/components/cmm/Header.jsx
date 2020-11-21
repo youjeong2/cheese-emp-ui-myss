@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {useHistory} from 'react-router-dom'
-import { CartContext } from '../../containers/cop/cart/contexts/CartContext';
+import { CartContext } from '../../containers/cop/itm/cart/contexts/CartContext';
 import { history } from '../../modules/history'
 
 import useAnimatedNavToggler from "./AnimatedNavToggler";
@@ -12,7 +12,7 @@ import useAnimatedNavToggler from "./AnimatedNavToggler";
 import logo from "./images/cheese/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
-import {CartIcon} from '../../containers/cop/cart/Icons' //eslint-disable-line
+import {CartIcon} from '../../containers/cop/itm/cart/Icons' //eslint-disable-line
 
 import Button from '@material-ui/core/Button';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';

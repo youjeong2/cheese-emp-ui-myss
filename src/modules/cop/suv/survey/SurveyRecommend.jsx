@@ -6,7 +6,7 @@ import { SectionHeading, Subheading as SubheadingBase } from "../../../../compon
 import { SectionDescription } from "../../../../components/cmm/Typography.jsx";
 import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
 import { Container as ContainerBase, ContentWithPaddingXl as ContentBase } from "../../../../components/cmm/Layouts.jsx";
-import { ReactComponent as CheckboxIcon } from "../../../../components/images/checkbox-circle.svg";
+import { ReactComponent as CheckboxIcon } from "../../../../components/cmm/images/checkbox-circle.svg";
 
 const Container = tw(ContainerBase)`bg-yellow-900 text-gray-100 -mx-8 px-8`;
 const ContentWithPaddingXl = tw(

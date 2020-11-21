@@ -3,13 +3,11 @@ import tw from "twin.macro"; //eslint-disable-line
 import { Link } from 'react-router-dom'; //eslint-disable-line
 import AnimationRevealPage from "../components/cmm/AnimationEffect.jsx";
 // import Header from "./common/header-practice.js"
-import Hero from "../containers/cmm/hom/BackgroundAsImageWithCenteredContent.jsx";
-import Features from "../containers/cmm/hom/VerticalWithAlternateImageAndText.jsx";
-import Blog from "../containers/cmm/hom/Blogs.jsx";
-import Testimonial from "../containers/cmm/hom/TwoColumnWithImage.jsx";
-import ContactUsForm from "../containers/cmm/hom/SimpleContactUs.jsx";
+import MainBackground from "../containers/cmm/hom/MainBackground.jsx";
+import HomeInfo from "../containers/cmm/hom/HomeInfo.jsx";
+import ContactUs from "../containers/cmm/hom/ContactUs.jsx";
 import { ChatbotContainer as Chatbot } from "../containers/cop/itm/chatbot"
-import FAQ from "../containers/cmm/hom/SingleCol.jsx";
+import FAQ from "../containers/cmm/hom/Faq.jsx";
 import Tooltip from '@material-ui/core/Tooltip'
 
   const Subheading = tw.span`uppercase tracking-widest font-bold text-primary-500`;
@@ -22,10 +20,8 @@ export default function Home () {
     <Tooltip title="구매 고객 리뷰 리스트 CRUD">
     <Chatbot/>
     </Tooltip>
-    <Hero />
-    <Features />
-    <Blog />
-    <Testimonial />
+    <MainBackground />
+    <HomeInfo />
   <FAQ
         subheading={<Subheading>FAQS</Subheading>}
         heading={
@@ -66,7 +62,7 @@ export default function Home () {
           }
         ]}
       />
-    <ContactUsForm />
+    <ContactUs />
   </AnimationRevealPage>      
 </div>)
 }
