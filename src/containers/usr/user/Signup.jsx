@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { userActions } from '../../../modules/usr/user/user.action'
 import { useDispatch, useSelector } from "react-redux"
 
+import Select from 'react-select'
 import { Container as ContainerBase } from "../../../components/cmm/Layouts";
 import tw from "twin.macro"; 
 import styled from "styled-components";
@@ -79,6 +80,17 @@ export default function SignUp () {
     email: ''
   });
   
+  const options = [
+    { value: '10', label: '10대' },
+    { value: '20', label: '20대' },
+    { value: '30', label: '30대' },
+    { value: '40', label: '40대' },
+    { value: '50', label: '50대' },
+    { value: '60', label: '60대' },
+    { value: '70', label: '70대' },
+    { value: '80', label: '80대' }
+  ]
+
   const [submitted, setSubmitted] = useState(false);
   // const registering = useSelector(state => state.registering.registering);
   const dispatch = useDispatch();
@@ -136,21 +148,13 @@ export default function SignUp () {
                   {submitted && !user.name &&
                       <div className="invalid-feedback">User Name is required</div>
                   }
-
-                   
+     
                   <RadioGroup defaultValue="female" aria-label="gender" name="gender" value={user.gender} onChange={handleChange}>
                     <FormControlLabel value="F" control={<Radio />} label="Female" />
                     <FormControlLabel value="M" control={<Radio />} label="Male" />
                   </RadioGroup>
 
-
-                  <Input type="text" placeholder="age" name="age" value={user.age} onChange={handleChange} 
-                  size="small"
-                  control={<Radio color="yellow" />}
-                  className={'form-control' + (submitted && !user.age ? 'is-invalid' : '')}/>
-                  {submitted && !user.age &&
-                    <div className="invalid-feedback">Tel is required</div>
-                  }  
+                  <Select options={options} value={user.age} onChange={handleChange} placeholder="Age"/>
 
 
                   <Input type="text" placeholder="Tel" name="phone" value={user.phone} onChange={handleChange} 

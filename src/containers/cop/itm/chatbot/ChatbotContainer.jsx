@@ -37,7 +37,7 @@ export default function ChatBotContainer () {
     return (
     <ThemeProvider theme={theme}>        
         <ChatBot
-            style={{ width: '700px', height: '60%'}}
+            style={{ width: '700px'}}
             floating = {true}
             headerTitle = {'서비스'}
             enableSmoothScroll = {true}
@@ -73,11 +73,15 @@ export default function ChatBotContainer () {
                 {
                     id: 'recommend1',
                     message: '그러면 고객님의 치즈 취향을 분석해보겠습니다. 총 5가지의 질문을 드리겠습니다!',
-                    trigger: 'question1',
+                    trigger: 'question_1',
                 },
                 {
-                    id: 'question1',
-                    message: '치즈나 음식의 어떤 맛을 선호하시나요?',
+                    id: 'question_1',
+                    // message: '치즈나 음식의 어떤 맛을 선호하시나요?',
+                    options: [
+                        { value: 1, label: '단맛', trigger: 'recommend1' },
+                        { value: 2, label: '짠맛', trigger: 'cheeseList' },
+                    ],
                     trigger: 'recommend3',
                 },
                 {
