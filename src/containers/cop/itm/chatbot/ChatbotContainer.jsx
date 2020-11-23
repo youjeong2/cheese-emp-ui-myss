@@ -1,23 +1,68 @@
 import React, { Component } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
+import axios from 'axios'
 
-
-export const ItemSearch = () => {
-        return (<>
-
-        </>)
-    
+class Recommend extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tasty : '',
+            texture: '',
+        }
+    }
+    componentWillMount() {
+      const { steps } = this.props;
+      const { tasty, texture } = steps;
+      this.setState({ tasty, texture });  
+    }
+    render() {
+        const { tasty, texture } = this.state
+        return (
+            <div style={{ width: '100%' }}/>
+            <h3> 치즈 리스트</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>tasty</td>
+                        <td>{tasty.value}</td>
+                    </tr>
+                    <tr>
+                        <td>texture</td>
+                        <td>{texture.value}</td>
+                    </tr>
+                </tbody>
+            </table>
+        )
+    }
+}
+Recommend.propTypes = {
+    steps: PropsTypes.object,
+}
+Recommend.defaultProps = {
+    steps : undefined,
 }
 
-export const ItemSearch2 = () => {
+componentWillMount() {
+    const { steps } = this.props;
+    const { tasty, texture } = steps
+    axios.post('http://localhost:8080/api/survey',
+    { "texture":teuxture, "tasty": tasty })
+    .then(res=>{
+        alert("Connection Success")
+    })
+    .catch(e => {
+        alert("Connection Fail")
+    })
+}
+render() {
+    console.log(localStorage.getCheese("texture"))
     return (
-            <p>정보가 없습니다.</p>
-
+        <div style={{ width: '100%' }}>
+            <h3>{localStorage.getCheese("texture")}</h3>
+        </div>
     )
-
 }
-
 // all available props
 const theme = {
     background: '#f5f8fb',
@@ -199,122 +244,3 @@ export default function ChatBotContainer () {
         />
     </ThemeProvider>    
 )}
-
-// class CheeseKinds extends Component {
-//     constructor(props) {
-//         super(props)
-
-//         this.state = {
-//             name: '',
-            
-//         }
-//     }
-
-// }
-
-// export const ItemSearch = () => {
-//         return (<>
-
-//         </>)
-    
-// }
-
-// export const ItemSearch2 = () => {
-//     return (
-//             <p>정보가 없습니다.</p>
-
-//     )
-
-// }
-
-// // all available props
-// const theme = {
-//     background: '#f5f8fb',
-//     fontFamily: 'Helvetica Neue',
-//     headerBgColor: '#ffb74d',
-//     headerFontColor: '#fff',
-//     headerFontSize: '15px',
-//     botBubbleColor: '#ffb74d',
-//     botFontColor: '#black',
-//     userBubbleColor: '#fff',
-//     userFontColor: '#4a4a4a',
-//     width: "500",
-//     height: "900"
-//     };
-
-// export default function ChatBotContainer () {
-//     return (
-//     <ThemeProvider theme={theme}>        
-//         <ChatBot
-//             floating = {true}
-//             headerTitle = {'서비스'}
-//             enableSmoothScroll = {true}
-//             steps={[
-//                 //서비스선택
-//                 {
-//                     id: '1',
-//                     message: '원하시는 서비스를 선택해주세요.',
-//                     trigger: '2',
-//                 },
-//                 {
-//                     id: '2',
-//                     options: [
-//                         { value: 1, label: '치즈 종류 소개', trigger: 'category' },
-//                         { value: 2, label: '아이템 가격', trigger: 'fare' },
-//                     ],
-//                 },
-//                 // {
-//                 //     id: 'category',
-//                 //     message: '제품명을 입력하세요',
-//                 //     trigger: 'itemSearch',
-//                 // },
-//                 {
-//                     id: 'category',
-//                     options: [
-//                         { value: 1, label: '리코타', trigger: 'itemSearch' },
-//                         { value: 2, label: '파마산', trigger: 'itemSearch' },
-//                         { value: 3, label: '모짜렐라', trigger: 'itemSearch' },
-//                         { value: 4, label: '블루치즈', trigger: 'itemSearch' },
-//                         { value: 5, label: '체다', trigger: 'itemSearch' },
-//                         { value: 6, label: '브리', trigger: 'itemSearch' }
-//                     ],
-//                 },
-//                 {
-//                     id: 'itemSearch',
-//                     user: true,
-//                     trigger: 'itemSearchResult',
-//                 },
-//                 {
-//                     id: 'itemSearchResult',
-//                     component: <ItemSearch/>,
-//                     trigger: '1',
-//                 },
-//                 {
-//                     id: 'fare',
-//                     message: '주문사항을 입력해주세요.',
-//                     trigger: 'startName',
-//                 },
-//                 {
-//                     id: 'startName',
-//                     user: true,
-//                     trigger: 'fare1',
-//                 },
-//                 {
-//                     id: 'fare1',
-//                     message: '주문사항을 입력해주세요.',
-//                     trigger: 'arriveName'
-//                 },
-//                 {
-//                     id: 'arriveName',
-//                     user: true,
-//                     trigger: 'fareResult',
-//                 },
-//                 {
-//                     id: 'fareResult',
-//                     component: <ItemSearch2/>,
-//                     trigger: '1',
-//                 },
-//             ]}
-//         />
-//     </ThemeProvider>    
-// )}
