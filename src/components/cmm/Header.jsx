@@ -193,7 +193,7 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
         <NavLink href="/login" tw="lg:ml-20!">Sign in</NavLink>
         </Tooltip>
         <Tooltip title="회원가입 기능">
-        <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
+        <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/signup">Sign Up</PrimaryLink>
         </Tooltip>
       </ul>
       }
