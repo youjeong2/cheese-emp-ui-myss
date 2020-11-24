@@ -2,7 +2,6 @@ import React, {useEffect, useCallback, useState} from 'react'
 import {useHistory } from "react-router-dom"
 import { context as c } from '../../../modules/context'
 import axios from 'axios'
-import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
@@ -16,7 +15,7 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
   
-import { userActions } from '../../../modules/usr/user/user.action'
+import { userActions } from '../../../modules/usr/user/user.action' //eslint-disable-line
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -123,11 +122,11 @@ const fetchOneUser = () => {
     }
   })
   
-  const show = e => {
-    alert('data: ' + JSON.stringify(data))
-    alert('data: ' + JSON.stringify(data[0].name))
-    // alert('data: ' + JSON.stringify(data.name))
-  }
+  // const show = e => {
+  //   alert('data: ' + JSON.stringify(data))
+  //   alert('data: ' + JSON.stringify(data[0].name))
+  //   // alert('data: ' + JSON.stringify(data.name))
+  // }
 
   return (<>
     <Container component="main" >

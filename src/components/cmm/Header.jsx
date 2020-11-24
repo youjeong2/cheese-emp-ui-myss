@@ -1,41 +1,40 @@
-import React, { useContext } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {useHistory} from 'react-router-dom'
-import { CartContext } from '../../containers/cop/itm/cart/contexts/CartContext';
-import { history } from '../../modules/history'
+// import { CartContext } from '../../containers/cop/cart/contexts/CartContext';
+import { history } from '../../modules/history' //eslint-disable-line
 
 import useAnimatedNavToggler from "./AnimatedNavToggler";
 
 import logo from "./images/cheese/cheese-logo.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
-import {CartIcon} from '../../containers/cop/itm/cart/Icons' //eslint-disable-line
+import {CartIcon} from '../../containers/cop/cart/Icons' //eslint-disable-line
 
-import Button from '@material-ui/core/Button';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import { makeStyles } from '@material-ui/core/styles';
+// // import Button from '@material-ui/core/Button';
+// import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+// import Grow from '@material-ui/core/Grow';
+// import Paper from '@material-ui/core/Paper';
+// import Popper from '@material-ui/core/Popper';
+// // import MenuItem from '@material-ui/core/MenuItem';
+// import MenuList from '@material-ui/core/MenuList';
 
 import Tooltip from '@material-ui/core/Tooltip'
 
 import { FaRegUser } from "react-icons/fa"  //eslint-disable-line
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  paper: {
-    marginRight: theme.spacing(2),
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     display: 'flex',
+//   },
+//   paper: {
+//     marginRight: theme.spacing(2),
+//   },
+// }));
 
 
 
@@ -46,9 +45,6 @@ const HeaderBlock = tw.header`
 
 const NavLinks = tw.div`inline-block`;
 
-/* hocus: stands for "on hover or focus"
- * hocus:bg-primary-700 will apply the bg-primary-700 class on hover or focus
- */
 const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300 
@@ -70,30 +66,7 @@ const LogoLink = styled(NavLink)`
   }
 `;
 
-const UserLink = styled(NavLink)`
-    font-size: 1.0rem;
-    font-weight: 400;
-    position: relative;
-    right: 0;
-    left: 0;
-    margin: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: pre;
-    color: black;
-    &:hover{
-        color: yellow;
-    }
-    &.active{
-        font-weight: 700;
-        padding-bottom: 0.5rem;
-        color: black;
-        border-bottom: 2px solid #FFCE54;
-        &:hover{
-            color: #FFCE54;
-        }
-    }
-`
+
 const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between`;
 const NavToggle = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-yellow-500 transition duration-300
@@ -109,21 +82,10 @@ const DesktopNavLinks = tw.nav`
   hidden lg:flex flex-1 justify-between items-center
 `;
 
-const selectedStyle = {
-  backgroundColor: "white", color: "yellow"
-}
-
-
-
-
-// const constructor = (props) => {
-//   super(props);
-//   this.state = {
-//     showCart: false,
-//     cart: this.props.cartItems,
-//     mobileSearch: false
-//   }
+// const selectedStyle = {
+//   backgroundColor: "white", color: "yellow"
 // }
+
 
 const Header = (props, { roundedHeaderButton = false, logoLink, links, className, collapseBreakpointClass = "lg" }) => {
   
@@ -136,6 +98,40 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
     history.push('/')
     window.location.reload()
   }
+
+  // const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+
+  // const handleToggle = () => {
+  //   setOpen((prevOpen) => !prevOpen);
+  // };
+
+  // const handleClose = (event) => {
+  //   if (anchorRef.current && anchorRef.current.contains(event.target)) {
+  //     return;
+  //   }
+
+  //   setOpen(false);
+  // };
+
+  // function handleListKeyDown(event) {
+  //   if (event.key === 'Tab') {
+  //     event.preventDefault();
+  //     setOpen(false);
+  //   }
+  // }
+
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
+
   const defaultLinks = (
     <NavLinks key={1}>
       { props.isAuth !== null
@@ -146,8 +142,8 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
         <NavLink href="/survey">추천</NavLink>
         {/* <NavLink href="/cart"><CartIcon/>Cart ({itemCount})</NavLink> */}
         <NavLink href="/cart">Cart</NavLink>
-        {/* <NavLink href="/user-detail" tw="lg:ml-20!">My Page</NavLink> */}
-        <NavLink ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup="true" onClick={handleToggle} tw="lg:ml-20!">My Page
+        <NavLink href="/user-info" tw="lg:ml-20!">My Page</NavLink>
+        {/* <NavLink ref={anchorRef} aria-controls={open ? 'menu-list-grow' : undefined} aria-haspopup="true" onClick={handleToggle} tw="lg:ml-20!">My Page
           <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
             {({ TransitionProps, placement }) => (
               <Grow
@@ -166,7 +162,7 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
               </Grow>
             )}
           </Popper>
-        </NavLink>
+        </NavLink> */}
         <NavLink onClick={logout} tw="lg:ml-4!" style={{textDecoration: 'underline'}}>Logout</NavLink>
       </ul>:
 
@@ -219,38 +215,6 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
   
   // const {itemCount} = useContext(CartContext)
 
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
-
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-
-  const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
-
-    setOpen(false);
-  };
-
-  function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    }
-  }
-
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
-    }
-
-    prevOpen.current = open;
-  }, [open]);
 
 
   return (<>
@@ -269,8 +233,6 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
           {showNavLinks ? <CloseIcon tw="w-6 h-6" /> : <MenuIcon tw="w-6 h-6" />}
         </NavToggle>
       </MobileNavLinksContainer>
-
-      
     </HeaderBlock>
   </>);
 };

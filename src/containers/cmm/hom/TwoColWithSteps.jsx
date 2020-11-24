@@ -1,7 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
-import styled from "../../suv/survey/node_modules/styled-components";
-import { css } from "../../suv/survey/node_modules/styled-components/macro"; //eslint-disable-line
+import styled from "../../cop/rec/recommend/node_modules/styled-components";
+import { css } from "../../cop/rec/recommend/node_modules/styled-components/macro"; //eslint-disable-line
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.jsx";
 import TeamIllustrationSrc from "images/team-illustration-2.svg";
 import { ReactComponent as SvgDotPattern } from "images/dot-pattern.svg";

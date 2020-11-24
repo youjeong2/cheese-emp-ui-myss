@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import tw from "twin.macro"; //eslint-disable-line
 import axios from 'axios'
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { context as c } from '../modules/context'
 // import { reviewActions } from '../modules/cop/rev/review/review.action'
 
@@ -16,7 +15,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import { withStyles } from '@material-ui/core/styles';
 import TableContainer from '@material-ui/core/TableContainer';
 
 
@@ -33,8 +31,6 @@ export const PrimaryLink = tw(NavLink)`
   border-b-0
 `;
 
-
-
 const Container = styled.div`
   ${tw`relative -mx-3 px-10 bg-center bg-cover h-screen min-h-144 pt-10 `}`;
 
@@ -43,7 +39,7 @@ export default function Review(){
     const [reviews, setReviews] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
 
     useEffect(() => {

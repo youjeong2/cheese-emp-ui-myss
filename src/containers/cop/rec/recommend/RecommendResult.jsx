@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
-import styled, { css } from "../../../../containers/suv/survey/node_modules/styled-components/macro"; //eslint-disable-line
+import styled, { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "../../../../components/cmm/Layouts.jsx";
 import { SectionHeading, Subheading as SubheadingBase } from "../../../../components/cmm/Headings.jsx";
 import { SectionDescription } from "../../../../components/cmm/Typography.jsx";
@@ -27,7 +27,7 @@ const QuestionToggleIcon = styled(motion.span)`
 `;
 const Answer = tw(motion.div)`hidden text-sm font-normal mt-4 text-gray-300`;
 
-export default function TwoColumnPrimaryBackground ({
+export default function RecommendResult ({
   subheading = "",
   heading = "당신이 좋아하는 치즈상품은 '[브리미]보코치니' 입니다.",
   description = "새알을 빚어놓은 듯 깜찍한 미니 모짜렐라",

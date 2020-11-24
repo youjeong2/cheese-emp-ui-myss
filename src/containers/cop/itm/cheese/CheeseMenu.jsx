@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -31,7 +31,7 @@ const DecoratorBlob2 = tw(
   SvgDecoratorBlob2
 )`-z-10 absolute top-0 left-0 w-48 h-48 transform -translate-x-32 translate-y-full opacity-25`;
 
-export default function Blogs() {
+export default function CheeseMenu() {
   const dispatch = useDispatch()
     const chee = useSelector(state => (state.cheeseReducer.cheeses))
     useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Layout from './Layout'
-import { Cart } from '../../../../templates'
+import { Cart } from '../../../templates'
 import CartProducts from './CartProducts';
 import { CartContextProvider } from './contexts';
 import { formatNumber } from './Helps';

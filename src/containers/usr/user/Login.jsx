@@ -1,15 +1,11 @@
-import React, {useCallback, useState} from "react";
-import { useDispatch, useSelector } from "react-redux"
-import { userActions } from '../../../modules/usr/user/user.action'
+import React, { useState } from "react";
 import { context as c } from '../../../modules/context'
 import axios from 'axios'
 import {useHistory } from "react-router-dom"
 
-// import AnimationRevealPage from "../home/AnimationRevealPage.js";
 import { Container as ContainerBase } from "../../../components/cmm/Layouts";
 import tw from "twin.macro";
-// import styled from "../components/common/node_modules/styled-components";
-// import {css} from "../components/common/node_modules/styled-components/macro"; //eslint-disable-line
+
 import {css} from "styled-components/macro"; //eslint-disable-line
 import styled from "styled-components";
 import cheeseLogin from "../../../components/cmm/images/cheese/cheeseImg2.png";
@@ -21,25 +17,10 @@ import { ReactComponent as LoginIcon } from "feather-icons/dist/icons/log-in.svg
 const Container = tw(ContainerBase)`min-h-screen bg-yellow-500 text-white font-medium flex justify-center`;
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
 const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
-// const LogoLink = tw.a``;
-// const LogoImage = tw.img`h-12 mx-auto`;
 const MainContent = tw.div`mt-12 flex flex-col items-center`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold`;
 const FormContainer = tw.div`w-full flex-1 mt-8`;
 
-const SocialButtonsContainer = tw.div`flex flex-col items-center`;
-const SocialButton = styled.a`
-  ${tw`w-full max-w-xs font-semibold rounded-lg py-3 border text-gray-900 bg-gray-100 hocus:bg-gray-200 hocus:border-gray-400 flex items-center justify-center transition-all duration-300 focus:outline-none focus:shadow-outline text-sm mt-5 first:mt-0`}
-  .iconContainer {
-    ${tw`bg-white p-2 rounded-full`}
-  }
-  .icon {
-    ${tw`w-4`}
-  }
-  .text {
-    ${tw`ml-4`}
-  }
-`;
 
 const DividerTextContainer = tw.div`my-12 border-b text-center relative`;
 const DividerText = tw.div`leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform -translate-y-1/2 absolute inset-x-0 top-1/2 bg-transparent`;
@@ -61,38 +42,17 @@ const CheeseLoginImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-sm bg-contain bg-center bg-no-repeat`}
 `;
 
-const logoLinkUrl = "/",
-      cheeseLoginImageSrc  = cheeseLogin,
+const cheeseLoginImageSrc  = cheeseLogin,
       headingText = "Sign In for Pic 2 Cheese",  
       submitButtonText = "Sign In",
       SubmitButtonIcon = LoginIcon,
-      forgotPasswordUrl = "#",
-      signupUrl = "/signup"
+      forgotPasswordUrl = "#"
 
 export default function Login (
-  // logoLinkUrl = "/",
-  // illustrationImageSrc = illustration,
-  // headingText = "Sign In To Treact",
-  // socialButtons = [
-  //   {
-  //     iconImageSrc: googleIconImageSrc,
-  //     text: "Sign In With Google",
-  //     url: "https://google.com"
-  //   },
-  //   {
-  //     iconImageSrc: twitterIconImageSrc,
-  //     text: "Sign In With Twitter",
-  //     url: "https://twitter.com"
-  //   }
-  // ]
-  // submitButtonText = "Sign In",
-  // SubmitButtonIcon = LoginIcon,
-  // forgotPasswordUrl = "#",
-  // signupUrl = "/signup",
 ) {
   const [user_id, setUserId] = useState('')
   const [password, setPassword] = useState('')
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   const history = useHistory()
   const login = e => {

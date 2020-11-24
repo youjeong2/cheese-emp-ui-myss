@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { userActions } from '../../../modules/usr/user/user.action'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import Select from 'react-select'
 import { Container as ContainerBase } from "../../../components/cmm/Layouts";
@@ -8,12 +8,10 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import illustration from "../../../components/cmm/images/signup-illustration.svg";
-// import logo from "../images/logo.svg";
-import googleIconImageSrc from "../../../components/cmm/images/google-icon.png";
-import twitterIconImageSrc from "../../../components/cmm/images/twitter-icon.png";
+
+
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
-import Header from "../../../components/cmm/Header.jsx";
-import {FormControl,FormLabel, RadioGroup, Radio, Card } from '@material-ui/core'
+import {FormControl,FormLabel, RadioGroup, Radio, Card } from '@material-ui/core' //eslint-disable-line
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
@@ -25,20 +23,6 @@ const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
 const MainContent = tw.div`mt-12 flex flex-col items-center`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold`;
 const FormContainer = tw.div`w-full flex-1`;
-
-// const SocialButtonsContainer = tw.div`flex flex-col items-center`;
-// const SocialButton = styled.a`
-//   ${tw`w-full max-w-xs font-semibold rounded-lg py-3 border text-gray-900 bg-gray-100 hocus:bg-gray-200 hocus:border-gray-400 flex items-center justify-center transition-all duration-300 focus:outline-none focus:shadow-outline text-sm mt-5 first:mt-0`}
-//   .iconContainer {
-//     ${tw`bg-white p-2 rounded-full`}
-//   }
-//   .icon {
-//     ${tw`w-4`}
-//   }
-//   .text {
-//     ${tw`ml-4`}
-//   }
-// `;
 
 const DividerTextContainer = tw.div`my-10 border-b text-center relative`;
 const DividerText = tw.div`leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform -translate-y-1/2 absolute inset-x-0 top-1/2 bg-transparent`;
@@ -60,14 +44,12 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
 
-const logoLinkUrl = "/",
-      illustrationImageSrc = illustration,
+const illustrationImageSrc = illustration,
       headingText = "Sign Up For Pic 2 Cheese",
       submitButtonText = "Sign Up",
       SubmitButtonIcon = SignUpIcon,
       tosUrl = "#",
-      privacyPolicyUrl = "#",
-      signInUrl = "login"
+      privacyPolicyUrl = "#"
 
 export default function SignUp () {
   const [user, setUser] = useState({
@@ -154,7 +136,7 @@ export default function SignUp () {
                     <FormControlLabel value="M" control={<Radio />} label="Male" />
                   </RadioGroup>
 
-                  <Select options={options} value={user.age} onChange={handleChange} placeholder="Age"/>
+                  <Select options={options} placeholder="Age" name="age" value={user.age} onChange={handleChange} />
 
 
                   <Input type="text" placeholder="Tel" name="phone" value={user.phone} onChange={handleChange} 

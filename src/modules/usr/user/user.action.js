@@ -1,7 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 import { userService } from './user.service'
 import { alertActions } from '../../alert.action'
-import { useHistory } from 'react-router-dom'
 import history from '../../history'
 
 
@@ -26,10 +25,9 @@ export const userConstants = {
   DELETE_FAILURE: 'USERS_DELETE_FAILURE'    
 }
 
-let sessionUser = JSON.parse(sessionStorage.getItem("user"));
+// let sessionUser = JSON.parse(sessionStorage.getItem("user"));
 
 export const loginSuccess = createAction(userConstants.LOGIN_SUCCESS);
-// export const registerSuccess = createAction(userConstants.REGISTER_SUCCESS)
 
 // Initial State
 const initialState = {
@@ -42,10 +40,6 @@ const userReducer = handleActions(
     initialState,
   )
 
-// const userReducer = handleActions(
-// { [userConstants.REGISTER_SUCCESS]: (state, action) => ({ loggingIn: true, user: action.user }) },
-// initialState,
-// )
 
 // Actions
 
@@ -184,22 +178,22 @@ function getById() {
   }
 }
 function goToDest(dest) {history.push(dest)}
-function bulk(){
-    return dispatch => {
-        userService.bulk().then(
-            resp => {},
-            error => {}
-        )
-    }
-}
-function count (){
-    return dispatch => {
-        userService.count().then(
-            resp => {},
-            error => {}
-        )
-    }
-}
+// function bulk(){
+//     return dispatch => {
+//         userService.bulk().then(
+//             resp => {},
+//             error => {}
+//         )
+//     }
+// }
+// function count (){
+//     return dispatch => {
+//         userService.count().then(
+//             resp => {},
+//             error => {}
+//         )
+//     }
+// }
 function getByOption(){
     return dispathc => {
         

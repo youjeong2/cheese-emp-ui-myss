@@ -22,8 +22,6 @@ const Heading = styled.h1`
   }
 `;
 
-const PrimaryAction = tw.button`rounded-full px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 font-bold shadow transition duration-300 bg-yellow-500 text-gray-100 hocus:bg-yellow-700 hocus:text-gray-200 focus:outline-none focus:shadow-outline`;
-
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
   input {

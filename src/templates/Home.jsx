@@ -5,7 +5,7 @@ import AnimationRevealPage from "../components/cmm/AnimationEffect.jsx";
 import MainBackground from "../containers/cmm/hom/MainBackground.jsx";
 import HomeInfo from "../containers/cmm/hom/HomeInfo.jsx";
 import ContactUs from "../containers/cmm/hom/ContactUs.jsx";
-import { ChatbotContainer as Chatbot } from "../containers/cop/itm/chatbot"
+import { ChatbotContainer as Chatbot } from "../containers/cop/chatbot"
 import FAQ from "../containers/cmm/hom/Faq.jsx";
 import Tooltip from '@material-ui/core/Tooltip'
 
