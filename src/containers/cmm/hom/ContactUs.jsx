@@ -3,7 +3,6 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {ReactComponent as SvgDotPatternIcon} from "../../../components/cmm/images/dot-pattern.svg"
-
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
 
@@ -40,28 +39,11 @@ export default function SimpleContactUs() {
       <Content>
         <FormContainer>
           <div tw="mx-auto max-w-4xl">
-            <h2>Subscribe Now !</h2>
+            <h2>pic 2 Cheese의 혜택! 지금 받으세요.</h2>
+            <h4>pic 2 cheese 챗봇으로 상담 해 보세요. 당신에게 꼭 맞는 치즈를 추천해 드립니다. </h4>
             <form action="#">
-              <TwoColumn>
-                <Column>
-                  <InputContainer>
-                    <Label htmlFor="name-input">Your Name</Label>
-                    <Input id="name-input" type="text" name="name" placeholder="E.g. John Doe" />
-                  </InputContainer>
-                  <InputContainer>
-                    <Label htmlFor="email-input">Your Email Address</Label>
-                    <Input id="email-input" type="email" name="email" placeholder="E.g. john@mail.com" />
-                  </InputContainer>
-                </Column>
-                <Column>
-                  <InputContainer tw="flex-1">
-                    <Label htmlFor="name-input">Your Message</Label>
-                    <TextArea id="message-input" name="message" placeholder="E.g. Details about your event"/>
-                  </InputContainer>
-                </Column>
-              </TwoColumn>
 
-              <SubmitButton type="submit" value="Submit">Submit</SubmitButton>
+              <SubmitButton type="submit" value="Submit" href="/signup" >지금 시작하기</SubmitButton>
             </form>
           </div>      
           <SvgDotPattern1 />
