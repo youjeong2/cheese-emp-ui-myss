@@ -8,10 +8,10 @@ import { context as c } from '../../../../modules/context' //eslint-disable-line
 //   // PrimaryLink as PrimaryLinkBase
 // } from "../home/common/Header.jsx";
 
-import { Container as ContainerBase, ContentWithVerticalPadding, Content2Xl } from "../../../cmm/Layouts.jsx";
-import { SectionHeading } from "../../../cmm/Headings.jsx";
-import { SectionDescription } from "../../../cmm/Typography.jsx";
-import { PrimaryButton as PrimaryButtonBase } from "../../../cmm/Buttons.jsx";
+import { Container as ContainerBase, ContentWithVerticalPadding, Content2Xl } from "../../../../components/cmm/Layouts.jsx";
+import { SectionHeading } from "../../../../components/cmm/Headings.jsx";
+import { SectionDescription } from "../../../../components/cmm/Typography.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "../../../../components/cmm/Buttons.jsx";
 // import logoImageSrc from "../images/logo-light.svg";
 import serverIllustrationImageSrc from "../../../../components/cmm/images/server-illustration-2.svg";
 

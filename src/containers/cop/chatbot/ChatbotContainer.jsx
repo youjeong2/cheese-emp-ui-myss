@@ -8,7 +8,7 @@ import axios from 'axios'
 class Recommend extends Component {
     constructor(props) {
         super(props)
-        this.stat = {
+        this.state = {
             tasty: '',
             texture: '',
         }
