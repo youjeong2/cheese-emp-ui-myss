@@ -77,27 +77,27 @@ export default function BestReview() {
   const testimonials = [
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3.25&w=512&h=512&q=80",
+        "https://img.pilly.kr/main/v201911/reallife01-pc@2x.jpg",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      customerName: "Charlotte Hale",
-      customerTitle: "CEO, Delos Inc."
+      "치즈를 고를 수 있는 가장 쉬운 방법 같아요.",
+      customerName: "이**님, 32세",
+      customerTitle: "정기구독 7회차"
     },
     {
       imageSrc:
         "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=512&h=512&q=80",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      customerName: "Adam Cuppy",
-      customerTitle: "Founder, EventsNYC"
+        "Pic 2 Cheese가 매 달 챙겨주는 기분이 들어서 좋아요.",
+      customerName: "홍**님, 30세",
+      customerTitle: "정기구독 3회차"
     },
     {
       imageSrc:
-        "https://images.unsplash.com/photo-1580852300654-03c803a14e24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4.25&w=512&h=512&q=80",
+        "11월의 pic 2 cheese, 퇴근하자마자 집에 치즈가! #Pic2Cheese #찾아오는인생치즈 #치즈구독",
       quote:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
-      customerName: "Steven Marcetti",
-      customerTitle: "Event Manager, Brite"
+        "11월의 pic 2 cheese, 퇴근하자마자 집에 치즈가! #Pic2Cheese #찾아오는인생치즈 #치즈구독",
+      customerName: "박**님, 40세",
+      customerTitle: "정기구독 5회차"
     }
   ];
   return (

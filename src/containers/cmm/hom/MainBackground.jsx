@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
 
-// const PrimaryLink = tw(PrimaryLinkBase)`rounded-full`
+import back from "../../../components/cmm/images/cheese/back.png"; 
+
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover h-screen min-h-144`}
   background-image: url("https://post-phinf.pstatic.net/MjAyMDA2MDNfMjE4/MDAxNTkxMTQ4ODg0MzY5.MjSnIId_fn5_Cqe07p8FaJvzRbCrJZsECjfm2e6CHOsg.HKKfGRtpu4XehJI2yo9qyJ3Rm5zUn8pPa46WONNboNUg.JPEG/%EC%9C%A0%EC%96%B4%EB%84%A4%EC%9D%B4%ED%82%A4%EB%93%9C%EC%B9%98%EC%A6%88_%282%29.jpg?type=w1200");
@@ -21,12 +22,7 @@ const Heading = styled.h1`
     ${tw`inline-block mt-2`}
   }
 `;
-<<<<<<< HEAD
 
-const PrimaryAction = tw.button`rounded-full px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 font-bold shadow transition duration-300 bg-yellow-500 text-gray-100 hocus:bg-yellow-700 hocus:text-gray-200 focus:outline-none focus:shadow-outline`;
-
-=======
->>>>>>> 201124
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
   input {
@@ -46,12 +42,13 @@ export default function BackgroundAsImageWithCenteredContent() {
           <Content>
             <Heading>
                 <h1>Find Your Cheese !</h1>
-                나에게 맞는 치즈를 추천 받아보세요!
+                Pic 2 Cheeese 와 함께<br/>
+                나에게 맞는 치즈를 추천 받아보세요.
             </Heading>
             <br/>
             <Actions>
               <input type="text" placeholder="Your E-mail Address" />
-              <button>지금 시작하기</button>
+              <button >지금 시작하기</button>
             </Actions>
           </Content>
         </HeroContainer>
