@@ -1,4 +1,4 @@
-import { css } from '../../containers/suv/survey/node_modules/styled-components';
+import { css } from '../../containers/cop/rec/recommend/node_modules/styled-components';
 
 // 미디어 쿼리 헬퍼: https://www.styled-components.com/docs/advanced#media-templates 참조
 export const sizes = {

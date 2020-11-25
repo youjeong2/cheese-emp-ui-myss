@@ -1,18 +1,17 @@
 import React, {useState} from "react";
 import { userActions } from '../../../modules/usr/user/user.action'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
+import Select from 'react-select'
 import { Container as ContainerBase } from "../../../components/cmm/Layouts";
 import tw from "twin.macro"; 
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import illustration from "../../../components/cmm/images/signup-illustration.svg";
-// import logo from "../images/logo.svg";
-import googleIconImageSrc from "../../../components/cmm/images/google-icon.png";
-import twitterIconImageSrc from "../../../components/cmm/images/twitter-icon.png";
+
+
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
-import Header from "../../../components/cmm/Header.jsx";
-import {FormControl,FormLabel, RadioGroup, Radio, Card } from '@material-ui/core'
+import {FormControl,FormLabel, RadioGroup, Radio, Card } from '@material-ui/core' //eslint-disable-line
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
@@ -45,14 +44,12 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
 
-const logoLinkUrl = "/",
-      illustrationImageSrc = illustration,
+const illustrationImageSrc = illustration,
       headingText = "Sign Up For Pic 2 Cheese",
       submitButtonText = "Sign Up",
       SubmitButtonIcon = SignUpIcon,
       tosUrl = "#",
-      privacyPolicyUrl = "#",
-      signInUrl = "login"
+      privacyPolicyUrl = "#"
 
 export default function SignUp () {
   const [user, setUser] = useState({
@@ -67,6 +64,17 @@ export default function SignUp () {
 
 
   
+  const options = [
+    { value: '10', label: '10대' },
+    { value: '20', label: '20대' },
+    { value: '30', label: '30대' },
+    { value: '40', label: '40대' },
+    { value: '50', label: '50대' },
+    { value: '60', label: '60대' },
+    { value: '70', label: '70대' },
+    { value: '80', label: '80대' }
+  ]
+
   const [submitted, setSubmitted] = useState(false);
   // const registering = useSelector(state => state.registering.registering);
   const dispatch = useDispatch();
@@ -124,7 +132,11 @@ export default function SignUp () {
                   {submitted && !user.name &&
                       <div className="invalid-feedback">User Name is required</div>
                   }
+<<<<<<< HEAD
                   
+=======
+     
+>>>>>>> f6e691ab4f37bda6db25e963e454accaf2a6664b
                   <RadioGroup defaultValue="female" aria-label="gender" name="gender" value={user.gender} onChange={handleChange}>
                     <FormControlLabel value="F" control={<Radio />} label="Female" />
                     <FormControlLabel value="M" control={<Radio />} label="Male" />

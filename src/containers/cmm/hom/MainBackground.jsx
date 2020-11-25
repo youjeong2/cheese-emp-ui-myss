@@ -22,7 +22,10 @@ const Heading = styled.h1`
     ${tw`inline-block mt-2`}
   }
 `;
+<<<<<<< HEAD
 
+=======
+>>>>>>> f6e691ab4f37bda6db25e963e454accaf2a6664b
 const Actions = styled.div`
   ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
   input {
@@ -42,13 +45,21 @@ export default function BackgroundAsImageWithCenteredContent() {
           <Content>
             <Heading>
                 <h1>Find Your Cheese !</h1>
+<<<<<<< HEAD
                 Pic 2 Cheeese 와 함께<br/>
                 나에게 맞는 치즈를 추천 받아보세요.
+=======
+                나에게 맞는 치즈를 추천 받아보세요!
+>>>>>>> f6e691ab4f37bda6db25e963e454accaf2a6664b
             </Heading>
             <br/>
             <Actions>
               <input type="text" placeholder="Your E-mail Address" />
+<<<<<<< HEAD
               <button >지금 시작하기</button>
+=======
+              <button>지금 시작하기</button>
+>>>>>>> f6e691ab4f37bda6db25e963e454accaf2a6664b
             </Actions>
           </Content>
         </HeroContainer>

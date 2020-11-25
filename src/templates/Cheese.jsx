@@ -7,7 +7,7 @@ import { BestReview } from '../containers/cop/itm/cheese'
 import CheeseMenu from "../containers/cop/itm/cheese/CheeseMenu.jsx";
 
 export default function Cheese () {
-  const Subheading = tw.span`tracking-wider text-sm font-medium`;
+  // const Subheading = tw.span`tracking-wider text-sm font-medium`;
   const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   const imageCss = tw`rounded-4xl`;
   

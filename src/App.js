@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { createStore, applyMiddleware, combineReducers } from 'redux'
-import { BrowserRouter as Router, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom'
+import { createStore, applyMiddleware, combineReducers } from 'redux' //eslint-disable-line
+import { BrowserRouter as Router, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom' //eslint-disable-line
 // import { Nav } from './components'
 import { Header, Footer } from './components/cmm'
-import {Home, User, Cheese, Survey, Review} from './templates'
-import {Login, Signup, UserDetail, UserInfo } from './containers/usr/user'
+import {Home, Cheese, Recommend, Review} from './templates'
+import {Login, Signup, UserInfo } from './containers/usr/user'
 // import { Cart } from "./containers/cop/cart";
 // import { Cart } from "./templates/Cart";
 
@@ -23,13 +23,12 @@ export default function App(){
                     <Redirect from = {'/home'} to={'/'}/> 
                     <Route path='/login' component={Login}></Route>
                     <Route path='/signup' component={Signup}></Route>
-                    <Route path='/user-detail' component={ UserDetail }/>
                     <Route path='/user-info' component={UserInfo}/>
                     {/* <Route path='/modifying-user-info' component={ UserModify }/>
                     <Route path='/membership-withdrawal' component={ UserWithdrawal }/>
                     <Route path='/userlist' component={ UserList }/> */}
 
-                    <Route path='/survey' component={Survey}></Route>
+                    <Route path='/survey' component={Recommend}></Route>
                     <Route path='/cheese' component={Cheese}></Route>
                     <Route path='/review' component={Review}></Route>
 

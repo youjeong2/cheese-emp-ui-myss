@@ -68,7 +68,7 @@ const ActionButton = styled(PrimaryButtonBase)`
 
 const WhiteBackgroundOverlay = tw.div`absolute inset-x-0 bottom-0 h-1/6 lg:h-1/3 bg-white z-0`;
 
-export default function ThreePlansWithHalfPrimaryBackground ({
+export default function RecommendList ({
   subheading = "",
   heading = "당신에게 맞는 치즈를 추천받아보세요.",
   description = "아래 양식을 작성하고 제출 버튼을 누르시면 취향에 맞는 빵을 추천해드립니다.",

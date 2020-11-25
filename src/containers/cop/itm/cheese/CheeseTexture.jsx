@@ -1,9 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios'
-import { context as c } from '../../../../modules/context'
-
-import { cheeseActions } from '../../../../modules/cop/itm/cheese/cheese.action';
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -409,28 +404,6 @@ export default function CheeseTexture({
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
 
 
-  const cheeseAxios = () => {
-    axios.get(`${c.url}/api/cheeses`)
-      .then(res => {
-        const cheeses = res.data
-        alert(`Cheese Connection Success !!${res.data}`)
-        
-
-      }).catch(
-        e => alert(`Cheese Failure`)
-      )
-  }
-
-  const CheeseData = () => {
-    const dispatch = useDispatch()
-  const cheeses = useSelector(state => (state.cheeseReducer.cheeses)) 
-    useEffect(()=> {
-      dispatch(cheeseActions.getAll())
-    })
-    
-  }
-
-
   return (
     <Container>
       <ContentWithPaddingXl>
@@ -509,91 +482,91 @@ export default function CheeseTexture({
 };
 
 /* This function is only there for demo purposes. It populates placeholder cards */
-const soft = () => {
-  const cards = [
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/1566382934703l0.jpg",
-      title: "Chicken Chilled",
-      content: "Chicken Main Course",
-      price: "$5.99",
-      rating: "5.0",
-      reviews: "87",
-      url: "#"
-    },
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/1528161805562l0.jpg",
-      title: "Samsa Beef",
-      content: "Fried Mexican Beef",
-      price: "$3.99",
-      rating: "4.5",
-      reviews: "34",
-      url: "#"
-    },
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/1566383011754l0.jpg",
-      title: "Carnet Nachos",
-      content: "Chilli Crispy Nachos",
-      price: "$3.99",
-      rating: "3.9",
-      reviews: "26",
-      url: "#"
-    },
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/1595490964205l0.jpg",
-      title: "Guacamole Mex",
-      content: "Mexican Chilli",
-      price: "$3.99",
-      rating: "4.2",
-      reviews: "95",
-      url: "#"
-    },
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/155591204450l0.jpg",
-      title: "Chillie Cake",
-      content: "Deepfried Chicken",
-      price: "$2.99",
-      rating: "5.0",
-      reviews: "61",
-      url: "#"
-    },
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/1493028272308l0.jpg",
-      title: "Nelli",
-      content: "Hamburger & Fries",
-      price: "$7.99",
-      rating: "4.9",
-      reviews: "89",
-      url: "#"
-    },
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/1575338281586l0.jpg",
-      title: "Jalapeno Poppers",
-      content: "Crispy Soyabeans",
-      price: "$8.99",
-      rating: "4.6",
-      reviews: "12",
-      url: "#"
-    },
-    {
-      imageSrc:
-      "https://img-cf.kurly.com/shop/data/goods/1477568051626l0.jpg",
-      title: "Cajun Chicken",
-      content: "Roasted Chicken & Egg",
-      price: "$7.99",
-      rating: "4.2",
-      reviews: "19",
-      url: "#"
-    }
-  ];
+// const soft = () => {
+//   const cards = [
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/1566382934703l0.jpg",
+//       title: "Chicken Chilled",
+//       content: "Chicken Main Course",
+//       price: "$5.99",
+//       rating: "5.0",
+//       reviews: "87",
+//       url: "#"
+//     },
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/1528161805562l0.jpg",
+//       title: "Samsa Beef",
+//       content: "Fried Mexican Beef",
+//       price: "$3.99",
+//       rating: "4.5",
+//       reviews: "34",
+//       url: "#"
+//     },
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/1566383011754l0.jpg",
+//       title: "Carnet Nachos",
+//       content: "Chilli Crispy Nachos",
+//       price: "$3.99",
+//       rating: "3.9",
+//       reviews: "26",
+//       url: "#"
+//     },
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/1595490964205l0.jpg",
+//       title: "Guacamole Mex",
+//       content: "Mexican Chilli",
+//       price: "$3.99",
+//       rating: "4.2",
+//       reviews: "95",
+//       url: "#"
+//     },
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/155591204450l0.jpg",
+//       title: "Chillie Cake",
+//       content: "Deepfried Chicken",
+//       price: "$2.99",
+//       rating: "5.0",
+//       reviews: "61",
+//       url: "#"
+//     },
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/1493028272308l0.jpg",
+//       title: "Nelli",
+//       content: "Hamburger & Fries",
+//       price: "$7.99",
+//       rating: "4.9",
+//       reviews: "89",
+//       url: "#"
+//     },
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/1575338281586l0.jpg",
+//       title: "Jalapeno Poppers",
+//       content: "Crispy Soyabeans",
+//       price: "$8.99",
+//       rating: "4.6",
+//       reviews: "12",
+//       url: "#"
+//     },
+//     {
+//       imageSrc:
+//       "https://img-cf.kurly.com/shop/data/goods/1477568051626l0.jpg",
+//       title: "Cajun Chicken",
+//       content: "Roasted Chicken & Egg",
+//       price: "$7.99",
+//       rating: "4.2",
+//       reviews: "19",
+//       url: "#"
+//     }
+//   ];
   
 
-  // Shuffle array
-  return cards.sort(() => Math.random() - 0.5);
-};
+//   // Shuffle array
+//   return cards.sort(() => Math.random() - 0.5);
+// };

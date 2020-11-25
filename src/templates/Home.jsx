@@ -2,11 +2,10 @@ import React from "react";
 import tw from "twin.macro"; //eslint-disable-line
 import { Link } from 'react-router-dom'; //eslint-disable-line
 import AnimationRevealPage from "../components/cmm/AnimationEffect.jsx";
-// import Header from "./common/header-practice.js"
 import MainBackground from "../containers/cmm/hom/MainBackground.jsx";
 import HomeInfo from "../containers/cmm/hom/HomeInfo.jsx";
 import ContactUs from "../containers/cmm/hom/ContactUs.jsx";
-import { ChatbotContainer as Chatbot } from "../containers/cop/itm/chatbot"
+import { ChatbotContainer as Chatbot } from "../containers/cop/chatbot"
 import FAQ from "../containers/cmm/hom/Faq.jsx";
 import Tooltip from '@material-ui/core/Tooltip'
 
