@@ -53,7 +53,7 @@ export default function VerticalWithAlternateImageAndText() {
     },
     {
       imageSrc:
-        "https://img-cf.kurly.com/shop/data/goods/1515396236580l0.jpg",
+        "https://img-cf.kurly.com/shop/data/goods/1566382934703l0.jpg",
       description: "안녕하세요",
       title: "AI가 추천해주는",
       subtitle: "Pic 2 Cheese가 엄선하고 AI가 매칭해주는 큐레이션",
@@ -61,7 +61,7 @@ export default function VerticalWithAlternateImageAndText() {
     },
     {
       imageSrc:
-        "https://img-cf.kurly.com/shop/data/goods/1515396236580l0.jpg",
+        "https://img-cf.kurly.com/shop/data/goods/1563949642720l0.jpg",
       description:
         "안녕하세요",
       title: "매 월 선물처럼",
