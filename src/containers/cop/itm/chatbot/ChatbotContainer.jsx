@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components';
 import { context as c } from '../../../modules/context'
 import axios from 'axios'
-import cheese_logo from "../../../components/cmm/images/cheese/cheese-logo.png";
+import cheese_logo from "../../../components/cmm/images/cheese/cheese_img.png";
 import {Recommend} from '../../../templates'
 // import { m } from 'framer-motion';
 
@@ -387,3 +387,4 @@ class MyChatbot extends Component {
 }
 
 export default MyChatbot
+

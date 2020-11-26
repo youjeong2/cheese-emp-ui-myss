@@ -461,7 +461,7 @@ export default function CheeseTexture({
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <CardButton>Buy Now</CardButton>
+                      <CardButton >Buy Now</CardButton>
                     </CardHoverOverlay>
                   </CardImageContainer>
                   <CardText>

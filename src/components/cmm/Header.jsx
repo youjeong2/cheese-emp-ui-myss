@@ -9,7 +9,7 @@ import { history } from '../../modules/history' //eslint-disable-line
 
 import useAnimatedNavToggler from "./AnimatedNavToggler";
 
-import logo from "./images/cheese/cheese-logo.png";
+import logo from "./images/cheese/cheese_img.png";
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import {CartIcon} from '../../containers/cop/cart/Icons' //eslint-disable-line
@@ -43,7 +43,7 @@ const HeaderBlock = tw.header`
   max-w-screen-xl mx-auto pt-3 pb-3
 `;
 
-const NavLinks = tw.div`inline-block`;
+const NavLinks = tw.div`inline-block -mx-8`;
 
 const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
@@ -139,7 +139,7 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
         <NavLink href="/" >홈</NavLink>
         <NavLink href="/cheese">치즈</NavLink>
         <NavLink href="/review">Review</NavLink>
-        <NavLink href="/survey">추천</NavLink>
+        <NavLink href="/recommend">추천</NavLink>
         {/* <NavLink href="/cart"><CartIcon/>Cart ({itemCount})</NavLink> */}
         <NavLink href="/cart">Cart</NavLink>
         <NavLink href="/user-info" tw="lg:ml-20!">My Page</NavLink>
@@ -184,7 +184,7 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
         <NavLink href="/review">Review</NavLink>
         </Tooltip>
         <Tooltip title="챗봇을 통해 추천 받은 치즈 카테고리와 함께 치즈 상품 2~3개 추천 리스트 보여주는 기능(모델링 적용)">
-          <NavLink href="/survey">추천</NavLink>
+          <NavLink href="/recommend">추천</NavLink>
         </Tooltip>
         {/* <Tooltip title="구독 상품과 치즈 상품을 구매할 수 있는 장바구니 기능">
           <NavLink href="/cart" onClick={handleClose}>장바구니</NavLink>
@@ -193,7 +193,7 @@ const Header = (props, { roundedHeaderButton = false, logoLink, links, className
         <NavLink href="/login" tw="lg:ml-20!">Sign in</NavLink>
         </Tooltip>
         <Tooltip title="회원가입 기능">
-        <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/signup">Sign Up</PrimaryLink>
+        <PrimaryLink css={roundedHeaderButton && tw`rounded-full`}href="/signup">Sign Up</PrimaryLink>
         </Tooltip>
       </ul>
       }

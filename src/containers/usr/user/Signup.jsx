@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { userActions } from '../../../modules/usr/user/user.action'
 import { useDispatch } from "react-redux"
 
-import Select from 'react-select'
+import Select from 'react-select' //eslint-disable-line
 import { Container as ContainerBase } from "../../../components/cmm/Layouts";
 import tw from "twin.macro"; 
 import styled from "styled-components";
@@ -64,16 +64,16 @@ export default function SignUp () {
 
 
   
-  const options = [
-    { value: '10', label: '10대' },
-    { value: '20', label: '20대' },
-    { value: '30', label: '30대' },
-    { value: '40', label: '40대' },
-    { value: '50', label: '50대' },
-    { value: '60', label: '60대' },
-    { value: '70', label: '70대' },
-    { value: '80', label: '80대' }
-  ]
+  // const options = [
+  //   { value: '10', label: '10대' },
+  //   { value: '20', label: '20대' },
+  //   { value: '30', label: '30대' },
+  //   { value: '40', label: '40대' },
+  //   { value: '50', label: '50대' },
+  //   { value: '60', label: '60대' },
+  //   { value: '70', label: '70대' },
+  //   { value: '80', label: '80대' }
+  // ]
 
   const [submitted, setSubmitted] = useState(false);
   // const registering = useSelector(state => state.registering.registering);
@@ -132,11 +132,7 @@ export default function SignUp () {
                   {submitted && !user.name &&
                       <div className="invalid-feedback">User Name is required</div>
                   }
-<<<<<<< HEAD
                   
-=======
-     
->>>>>>> f6e691ab4f37bda6db25e963e454accaf2a6664b
                   <RadioGroup defaultValue="female" aria-label="gender" name="gender" value={user.gender} onChange={handleChange}>
                     <FormControlLabel value="F" control={<Radio />} label="Female" />
                     <FormControlLabel value="M" control={<Radio />} label="Male" />
